@@ -20,6 +20,10 @@ async def on_ready():
         if file.endswith('.py'):
             await bot.load_extension(f'cogs.{file[:-3]}')
             print(f'{file[:-3]}を読み込んだよ!!')
+    for file in os.listdir('./cogs/aicyserver'):
+        if file.endswith('.py'):
+            await bot.load_extension(f'cogs.aicyserver.{file[:-3]}')
+            print(f'{file[:-3]}を読み込んだよ!!')
     try:
         await bot.load_extension('jishaku')
         print('jishakuを読み込んだよ!!')
