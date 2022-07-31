@@ -16,20 +16,24 @@ profiles_collection = db.profiles
 async def on_ready():
     bot.guild = bot.get_guild(984807772333932594)
     bot.admin = bot.guild.get_role(1002599926670295152)
-    for file in os.listdir('./cogs'):
+    for file in os.listdir('./cogs'): # cogの中身ロード
         if file.endswith('.py'):
             await bot.load_extension(f'cogs.{file[:-3]}')
-            print(f'{file[:-3]}を読み込んだよ!!')
-    for file in os.listdir('./cogs/aicyserver'):
+            print(f'{file[:-3]}を読み込んだよ!!') 
+    for file in os.listdir('./cogs/aicyserver'): # cogs/aicyserverの読み込み
         if file.endswith('.py'):
             await bot.load_extension(f'cogs.aicyserver.{file[:-3]}')
             print(f'{file[:-3]}を読み込んだよ!!')
     try:
-        await bot.load_extension('jishaku')
+        await bot.load_extension('jishaku') # jishakuの読み込み
         print('jishakuを読み込んだよ!!')
     except:
         traceback.print_exc()
     print(f"Logged in as {bot.user}")
+    guilds=len(bot.guilds)
+    servers=str(guilds)
+    members = str()
+    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{members}, サーバー数:{servers}", type=discord.ActivityType.playing), status='online')
 
 
 @bot.command()

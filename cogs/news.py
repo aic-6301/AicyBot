@@ -8,6 +8,7 @@ class News(commands.Cog):
 
     @commands.command()
     async def news(self, ctx):
+        # 誰か手伝って()
         await ctx.send('実装中だよ. もう少し待ってね')
 
 async def setup(bot):
