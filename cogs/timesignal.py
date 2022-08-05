@@ -18,7 +18,7 @@ class Timesignal(commands.Cog):
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時ちょうどをお知らせします')
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
             if dt_now == '00':
-                self.embed.add_field(name='あけおめ!!', value=f'今日は{dt_now.month}/{dt_now.day}です')
+                self.embed.add_field(name='あけおめ!!', value=f'今日は{datetime.now().strftime("%m月%d日")}です')
             elif dt_now == '06':
                 self.embed.add_field(name='おはよう!!',value='ニュースはa!newsで見れるぞ')
             elif dt_now == '12':
@@ -38,7 +38,8 @@ class Timesignal(commands.Cog):
         if self.embed != None:
             if self.message != None:
                 await self.message.delete()
-            self.message = await self.bot.guild.system_channel.send(embed=self.embed)
+            guild = self.bot.get_all_guild()
+            self.message = await guild.system_channel.send(embed=self.embed)
             self.embed = None
 
     async def cog_unload(self):

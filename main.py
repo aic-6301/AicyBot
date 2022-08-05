@@ -1,4 +1,3 @@
-from motor import motor_asyncio as motor
 import discord
 import traceback
 import os
@@ -8,22 +7,26 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.environ.get('token')
 bot = commands.Bot(command_prefix="a!", intents=discord.Intents.all())
-dbclient = motor.AsyncIOMotorClient("mongodb+srv://aicy:dD4gei2qMFZVoTM4@aicy1.z7ime.mongodb.net/?retryWrites=true&w=majority")
-db = dbclient["ProfileBot"]
-profiles_collection = db.profiles
 
 @bot.event
 async def on_ready():
     bot.guild = bot.get_guild(984807772333932594)
     bot.admin = bot.guild.get_role(1002599926670295152)
-    for file in os.listdir('./cogs'): # cogの中身ロード
-        if file.endswith('.py'):
-            await bot.load_extension(f'cogs.{file[:-3]}')
-            print(f'{file[:-3]}を読み込んだよ!!') 
-    for file in os.listdir('./cogs/aicyserver'): # cogs/aicyserverの読み込み
-        if file.endswith('.py'):
-            await bot.load_extension(f'cogs.aicyserver.{file[:-3]}')
-            print(f'{file[:-3]}を読み込んだよ!!')
+    bot.log_ch = bot.get_channel(1004387301293555803)
+    try:
+        for file in os.listdir('./cogs'): # cogの中身ロード
+            if file.endswith('.py'):
+                await bot.load_extension(f'cogs.{file[:-3]}')
+                print(f'{file[:-3]}を読み込んだよ!!')
+    except:
+        traceback.print_exc()
+    try:
+        for file in os.listdir('./cogs/aicyserver'): # cogs/aicyserverの読み込み
+            if file.endswith('.py'):
+                await bot.load_extension(f'cogs.aicyserver.{file[:-3]}')
+                print(f'{file[:-3]}を読み込んだよ!!')
+    except:
+        traceback.print_exc()
     try:
         await bot.load_extension('jishaku') # jishakuの読み込み
         print('jishakuを読み込んだよ!!')
@@ -32,7 +35,7 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
     guilds=len(bot.guilds)
     servers=str(guilds)
-    members = str()
+    members = str(guilds.members)
     await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{members}, サーバー数:{servers}", type=discord.ActivityType.playing), status='online')
 
 
@@ -51,41 +54,13 @@ async def reload(ctx, extension):
     else:
         await ctx.send('このコマンドはbot管理者だけやで')
 
-@bot.command(name="set")
-async def set_profile(ctx, *, text):
-    new_data = {
-        "userid": ctx.author.id,
-        "text": text
-    }
-    result = await profiles_collection.replace_one({
-        "userid": ctx.author.id
-    }, new_data)
-    if result.matched_count == 0:
-        await profiles_collection.insert_one(new_data)
-    await ctx.reply("設定が完了しました。")
+@bot.command()
+@commands.is_owner()
+async def load(ctx, extension):
+    await bot.load_extension(f'cogs.{extension}')
+    embed = discord.Embed(title='Load!', description=f'{extension} Loaded!', color=0xff00c8)
+    await ctx.send(embed=embed)
 
-
-@bot.command(name="show")
-async def show_profile(ctx, target: discord.User):
-    profile = await profiles_collection.find_one({
-        "userid": target.id
-    }, {
-        "_id": False
-    })
-    if profile is None:
-        return await ctx.reply("見付かりませんでした。")
-    embed = discord.Embed(title=f"`{target}`のプロフィール", description=profile["text"])
-    return await ctx.reply(embed=embed)
-
-
-@bot.command(name="delete", aliases=["del"])
-async def delete_profile(ctx):
-    result = await profiles_collection.delete_one({
-        "userid": ctx.author.id
-    })
-    if result.deleted_count == 0:
-        return await ctx.reply("見付かりませんでした。")
-    return await ctx.reply("削除しました。")
 
 @bot.event
 async def on_command_error(ctx, error):
