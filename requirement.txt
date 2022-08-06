@@ -1,4 +1,4 @@
-git+https://github.com/Rapptz/discord
+git+https://github.com/Rapptz/discord.py
 datetime
 asyncio
 os
