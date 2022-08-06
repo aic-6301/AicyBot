@@ -1,8 +1,6 @@
 git+https://github.com/Rapptz/discord.py
 datetime
 asyncio
-os
-sqlite3
 json
 dotenv
 traceback
