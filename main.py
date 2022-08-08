@@ -37,6 +37,19 @@ async def on_ready():
     servers=str(guilds)
     members = str(guilds.members)
     await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{members}, サーバー数:{servers}", type=discord.ActivityType.playing), status='online')
+    bot.vc1 = bot.get_channel(1004606464918298684)
+    bot.vc2 = bot.get_channel(1004606505754046514)
+    bot.vc3 = bot.get_channel(1004606533176414321)
+    bot.vc1_owner = None
+    bot.vc2_owner = None
+    bot.vc3_owner = None
+    bot.vc1_dash = None
+    bot.vc2_dash = None
+    bot.vc3_dash = None
+
+    bot.vc1_status = 'Normal'
+    bot.vc2_status = 'Normal'
+    bot.vc3_status = 'Normal'
 
 
 @bot.command()
