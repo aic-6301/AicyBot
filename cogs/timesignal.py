@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 from datetime import datetime
-# import asyncio スマホに入れたら有効化する予定
+import asyncio スマホに入れたら有効化する予定
 
 
 class Timesignal(commands.Cog):
@@ -38,7 +38,7 @@ class Timesignal(commands.Cog):
         if self.embed != None:
             if self.message != None:
                 await self.message.delete()
-            guild = self.bot.get_all_guild()
+            guild = self.bot.guild.system_channel.send()
             self.message = await guild.system_channel.send(embed=self.embed)
             self.embed = None
 
