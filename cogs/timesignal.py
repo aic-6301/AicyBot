@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 from datetime import datetime
-import asyncio スマホに入れたら有効化する予定
+import asyncio
 
 
 class Timesignal(commands.Cog):
@@ -32,7 +32,7 @@ class Timesignal(commands.Cog):
         elif datetime.now().strftime('%M') == '30':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時30分をお知らせします')
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
-        # await asyncio.sleep(30) # 待つ
+        await asyncio.sleep(30) 
 
 
         if self.embed != None:
