@@ -74,7 +74,7 @@ async def load(ctx, extension):
 @bot.command()
 @commands.is_owner()
 async def restart(ctx):
-    await bot.ctx.send('再起動します。。')
+    await ctx.send('再起動します。。')
     os.execv(sys.executable, ['python'] + sys.argv)
 
 @bot.event
