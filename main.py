@@ -1,6 +1,7 @@
 import discord
 import traceback
 import os
+import sys
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -59,13 +60,9 @@ async def hello(ctx):
 @bot.command()
 @commands.is_owner()
 async def reload(ctx, extension):
-    admin = bot.admin
-    if admin is not None:
-        await bot.reload_extension(f'cogs.{extension}')
-        embed = discord.Embed(title='Reload!', description=f'{extension} Reloaded!', color=0xff00c8)
-        await ctx.send(embed=embed)
-    else:
-        await ctx.send('このコマンドはbot管理者だけやで')
+    await bot.reload_extension(f'cogs.{extension}')
+    embed = discord.Embed(title='Reload!', description=f'{extension} Reloaded!', color=0xff00c8)
+    await ctx.send(embed=embed)
 
 @bot.command()
 @commands.is_owner()
@@ -74,6 +71,11 @@ async def load(ctx, extension):
     embed = discord.Embed(title='Load!', description=f'{extension} Loaded!', color=0xff00c8)
     await ctx.send(embed=embed)
 
+@bot.command()
+@commands.is_owner()
+async def restart(ctx):
+    await bot.ctx.send('再起動します。。')
+    os.execv(sys.executable, ['python'] + sys.argv)
 
 @bot.event
 async def on_command_error(ctx, error):
