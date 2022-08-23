@@ -14,7 +14,7 @@ class Mod(commands.Cog):
         if ctx.invoked_subcommand is None:
             e = discord.Embed(title='`mod`のサブコマンド', description='管理向け')
             e.add_field(name='`setup`', value='moderationのセットアップをします')
-            e.add_field(name='`ban`', value='メンバーをbanします')
+            e.add_field(name='`ban`', value='メンバーをbanします(idのみ対応)')
             ctx.send(embed=e)
     # setup
     @mod.command(name='setup')
@@ -58,7 +58,8 @@ class Mod(commands.Cog):
     @mod.command()
     @commands.cooldown(1, 5, commands.BucketType.guild)
     @commands.has_permissions(manage_roles=True, ban_members=True)
-    async def ban(self, ctx, member:discord.Member, reason):
+    async def ban(self, ctx, member_id: int, *, reason):
+        member = ctx.guild.get_member(member_id)
         e = discord.Embed(title='Banned', color=0xff0000)
         e.add_field(name="メンバー", value=f"{member.mention}", inline=False)
         e.add_field(name="理由", value=f"{reason}", inline=False)
@@ -72,7 +73,8 @@ class Mod(commands.Cog):
     @mod.command()
     @commands.cooldown(1, 5, commands.BucketType.guild)
     @commands.has_permissions(manage_roles=True, ban_members=True)
-    async def unban(self, ctx, member:discord.Member, reason):
+    async def unban(self, ctx, member_id: int, *, reason):
+        member = ctx.guild.get_member(member_id)
         e = discord.Embed(title='Unbanned', color=0xff0000)
         e.add_field(name="メンバー", value=f"{member.mention}", inline=False)
         e.add_field(name="理由", value=f"{reason}", inline=False)
