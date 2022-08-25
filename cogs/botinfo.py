@@ -13,8 +13,8 @@ class Botinfo(commands.Cog):
         if ctx.invoked_subcommand is None:
             await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
     
-    @commands.command()
-    async def ping_site(self, ctx):
+    @ping.command()
+    async def _site(self, ctx):
         url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json")
         text = url.text
         data = json.loads(text)
