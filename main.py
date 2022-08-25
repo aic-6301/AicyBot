@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix="a!", intents=discord.Intents.all())
 
 @bot.event
 async def on_ready():
-    bot.guild = bot.get_guild(984807772333932594)
+    bot.guild = bot.get_guild(949560203374915605)
     bot.admin = bot.guild.get_role(1002599926670295152)
     bot.log_ch = bot.get_channel(1004387301293555803)
     kidou = bot.get_channel(1011708105161179136)

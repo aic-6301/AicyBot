@@ -38,8 +38,7 @@ class Timesignal(commands.Cog):
         if self.embed != None:
             if self.message != None:
                 await self.message.delete()
-            guild = self.bot.get_all_guild()
-            self.message = await guild.system_channel.send(embed=self.embed)
+            self.message = await self.bot.guild.system_channel.send(embed=self.embed)
             self.embed = None
 
     async def cog_unload(self):
