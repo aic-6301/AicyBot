@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import requests
+import json
 
 
 class Botinfo(commands.Cog):
@@ -13,9 +14,11 @@ class Botinfo(commands.Cog):
             await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
     
     @commands.command()
-    async def ping_site(self, ctx, url: discord.abc):
-        response = requests.get(f'https://aic-group.sytes.net/api/get/ping/{url}')
-        await ctx.send(f'{response.text}')
+    async def ping_site(self, ctx):
+        url = requests.get("https://aic-group.sytes.net/api/ping/")
+        text = url.text
+        data = json.loads(text)
+        await ctx.send('ping値' + str(data[1]['ping']) + f'\n' + 'ping先:' + (data[2]['domain']))
 
 async def setup(bot):
     await bot.add_cog(Botinfo(bot))
