@@ -14,11 +14,11 @@ class Botinfo(commands.Cog):
             await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
     
     @commands.command()
-    async def ping_site(self, ctx):
-        url = requests.get("https://aic-group.sytes.net/api/ping/")
+    async def ping_site(self, ctx, message):
+        url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json?ip={message.content}")
         text = url.text
         data = json.loads(text)
-        await ctx.send('ping値' + str(data[1]['ping']) + f'\n' + 'ping先:' + (data[2]['domain']))
+        await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
 
 async def setup(bot):
     await bot.add_cog(Botinfo(bot))
