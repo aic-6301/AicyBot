@@ -53,7 +53,6 @@ class Mod(commands.Cog):
             msg = await msg.edit(embed=emb)
         else:
             embed = discord.Embed(title='セットアップ済みのようです', description='こちらのサーバーでは実行する必要はありません！')
-    
     # ban
     @mod.command()
     @commands.cooldown(1, 5, commands.BucketType.guild)

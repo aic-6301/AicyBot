@@ -14,6 +14,7 @@ async def on_ready():
     bot.guild = bot.get_guild(984807772333932594)
     bot.admin = bot.guild.get_role(1002599926670295152)
     bot.log_ch = bot.get_channel(1004387301293555803)
+    kidou = bot.get_channel(1011708105161179136)
     try:
         for file in os.listdir('./cogs'): # cogの中身ロード
             if file.endswith('.py'):
@@ -34,6 +35,7 @@ async def on_ready():
     except:
         traceback.print_exc()
     print(f"Logged in as {bot.user}")
+    await kidou.send('起動したよ!!')
     guilds=len(bot.guilds)
     servers=str(guilds)
     members = str(guilds.members)
@@ -79,7 +81,7 @@ async def restart(ctx):
 
 @bot.event
 async def on_command_error(ctx, error):
-    error_ch = bot.get_channel(996370412239855667)
+    error_ch = bot.get_channel(1011469317822496858)
     if isinstance(error, discord.ext.commands.errors.MissingPermissions):
         embed = discord.Embed(title=":x: 失敗 -MissingPermissions", description=f"実行者の必要な権限が無いため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
         embed.set_footer(text="お困りの場合はBot管理者までお問い合わせください")
