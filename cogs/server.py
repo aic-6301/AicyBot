@@ -7,7 +7,7 @@ class Server(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(aliases=["si"])
     async def serverinfo(self, ctx, guild: int =None):
         if guild == None:
             guild = ctx.guild
@@ -19,7 +19,7 @@ class Server(commands.Cog):
         embed.add_field(name='ロール数', value=f'{len(roles)}', inline=False)
         embed.add_field(name='サーバーブースト数', value=guild.premium_subscription_count, inline=False)
         embed.add_field(name='メンバー数', value=f'{guild.member_count}', inline=False)
-        embed.add_field(name='サーバー作成日', value=f'{guild.created_at}', inline=False)
+        embed.add_field(name='サーバー作成日', value={guild.created_at.strftime(f'%Y/%m/%d %H:%M:%S')}, inline=False)
         await ctx.send(embed=embed)
 
 async def setup(bot):
