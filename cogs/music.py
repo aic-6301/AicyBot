@@ -37,9 +37,9 @@ class AudioStatus:
             self.vc.play(discord.FFmpegPCMAudio(executable=selfpath+"/bin/ffmpeg.exe", source=path), after = self.play_next)
             if (isloop):
                 await self.add_audio(title, path, isloop = True)
-            activity = discord.Activity(name=title, type=discord.ActivityType.listening)    #アクティビティの作成
+            # activity = discord.Activity(name=title, type=discord.ActivityType.listening)    #アクティビティの作成
             self.bgminfo = path #後で使います
-            await self.bot.change_presence(activity=activity)    #アクティビティの更新
+            # await self.bot.change_presence(activity=activity)    #アクティビティの更新
             await self.playing.wait()
     
     #playing_taskの中で呼び出される
@@ -138,7 +138,7 @@ async def send_list(send_method, mention, mes, title = 'Result', delimiter = ['\
         else:
             await send_method(f'{mention} \n'+reply)
     return True
-class __BGM(commands.Cog, name= 'BGM'): #BGMという名前でCogを定義する
+class __BGM(commands.Cog, name= 'Music'): #BGMという名前でCogを定義する
     def search_audiofiles(self):
         cur_path   = os.getcwd()    #カレントディレクトリ
         MUSIC_PATH = os.path.dirname(__file__)
@@ -216,6 +216,10 @@ class __BGM(commands.Cog, name= 'BGM'): #BGMという名前でCogを定義する
             numbers = len(music_pathes)
             for i in range(numbers):
                 await self.audio_status.add_audio(music_titles[i], self.path + os.sep + self.music_dirs[idx] + os.sep + music_pathes[i])
+            asyncio.sleep(3200)
+            for file in os.listdir('/main/aicybot/discord.bot/'): # cogs/aicyserverの読み込み
+                if file.endswith('.webm'):
+                    os.remove(file)
         else:   #それ以外
             await ctx.send('Audio File Not Found')
         return
@@ -255,6 +259,10 @@ class __BGM(commands.Cog, name= 'BGM'): #BGMという名前でCogを定義する
             numbers = len(music_pathes)
             for i in range(numbers):
                 await self.audio_status.add_audio(music_titles[i], self.path + os.sep + self.music_dirs[idx] + os.sep + music_pathes[i], isloop = True)
+            asyncio.sleep(3200)
+            for file in os.listdir('/main/aicybot/discord.bot/'): # cogs/aicyserverの読み込み
+                if file.endswith('.webm'):
+                    os.remove(file)
         else:   #それ以外
             await ctx.send('Audio File Not Found')
         return

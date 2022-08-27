@@ -12,10 +12,10 @@ class Mod(commands.Cog):
     @commands.group()
     async def mod(self, ctx):
         if ctx.invoked_subcommand is None:
-            e = discord.Embed(title='`mod`のサブコマンド', description='管理向け')
-            e.add_field(name='`setup`', value='moderationのセットアップをします')
-            e.add_field(name='`ban`', value='メンバーをbanします(idのみ対応)')
-            ctx.send(embed=e)
+            modhelp = discord.Embed(title='`mod`のサブコマンド', description='管理向け')
+            modhelp.add_field(name='`setup`', value='moderationのセットアップをします')
+            modhelp.add_field(name='`ban`', value='メンバーをbanします(idのみ対応)')
+            ctx.send(embed=modhelp)
     # setup
     @mod.command(name='setup')
     @commands.cooldown(1, 5, commands.BucketType.guild)
