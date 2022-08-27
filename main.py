@@ -81,7 +81,7 @@ async def load(ctx, extension):
 @commands.is_owner()
 async def restart(ctx):
     await ctx.send('再起動します。。')
-    os.execv(sys.executable, ['python'] + sys.argv)
+    exit()
 
 @bot.event
 async def on_command_error(ctx, error):
