@@ -20,7 +20,7 @@ class Server(commands.Cog):
         embed.add_field(name='サーバーブースト数', value=guild.premium_subscription_count, inline=False)
         embed.add_field(name='メンバー数', value=f'{guild.member_count}', inline=False)
         embed.add_field(name='サーバー作成日', value=guild.created_at.strftime("%Y/%m/%d %H:%M:%S"), inline=False)
-        embed.set_thumbnail(url=guild.icon_url)
+        embed.set_thumbnail(url=guild.icon.url)
         await ctx.send(embed=embed)
 
 async def setup(bot):
