@@ -21,7 +21,7 @@ class Mod(commands.Cog):
     @commands.cooldown(1, 5, commands.BucketType.guild)
     @commands.has_permissions(manage_guild=True)
     async def setup(self, ctx):
-        if discord.utils.get(ctx.message.server.roles, name='Muted') is None:
+        if discord.utils.get(ctx.message.guild.roles, name='Muted') is None:
             log_ch = self.bot.get_channel(1004387301293555803)
             guild = ctx.guild
             embed = discord.Embed(title='Setup', description='moderationのセットアップをしています')
