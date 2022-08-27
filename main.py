@@ -35,15 +35,15 @@ async def on_ready():
     except:
         traceback.print_exc()
     print(f"Logged in as {bot.user}")
+    guilds=len(bot.guilds)
+    servers=str(guilds)
     embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。')
     embed.add_field(name='導入サーバー数', value=f'{servers}')
     embed.add_field(name='メンバー数', description=f'')
     await kidou.send(embed=embed)
-    guilds=len(bot.guilds)
-    servers=str(guilds)
-    for guild in bot.guilds:
+    '''for guild in bot.guilds:
         print(len(guild.members))
-    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{members}, サーバー数:{servers}", type=discord.ActivityType.playing), status='online')
+    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{}, サーバー数:{servers}", type=discord.ActivityType.playing), status='online')'''
     bot.vc1 = bot.get_channel(1004606464918298684)
     bot.vc2 = bot.get_channel(1004606505754046514)
     bot.vc3 = bot.get_channel(1004606533176414321)
