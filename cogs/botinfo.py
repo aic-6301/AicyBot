@@ -15,11 +15,13 @@ class Botinfo(commands.Cog):
     
     @ping.command()
     async def site(self, ctx, url):
-        url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json&ip="+url)
-        text = url.text
-        data = json.loads(text)
-        print(data)
-        await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+        try:
+            url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json&ip="+url)
+            text = url.text
+            data = json.loads(text)
+            await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+        except:
+            await ctx.send('URLが存在しません。別のURLを試してみて下さい')
 
 async def setup(bot):
     await bot.add_cog(Botinfo(bot))
