@@ -19,7 +19,7 @@ class Server(commands.Cog):
         embed.add_field(name='ロール数', value=f'{len(roles)}', inline=False)
         embed.add_field(name='サーバーブースト数', value=guild.premium_subscription_count, inline=False)
         embed.add_field(name='メンバー数', value=f'{guild.member_count}', inline=False)
-        embed.add_field(name='サーバー作成日', value={guild.created_at.strftime(f'%Y/%m/%d %H:%M:%S')}, inline=False)
+        embed.add_field(name='サーバー作成日', value=guild.created_at.strftime("%Y/%m/%d %H:%M:%S"), inline=False)
         await ctx.send(embed=embed)
 
 async def setup(bot):
