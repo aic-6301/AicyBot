@@ -16,7 +16,11 @@ class User(commands.Cog):
             user = member
         embed = discord.Embed(title=f'{user}の詳細', description=f'{user}の詳しい情報が載っています。', color=user.color)
         embed.add_field(name='名前', value=user)
-        embed.add_field(name='Botかどうか', value=user.bot)
+        if user.bot == True:
+            bot = 'はい'
+        else:
+            bot = 'いいえ'
+        embed.add_field(name='Botかどうか', value=bot)
         embed.add_field(name='ID', value=user.id)
         embed.set_thumbnail(url=user.avatar)
         if member is not None:
