@@ -81,7 +81,7 @@ class info(commands.Cog):
             except:
                 await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')
     @api.command()
-    async def color(self, ctx, color=None):
+    async def color(self, ctx, color):
         try:
             new_color = color.replace('#','')
         except:
