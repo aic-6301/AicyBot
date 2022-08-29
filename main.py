@@ -65,17 +65,20 @@ async def hello(ctx):
 
 @bot.command()
 @commands.is_owner()
+async def unload(ctx, extension):
+    await bot.unload_extension(f'cogs.{extension}')
+    await ctx.send(f':outbox_tray:`cogs.{extension}`')
+@bot.command()
+@commands.is_owner()
 async def reload(ctx, extension):
     await bot.reload_extension(f'cogs.{extension}')
-    embed = discord.Embed(title='Reload!', description=f'{extension} Reloaded!', color=0xff00c8)
-    await ctx.send(embed=embed)
+    await ctx.send(f':repeat:`cogs.{extension}`')
 
 @bot.command()
 @commands.is_owner()
 async def load(ctx, extension):
     await bot.load_extension(f'cogs.{extension}')
-    embed = discord.Embed(title='Load!', description=f'{extension} Loaded!', color=0xff00c8)
-    await ctx.send(embed=embed)
+    await ctx.send(f':inbox_tray:`cogs.{extension}`')
 
 @bot.command()
 @commands.is_owner()
