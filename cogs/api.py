@@ -83,7 +83,10 @@ class info(commands.Cog):
     @api.command()
     async def color(self, ctx, color=None):
         msg = await ctx.send('取得中・・・')
-        new_color = color.replace('#')
+        try:
+            new_color = color.replace('#')
+        except:
+            pass
         msg.edit('https://api.aic-group.net/get/color.php?px=700&color='+new_color)
         
 
