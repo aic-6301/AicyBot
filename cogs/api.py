@@ -97,13 +97,13 @@ class info(commands.Cog):
         await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
     @commands.command()
     async def news(self, ctx):
-        e = discord.Embed(title='取得中', description='少し待ってね')
+        e = discord.Embed(title='取得中', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
         msg = await ctx.send(embed=e)
         try:
             url = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
             text = url.text
             data = json.loads(text)
-            embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
+            embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name=(data['main1']['title']), value='更新日:'+(data['main1']['date'])+f'\nURL:'+(data['main1']['uri']), inline=False)
             embed.add_field(name=(data['main2']['title']), value='更新日:'+(data['main2']['date'])+f'\nURL:'+(data['main2']['uri']), inline=False)
             embed.add_field(name=(data['main3']['title']), value='更新日:'+(data['main3']['date'])+f'\nURL:'+(data['main3']['uri']), inline=False)
