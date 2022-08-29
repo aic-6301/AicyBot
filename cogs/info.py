@@ -37,9 +37,9 @@ class Botinfo(commands.Cog):
             data = json.loads(text)
             embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です')
             embed.add_field(name='メインサイト', value=(data['MainSite']))
-            embed.add_field(name='ブログサイト', value=(data['BlogSite']))
-            embed.add_field(name='Wikiサイト', value=(data['WikiSite']))
-            embed.add_field(name='メディアサイト', value=(data['MediaSite']))
+            embed.add_field(name='ブログサイト', value=(data['AicyBlog']))
+            embed.add_field(name='Wikiサイト', value=(data['AicyWiki']))
+            embed.add_field(name='メディアサイト', value=(data['AicyMedia']))
             embed.add_field(name='API', value=(data['AicyAPI']))
             await ctx.send(embed=embed)
 
