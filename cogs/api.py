@@ -99,19 +99,15 @@ class info(commands.Cog):
     async def news(self, ctx):
         e = discord.Embed(title='取得中', description='少し待ってね')
         msg=await ctx.send(embed=e)
-        try:
-            urI = requests.get('https://api.aic-group.net/get/news.php?type=mainline')
-            text = urI.text
-            data = json.loads(text)
-            embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
-            embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['url'])+')`', value='更新日:'+(data['main1']['date']))
-            embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['url'])+')`', value='更新日:'+(data['main2']['date']))
-            embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['url'])+')`', value='更新日:'+(data['main3']['date']))
-            embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['url'])+')`', value='更新日:'+(data['main4']['date']))
-            msg.edit(embed=embed)
-        except:
-            await msg.delete()
-        
+        urI = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
+        text = urI.text
+        data = json.loads(text)
+        embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
+        embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['url'])+')`', value='更新日:'+(data['main1']['date']))
+        embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['url'])+')`', value='更新日:'+(data['main2']['date']))
+        embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['url'])+')`', value='更新日:'+(data['main3']['date']))
+        embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['url'])+')`', value='更新日:'+(data['main4']['date']))
+        msg.edit(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(info(bot))
