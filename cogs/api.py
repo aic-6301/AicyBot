@@ -84,7 +84,7 @@ class info(commands.Cog):
     async def color(self, ctx, color=None):
         msg = await ctx.send('取得中・・・')
         try:
-            new_color = color.replace('#')
+            new_color = color.replace('#','')
         except:
             pass
         if new_color is None:
