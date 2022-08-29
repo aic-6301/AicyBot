@@ -98,16 +98,21 @@ class info(commands.Cog):
     @commands.command()
     async def news(self, ctx):
         e = discord.Embed(title='取得中', description='少し待ってね')
-        msg=await ctx.send(embed=e)
-        urI = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
-        text = urI.text
-        data = json.loads(text)
-        embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
-        embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['uri'])+')`', value='更新日:'+(data['main1']['date']))
-        embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['uri'])+')`', value='更新日:'+(data['main2']['date']))
-        embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['uri'])+')`', value='更新日:'+(data['main3']['date']))
-        embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['uri'])+')`', value='更新日:'+(data['main4']['date']))
-        msg.edit(embed=embed)
+        msg = await ctx.send(embed=e)
+        try:
+            url = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
+            text = url.text
+            data = json.loads(text)
+            print(data)
+            embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
+            embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['uri'])+')`', value='更新日:'+(data['main1']['date']))
+            embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['uri'])+')`', value='更新日:'+(data['main2']['date']))
+            embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['uri'])+')`', value='更新日:'+(data['main3']['date']))
+            embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['uri'])+')`', value='更新日:'+(data['main4']['date']))
+            await msg.edit(embed=embed)
+        except:
+            em = discord.Embed(title='ニュースを取得できませんでした', description='数秒後に実施してみてください。')
+            await msg.edit(embed=em)
 
 async def setup(bot):
     await bot.add_cog(info(bot))
