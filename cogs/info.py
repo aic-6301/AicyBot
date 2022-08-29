@@ -32,12 +32,12 @@ class info(commands.Cog):
     @commands.command()
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
-            e=discord.Embed(title='取得中・・・', description='少し待ってね', color='A06A54')
+            e=discord.Embed(title='取得中・・・', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
             msg = await ctx.send(embed=e)
             url = requests.get("https://api.aic-group.net/get/status")
             text = url.text
             data = json.loads(text)
-            embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です', color='A06A54')
+            embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です', color=discord.Colour.from_rgb(160, 106, 84))
             if (data['MainSite']) == 'OK':
                 status = ':white_check_mark:Online'
                 embed.add_field(name='メインサイト', value=status)
