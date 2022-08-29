@@ -95,6 +95,17 @@ class info(commands.Cog):
         else:
             new_size = size
         await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
+    @commands.command()
+    async def news(self, ctx):
+        e = discord.Embed(title='取得中', description='少し待ってね')
+        url = requests.get('https://api.aic-group.net/get/news.php?type=mainline')
+        text = url.text
+        data = json.loads(text)
+        embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
+        embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['url'])+')`', value='更新日:'+(data['main1']['date']))
+        embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['url'])+')`', value='更新日:'+(data['main2']['date']))
+        embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['url'])+')`', value='更新日:'+(data['main3']['date']))
+        embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['url'])+')`', value='更新日:'+(data['main4']['date']))
         
 
 async def setup(bot):
