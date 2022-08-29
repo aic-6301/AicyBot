@@ -4,7 +4,7 @@ import requests
 import json
 
 
-class Botinfo(commands.Cog):
+class info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -32,7 +32,7 @@ class Botinfo(commands.Cog):
     @commands.command()
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
-            e=discord.Embed(title='取得中・・・', value='少し待ってね', color='A06A54')
+            e=discord.Embed(title='取得中・・・', description='少し待ってね', color='A06A54')
             msg = await ctx.send(embed=e)
             url = requests.get("https://api.aic-group.net/get/status")
             text = url.text
@@ -71,4 +71,4 @@ class Botinfo(commands.Cog):
             await ctx.send(embed=embed)
 
 async def setup(bot):
-    await bot.add_cog(Botinfo(bot))
+    await bot.add_cog(info(bot))
