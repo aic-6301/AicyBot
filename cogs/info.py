@@ -68,7 +68,7 @@ class info(commands.Cog):
             else:
                 status = ':octagonal_sign:Offline'
                 embed.add_field(name='API', value=status)
-            await ctx.send(embed=embed)
+            await msg.edit(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(info(bot))
