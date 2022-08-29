@@ -32,15 +32,42 @@ class Botinfo(commands.Cog):
     @commands.command()
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
+            e=discord.Embed(title='取得中・・・', value='少し待ってね', color='A06A54')
+            msg = await ctx.send(embed=e)
             url = requests.get("https://api.aic-group.net/get/status")
             text = url.text
             data = json.loads(text)
-            embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です')
-            embed.add_field(name='メインサイト', value=(data['MainSite']))
-            embed.add_field(name='ブログサイト', value=(data['AicyBlog']))
-            embed.add_field(name='Wikiサイト', value=(data['AicyWiki']))
-            embed.add_field(name='メディアサイト', value=(data['AicyMedia']))
-            embed.add_field(name='API', value=(data['AicyAPI']))
+            embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です', color='A06A54')
+            if (data['MainSite']) == 'OK':
+                status = ':white_check_mark:Online'
+                embed.add_field(name='メインサイト', value=status)
+            else:
+                status = ':octagonal_sign:Offline'
+                embed.add_field(name='メインサイト', value=status)
+            if (data['AicyBlog']) == 'OK':
+                status = ':white_check_mark:Online'
+                embed.add_field(name='ブログサイト', value=status)
+            else:
+                status = ':octagonal_sign:Offline'
+                embed.add_field(name='ブログサイト', value=status)
+            if (data['AicyWiki']) == 'OK':
+                status = ':white_check_mark:Online'
+                embed.add_field(name='Wikiサイト', value=status)
+            else:
+                status = ':octagonal_sign:Offline'
+                embed.add_field(name='Wikiサイト', value=status)
+            if (data['AicyMedia']) == 'OK':
+                status = ':white_check_mark:Online'
+                embed.add_field(name='メディアサイト', value=status)
+            else:
+                status = ':octagonal_sign:Offline'
+                embed.add_field(name='メディアサイト', value=status)
+            if (data['AicyAPI']) == 'OK':
+                status = ':white_check_mark:Online'
+                embed.add_field(name='API', value=status)
+            else:
+                status = ':octagonal_sign:Offline'
+                embed.add_field(name='API', value=status)
             await ctx.send(embed=embed)
 
 async def setup(bot):
