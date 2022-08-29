@@ -87,7 +87,10 @@ class info(commands.Cog):
             new_color = color.replace('#')
         except:
             pass
-        msg.edit('https://api.aic-group.net/get/color.php?px=700&color='+new_color)
+        if new_color is None:
+            msg.edit('https://api.aic-group.net/get/color.php?px=700&color='+color)
+        else:
+            msg.edit('https://api.aic-group.net/get/color.php?px=700&color='+new_color)
         
 
 async def setup(bot):
