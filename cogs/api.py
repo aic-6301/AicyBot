@@ -103,12 +103,11 @@ class info(commands.Cog):
             url = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
             text = url.text
             data = json.loads(text)
-            print(data)
             embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
-            embed.add_field(name=(data['main1']['title']), url=(data['main1']['uri']), value='更新日:'+(data['main1']['date']))
-            embed.add_field(name=(data['main2']['title']), url=(data['main2']['uri']), value='更新日:'+(data['main2']['date']))
-            embed.add_field(name=(data['main3']['title']), url=(data['main3']['uri']), value='更新日:'+(data['main3']['date']))
-            embed.add_field(name=(data['main4']['title']), url=(data['main4']['uri']), value='更新日:'+(data['main4']['date']))
+            embed.add_field(name=(data['main1']['title']), value='更新日:'+(data['main1']['date'])+f'\nURL:'+(data['main1']['uri']), inline=False)
+            embed.add_field(name=(data['main2']['title']), value='更新日:'+(data['main2']['date'])+f'\nURL:'+(data['main2']['uri']), inline=False)
+            embed.add_field(name=(data['main3']['title']), value='更新日:'+(data['main3']['date'])+f'\nURL:'+(data['main3']['uri']), inline=False)
+            embed.add_field(name=(data['main4']['title']), value='更新日:'+(data['main4']['date'])+f'\nURL:'+(data['main4']['uri']), inline=False)
             await msg.edit(embed=embed)
         except:
             em = discord.Embed(title='ニュースを取得できませんでした', description='数秒後に実施してみてください。')
