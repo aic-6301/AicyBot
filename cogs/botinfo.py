@@ -14,14 +14,20 @@ class Botinfo(commands.Cog):
             await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
     
     @ping.command()
-    async def site(self, ctx, url):
-        try:
-            url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json&ip="+url)
+    async def site(self, ctx, url=None):
+        if url is None:
+            url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json")
             text = url.text
             data = json.loads(text)
             await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
-        except:
-            await ctx.send('URLが存在しません。別のURLを試してみて下さい')
+        else:
+            try:
+                url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json&ip="+url)
+                text = url.text
+                data = json.loads(text)
+                await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+            except:
+                await ctx.send('URLが存在しません。別のURLを試してみて下さい')
 
 async def setup(bot):
     await bot.add_cog(Botinfo(bot))
