@@ -81,12 +81,16 @@ class info(commands.Cog):
             except:
                 await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')
     @api.command()
-    async def color(self, ctx, color):
+    async def color(self, ctx, color, size: int=None):
         try:
             new_color = color.replace('#','')
         except:
             pass
-        await ctx.send('https://api.aic-group.net/get/color.php?px=700&color='+new_color)
+        if size is None:
+            new_size = 300
+        else:
+            new_size = size
+        await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
         
 
 async def setup(bot):
