@@ -16,13 +16,13 @@ class Botinfo(commands.Cog):
     @ping.command()
     async def site(self, ctx, url=None):
         if url is None:
-            url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json")
+            url = requests.get(f"https://aic-group.net/api/get/ping/?type=json")
             text = url.text
             data = json.loads(text)
             await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
         else:
             try:
-                url = requests.get(f"https://aic-group.sytes.net/api/get/ping/?type=json&ip="+url)
+                url = requests.get(f"https://aic-group.net/api/get/ping/?type=json&ip="+url)
                 text = url.text
                 data = json.loads(text)
                 await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
