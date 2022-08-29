@@ -13,7 +13,7 @@ class Server(commands.Cog):
             guild = ctx.guild
         roles = [role for role in guild.roles]
         text_channels = [text_channels for text_channels in guild.text_channels]
-        embed = discord.Embed(title=f'サーバー情報 - {guild.name}', timestamp=ctx.message.created_at)
+        embed = discord.Embed(title=f'サーバー情報 - {guild.name}', timestamp=ctx.message.created_at, color=discord.Colour.from_rgb(160, 106, 84))
         embed.add_field(name='サーバー名', value=f'{guild.name}',inline=False)
         embed.add_field(name='チャンネル数', value=f'{len(text_channels)}', inline=False)
         embed.add_field(name='ロール数', value=f'{len(roles)}', inline=False)

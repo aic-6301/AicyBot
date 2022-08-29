@@ -37,9 +37,9 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
     guilds=len(bot.guilds)
     servers=str(guilds)
-    embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。')
+    embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
     embed.add_field(name='導入サーバー数', value=f'{servers}')
-    embed.add_field(name='メンバー数', description=f'')
+    embed.add_field(name='メンバー数', description=f'bot.usersmembers')
     await kidou.send(embed=embed)
     '''for guild in bot.guilds:
         print(len(guild.members))
