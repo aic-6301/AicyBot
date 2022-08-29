@@ -31,10 +31,10 @@ class info(commands.Cog):
                     data = json.loads(text)
                     await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
                 except:
-                    await ctx.send('URLが存在しません。別のURLを試してみて下さい')
+                    await ctx.send('uriが存在しません。別のurlを試してみて下さい')
     
     @ping.command()
-    async def websocket(self, ctx, url=None):
+    async def websocket(self, ctx):
         await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
     
     @commands.command()
@@ -43,8 +43,8 @@ class info(commands.Cog):
             try:
                 e=discord.Embed(title='取得中・・・', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
                 msg = await ctx.send(embed=e)
-                url = requests.get("https://api.aic-group.net/get/status")
-                text = url.text
+                uri = requests.get("https://api.aic-group.net/get/status")
+                text = uri.text
                 data = json.loads(text)
                 embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です', color=discord.Colour.from_rgb(160, 106, 84))
                 if (data['MainSite']) == 'OK':
@@ -103,10 +103,10 @@ class info(commands.Cog):
         text = urI.text
         data = json.loads(text)
         embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています')
-        embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['url'])+')`', value='更新日:'+(data['main1']['date']))
-        embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['url'])+')`', value='更新日:'+(data['main2']['date']))
-        embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['url'])+')`', value='更新日:'+(data['main3']['date']))
-        embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['url'])+')`', value='更新日:'+(data['main4']['date']))
+        embed.add_field(name='`['+(data['main1']['title'])+']('+(data['main1']['uri'])+')`', value='更新日:'+(data['main1']['date']))
+        embed.add_field(name='`['+(data['main2']['title'])+']('+(data['main2']['uri'])+')`', value='更新日:'+(data['main2']['date']))
+        embed.add_field(name='`['+(data['main3']['title'])+']('+(data['main3']['uri'])+')`', value='更新日:'+(data['main3']['date']))
+        embed.add_field(name='`['+(data['main4']['title'])+']('+(data['main4']['uri'])+')`', value='更新日:'+(data['main4']['date']))
         msg.edit(embed=embed)
 
 async def setup(bot):
