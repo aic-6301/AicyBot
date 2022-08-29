@@ -14,9 +14,9 @@ class info(commands.Cog):
             e=discord.Embed(title='Apiのヘルプ', description='Apiを使ったコマンド集です', color=discord.Colour.from_rgb(160, 106, 84))
             e.add_field(name='ping', value='サイトへのpingを実行しています。')
             e.add_field(name='status', value='サーバー情報を取得します。')
-            e.add_field(name='color', value='色のサンプルを表示できます')
+            e.add_field(name='api color', value='色のサンプルを表示できます')
             await ctx.send(embed=e)
-    @api.group()
+    @commands.group()
     async def ping(self, ctx, url=None):
         if ctx.invoked_subcommand is None:
             if url is None:
