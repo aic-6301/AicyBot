@@ -8,7 +8,7 @@ class Server(commands.Cog):
         self.bot = bot
 
     @commands.command(aliases=["si"])
-    async def serverinfo(self, ctx, guild: int =None):
+    async def serverinfo(self, ctx, guild:int=None):
         if guild == None:
             guild = ctx.guild
         roles = [role for role in guild.roles]

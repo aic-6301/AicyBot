@@ -186,6 +186,10 @@ async def on_command_error(ctx, error):
         e.add_field(name='エラーを発生させた人', value=ctx.author, inline=False)
         e.add_field(name='エラー内容', value=error, inline=False)
         await error_ch.send(embed=e)
+        orig_error = getattr(error, "original", error)
+        error_msg  = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+        await error_ch.send('エラー全文')
+        await error_ch.send(error_msg)
 
 
 bot.run(token)
