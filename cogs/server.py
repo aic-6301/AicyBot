@@ -7,8 +7,8 @@ class Server(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=["si"])
-    async def serverinfo(self, ctx, guild:int=None):
+    @commands.command(aliases=["si"], description='実行した鯖のみ対応')
+    async def serverinfo(self, ctx):
         if guild == None:
             guild = ctx.guild
         roles = [role for role in guild.roles]
