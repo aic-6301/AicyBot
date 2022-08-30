@@ -13,11 +13,8 @@ class Timesignal(commands.Cog):
     
     @tasks.loop(minutes=1)
     async def timesignal(self, after):
-        category = self.bot.get_all_category()
         for channel in self.bot.get_all_channels():
-            if after.channel is not None and after.channel != category:
-                pass
-            if channel.topic == "timesignal":
+            if channel.name == '時報':
                 dt_now = datetime.now().strftime('%H')
                 if datetime.now().strftime('%M') == '00':
                     self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時ちょうどをお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
