@@ -12,8 +12,11 @@ class Timesignal(commands.Cog):
         self.embed = None
     
     @tasks.loop(minutes=1)
-    async def timesignal(self):
+    async def timesignal(self, after):
+        category = self.bot.get_all_category()
         for channel in self.bot.get_all_channels():
+            if after.channel is not None and after.channel != category:
+                pass
             if channel.topic == "timesignal":
                 dt_now = datetime.now().strftime('%H')
                 if datetime.now().strftime('%M') == '00':
