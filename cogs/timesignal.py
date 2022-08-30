@@ -10,10 +10,11 @@ class Timesignal(commands.Cog):
         self.bot = bot
         self.message = None
         self.embed = None
-
     @tasks.loop(minutes=1)
     async def timesignal(self):
         dt_now = datetime.now().strftime('%H')
+        guild = self.bot.guilds
+        channels = discord.utils.get(guild.text_channels, topic='timesignal')
         if datetime.now().strftime('%M') == '00':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時ちょうどをお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
@@ -37,7 +38,7 @@ class Timesignal(commands.Cog):
         if self.embed != None:
             if self.message != None:
                 await self.message.delete()
-            self.message = await self.bot.guild.system_channel.send(embed=self.embed)
+            self.message = await channels.send(embed=self.embed)
             self.embed = None
 
     async def cog_unload(self):
