@@ -31,7 +31,7 @@ class info(commands.Cog):
                     data = json.loads(text)
                     await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
                 except:
-                    await ctx.send('uriが存在しません。別のurlを試してみて下さい')
+                    await ctx.send('urlが存在しません。別のurlを試してみて下さい')
     
     @ping.command()
     async def websocket(self, ctx):
@@ -77,6 +77,12 @@ class info(commands.Cog):
                 else:
                     status = ':octagonal_sign:Offline'
                     embed.add_field(name='API', value=status)
+                if (data['AicyGit']) == 'OK':
+                    status = ':white_check_mark:Online'
+                    embed.add_field(name='AicyGit', value=status)
+                else:
+                    status = ':octagonal_sign:Offline'
+                    embed.add_field(name='AicyGit', value=status)
                 await msg.edit(embed=embed)
             except:
                 await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')
@@ -112,6 +118,9 @@ class info(commands.Cog):
         except:
             em = discord.Embed(title='ニュースを取得できませんでした', description='数秒後に実施してみてください。')
             await msg.edit(embed=em)
-
+    @api.command()
+    async def nitro(self, ctx, count: int):
+        response = requests.get(f"https://api.aic-group.net/get/nitro_gen.php?q={str(count)}")
+        await ctx.send(response.text)
 async def setup(bot):
     await bot.add_cog(info(bot))
