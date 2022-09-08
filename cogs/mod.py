@@ -178,5 +178,11 @@ class Mod(commands.Cog):
         await member.send(f"あなたは {ctx.guild.name}からミュートを解除されました!")
         embed = discord.Embed(title="Unmute", description=f" {member.mention}はミュートを解除されました", colour=discord.Colour.blue(), timestamp=datetime.datetime.utcnow())
         await ctx.reply(embed=embed)
+
+    @commands.Cog.listener(name='on_automod_action')
+    async def automod_notice(self,execution,ctx):
+        channel = self.bot.get_channel(987240589949034547)
+        if execution.action.type == discord.AutoModRuleActionType.send_alert_message:
+            await channel.send(ctx.guild.owner.mention)
 async def setup(bot):
     await bot.add_cog(Mod(bot))
