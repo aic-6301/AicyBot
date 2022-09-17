@@ -85,12 +85,20 @@ class info(commands.Cog):
                     status = ':octagonal_sign:Offline'
                     embed.add_field(name='AicyGit', value=status)
                 await msg.edit(embed=embed)
-                if (data['Minecraft Serve']) == 'OK':
+                if (data['Minecraft Server']) == 'OK':
                     status = ':white_check_mark:Online'
                     embed.add_field(name='マイクラサーバー', value=status)
                 else:
                     status = ':octagonal_sign:Offline'
                     embed.add_field(name='マイクラサーバー', value=status)
+                await msg.edit(embed=embed)
+                if (data['Live Status']) == 'OK':
+                    status = ':white_check_mark:配信中'
+                    embed.add_field(name='配信状況', value=status)
+                    embed.url(url='https://live.aic-group.net/')
+                else:
+                    status = ':octagonal_sign:配信されていません'
+                    embed.add_field(name='配信状況', value=status)
                 await msg.edit(embed=embed)
             except:
                 await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')

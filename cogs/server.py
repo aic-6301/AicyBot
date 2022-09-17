@@ -40,7 +40,7 @@ class Server(commands.Cog):
             data = json.loads(text)
             if (data['Minecraft Serve']) == 'OK':
                 await ctx.reply('サーバーはすでに起動済みです!')
-            else :
+            else:
                 await ctx.send('サーバーの起動を開始します')
                 os.system('systemctl start mc')
     @mc.command()
@@ -50,13 +50,13 @@ class Server(commands.Cog):
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
             data = json.loads(text)
-            if (data['Minecraft Serve']) == 'OK':
+            if (data['Minecraft Server']) == 'OK':
                 await ctx.reply('1分後にサーバーを停止します')
                 mc.postToChat("1分後にサーバーを停止します")
                 time.sleep(60)
                 mc.postToChat("サーバーを停止します")
                 os.system('systemctl stop mc')
-            else :
+            else:
                 await ctx.reply('すでにサーバーは停止されています!')
     @mc.command()
     @commands.has_permissions(administrator=True)
@@ -65,13 +65,13 @@ class Server(commands.Cog):
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
             data = json.loads(text)
-            if (data['Minecraft Serve']) == 'OK':
+            if (data['Minecraft Server']) == 'OK':
                 await ctx.reply('1分後にサーバーを再起動します')
                 mc.postToChat("1分後にサーバーを再起動します")
                 time.sleep(60)
                 mc.postToChat("サーバーを再起動します")
                 os.system('systemctl restart mc')
-            else :
+            else:
                 await ctx.reply('サーバーは停止されています!')
 async def setup(bot):
     await bot.add_cog(Server(bot))
