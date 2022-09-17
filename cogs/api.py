@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import requests
 import json
+import os
 
 
 class info(commands.Cog):
@@ -83,6 +84,13 @@ class info(commands.Cog):
                 else:
                     status = ':octagonal_sign:Offline'
                     embed.add_field(name='AicyGit', value=status)
+                await msg.edit(embed=embed)
+                if os.system('systemctl is-active mc') == 'active':
+                    status = ':white_check_mark:Online'
+                    embed.add_field(name='マイクラサーバー', value=status)
+                else:
+                    status = ':octagonal_sign:Offline'
+                    embed.add_field(name='マイクラサーバー', value=status)
                 await msg.edit(embed=embed)
             except:
                 await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')
