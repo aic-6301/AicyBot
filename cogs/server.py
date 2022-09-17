@@ -3,6 +3,8 @@ from datetime import timezone, timedelta
 from discord.ext import commands
 from mcpi import minecraft
 import os
+import requests
+import json
 import time
 
 mc = minecraft.Minecraft.create("mc.aic-group.net", 25565)
@@ -33,7 +35,10 @@ class Server(commands.Cog):
     @mc.command()
     async def start(self, ctx):
         if self.bot.guild == True:
-            if os.system('systemctl is-active mc') == 'active':
+            uri = requests.get("https://api.aic-group.net/get/status")
+            text = uri.text
+            data = json.loads(text)
+            if (data['Minecraft Serve']) == 'OK':
                 await ctx.reply('サーバーはすでに起動済みです!')
             else :
                 await ctx.send('サーバーの起動を開始します')
@@ -42,7 +47,10 @@ class Server(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def stop(self, ctx):
         if self.bot.guild == True:
-            if os.system('systemctl is-active mc') == 'active':
+            uri = requests.get("https://api.aic-group.net/get/status")
+            text = uri.text
+            data = json.loads(text)
+            if (data['Minecraft Serve']) == 'OK':
                 await ctx.reply('1分後にサーバーを停止します')
                 mc.postToChat("1分後にサーバーを停止します")
                 time.sleep(60)
@@ -54,7 +62,10 @@ class Server(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def restart(self, ctx):
         if self.bot.guild == True:
-            if os.system('systemctl is-active mc') == 'active':
+            uri = requests.get("https://api.aic-group.net/get/status")
+            text = uri.text
+            data = json.loads(text)
+            if (data['Minecraft Serve']) == 'OK':
                 await ctx.reply('1分後にサーバーを再起動します')
                 mc.postToChat("1分後にサーバーを再起動します")
                 time.sleep(60)
