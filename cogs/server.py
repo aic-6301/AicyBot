@@ -26,7 +26,11 @@ class Server(commands.Cog):
         embed.add_field(name='サーバー作成日', value=guild.created_at.strftime("%Y/%m/%d %H:%M:%S"), inline=False)
         embed.set_thumbnail(url=guild.icon.url)
         await ctx.send(embed=embed)
-    @commands.command()
+    @commands.group()
+    async def mc(self, ctx):
+        if ctx.invoked_subcommand is None:
+            pass
+    @mc.command()
     async def start(self, ctx):
         if self.bot.guild == True:
             if os.system('systemctl is-active mc') == 'active':
@@ -34,7 +38,7 @@ class Server(commands.Cog):
             else :
                 await ctx.send('サーバーの起動を開始します')
                 os.system('systemctl start mc')
-    @commands.command()
+    @mc.command()
     @commands.has_permissions(administrator=True)
     async def stop(self, ctx):
         if self.bot.guild == True:
@@ -46,7 +50,7 @@ class Server(commands.Cog):
                 os.system('systemctl stop mc')
             else :
                 await ctx.reply('すでにサーバーは停止されています!')
-    @commands.command()
+    @mc.command()
     @commands.has_permissions(administrator=True)
     async def restart(self, ctx):
         if self.bot.guild == True:
