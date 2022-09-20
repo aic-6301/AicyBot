@@ -148,12 +148,13 @@ class info(commands.Cog):
         if (data['Live Status']) == 'OK':
             self.embed = discord.Embed(title="ライブが始まりました！", description='ライブを見に行きましょう！！！\nhttps://live.aic-group.net')
         else:
-            pass
+            self.message = None
         if self.embed != None:
             if self.message != None:
-                await self.message.delete()
-        self.message = await self.bot.guild.system_channel.send(embed=self.embed)
-        self.embed = None
+                pass
+            else:
+                self.message = await self.bot.guild.system_channel.send(embed=self.embed)
+                self.embed = None
 
 async def setup(bot):
     await bot.add_cog(info(bot))
