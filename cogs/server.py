@@ -30,7 +30,7 @@ class Server(commands.Cog):
         await ctx.send(embed=embed)
     @commands.group()
     async def mc(self, ctx):
-        if ctx.invoked_subcommand is not None:
+        if ctx.invoked_subcommand is None:
             await ctx.send('a!mc start でサーバーを実行できるはずだよ！！')
     @mc.command()
     async def start(self, ctx):
