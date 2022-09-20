@@ -10,6 +10,8 @@ class info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.livestatus.start()
+        self.message = None
+        self.embed = None
     @commands.group()
     async def api(self, ctx):
         if ctx.invoked_subcommand is None:
@@ -140,15 +142,18 @@ class info(commands.Cog):
         await ctx.send(response.text)
     @tasks.loop(minutes=1)
     async def livestatus(self):
-        ch = self.bot.get_channel(949560203886604293)
         uri = requests.get("https://api.aic-group.net/get/status")
         text = uri.text
         data = json.loads(text)
         if (data['Live Status']) == 'OK':
-            embed = discord.Embed(title="ライブが始まりました！", description='ライブを見に行きましょう！！！\nhttps://live.aic-group.net')
+            self.embed = discord.Embed(title="ライブが始まりました！", description='ライブを見に行きましょう！！！\nhttps://live.aic-group.net')
         else:
             pass
-        await ch.send(embed=embed)
+        if self.embed != None:
+            if self.message != None:
+                await self.message.delete()
+        self.message = await self.bot.guild.system_channel.send(embed=self.embed)
+        self.embed = None
 
 async def setup(bot):
     await bot.add_cog(info(bot))

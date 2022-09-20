@@ -30,15 +30,15 @@ class Server(commands.Cog):
         await ctx.send(embed=embed)
     @commands.group()
     async def mc(self, ctx):
-        if ctx.invoked_subcommand is None:
-            pass
+        if ctx.invoked_subcommand is not None:
+            await ctx.send('a!mc start でサーバーを実行できるはずだよ！！')
     @mc.command()
     async def start(self, ctx):
         if self.bot.guild == True:
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
             data = json.loads(text)
-            if (data['Minecraft Serve']) == 'OK':
+            if (data['Minecraft Server']) == 'OK':
                 await ctx.reply('サーバーはすでに起動済みです!')
             else:
                 await ctx.send('サーバーの起動を開始します')
