@@ -9,6 +9,7 @@ import os
 class info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.livestatus.start()
     @commands.group()
     async def api(self, ctx):
         if ctx.invoked_subcommand is None:
@@ -49,52 +50,52 @@ class info(commands.Cog):
                 data = json.loads(text)
                 embed = discord.Embed(title='ステーサス', description='サーバーのステーサス情報です', color=discord.Colour.from_rgb(160, 106, 84))
                 if (data['MainSite']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='メインサイト', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='AicyWeb', value='['+status+']('+ data['MainSiteURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
-                    embed.add_field(name='メインサイト', value=status)
+                    status = ':octagonal_sign:アクセス不可'
+                    embed.add_field(name='AicyWeb', value=status)
                 if (data['AicyBlog']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='ブログサイト', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='ブログサイト', value='['+status+']('+ data['AicyBlogURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
+                    status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='ブログサイト', value=status)
                 if (data['AicyWiki']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='Wikiサイト', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='AicyWiki', value='['+status+']('+ data['AicyWikiURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
-                    embed.add_field(name='Wikiサイト', value=status)
+                    status = ':octagonal_sign:アクセス不可'
+                    embed.add_field(name='AicyWiki', value=status)
                 if (data['AicyMedia']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='メディアサイト', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='メディアサイト', value='['+status+']('+ data['AicyMediaURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
+                    status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='メディアサイト', value=status)
                 if (data['AicyAPI']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='API', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='AicyAPI', value='['+status+']('+ data['AicyAPIURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
+                    status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='API', value=status)
                 if (data['AicyGit']) == 'OK':
-                    status = ':white_check_mark:Online'
-                    embed.add_field(name='AicyGit', value=status)
+                    status = ':white_check_mark:アクセス可能'
+                    embed.add_field(name='AicyGit', value='['+status+']('+ data['AicyGitURI'] +')')
                 else:
-                    status = ':octagonal_sign:Offline'
+                    status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyGit', value=status)
                 await msg.edit(embed=embed)
                 if (data['Minecraft Server']) == 'OK':
-                    status = ':white_check_mark:Online'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='マイクラサーバー', value=status)
                 else:
-                    status = ':octagonal_sign:Offline'
+                    status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='マイクラサーバー', value=status)
                 await msg.edit(embed=embed)
                 if (data['Live Status']) == 'OK':
                     status = ':white_check_mark:配信中'
-                    embed.add_field(name='配信状況', value=status+ '\nhttps://live.aic-group.net/')
+                    embed.add_field(name='AicyWeb', value='['+status+']('+ data['AicyLiveURI'] +')')
                 else:
                     status = ':octagonal_sign:配信されていません'
                     embed.add_field(name='配信状況', value=status)
