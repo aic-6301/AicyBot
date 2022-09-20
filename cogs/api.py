@@ -95,7 +95,7 @@ class info(commands.Cog):
                 if (data['Live Status']) == 'OK':
                     status = ':white_check_mark:配信中'
                     embed.add_field(name='配信状況', value=status)
-                    embed.url(url='https://live.aic-group.net/')
+                    embed.add_field(url='https://live.aic-group.net/')
                 else:
                     status = ':octagonal_sign:配信されていません'
                     embed.add_field(name='配信状況', value=status)
