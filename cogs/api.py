@@ -144,7 +144,7 @@ class info(commands.Cog):
         uri = requests.get("https://api.aic-group.net/get/status")
         text = uri.text
         data = json.loads(text)
-        if (data['Live status']) == 'OK':
+        if (data['Live Status']) == 'OK':
             embed = discord.Embed(title="ライブが始まりました！", description='ライブを見に行きましょう！！！\nhttps://live.aic-group.net')
         else:
             pass
