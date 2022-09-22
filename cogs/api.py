@@ -50,7 +50,7 @@ class info(commands.Cog):
                 uri = requests.get("https://api.aic-group.net/get/status")
                 text = uri.text
                 data = json.loads(text)
-                embed = discord.Embed(title='ステータス', description='サーバーのステーサス情報です', color=discord.Colour.from_rgb(160, 106, 84))
+                embed = discord.Embed(title='ステータス', description='サーバーのステータス情報です', color=discord.Colour.from_rgb(160, 106, 84))
                 if (data['MainSite']) == 'OK':
                     status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='AicyWeb', value='['+status+']('+ data['MainSiteURI'] +')')
