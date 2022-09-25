@@ -74,5 +74,19 @@ class Server(commands.Cog):
                 os.system('systemctl restart mc')
             else:
                 await ctx.reply('サーバーは停止されています!')
+    @commands.Cog.listener()
+    async def on_message(self, ctx, message):
+        #if message == discord.MessageType.premium_guild_subscription:
+            member = message.author.id
+            await member.add_roles(1015602734684184677)
+            embed = discord.Embed(title='ブースト!!!', description='ブーストありがとうございます!!')
+            embed.add_field(name='現在のブースト数', value=ctx.guild.premium_subscription_count+'個')
+            embed.add_field(name='現在のサーバーレベル', value=ctx.guild.premium_tier+'レベル')
+            if ctx.guild.premium_tier == 3:
+                embed.add_field(name='サーバーレベル3達成!!', value='ブーストしてくれた人ありがとうございます！！')
+            else:
+                want_boost = (14-ctx.guild.premium_subscription_count)
+                embed.add_field(name='サーバーレベル3まで', value=want_boost+'個です')
+            await ctx.send(embed=embed)
 async def setup(bot):
     await bot.add_cog(Server(bot))

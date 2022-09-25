@@ -82,4 +82,20 @@ async def restart(ctx):
 async def on_command_error(ctx, error):
         if isinstance(error, commands.CommandNotFound):
             await ctx.send("a")
+@bot.event
+async def on_message(message):
+    if not message.author.bot:
+        if bot.guild:
+            if message == discord.MessageType.premium_guild_subscription:
+                member = message.author
+                await member.add_roles(discord.utils.get(member.guild.roles, id=1015602734684184677))
+                embed = discord.Embed(title='ブースト!!!', description='ブーストありがとうございます!!')
+                embed.add_field(name='現在のブースト数', value=f'{message.author.guild.premium_subscription_count}個')
+                embed.add_field(name='現在のサーバーレベル', value=f'{message.author.guild.premium_tier}レベル')
+                if message.author.guild.premium_tier == 3:
+                    embed.add_field(name='サーバーレベル3達成!!', value='ブーストしてくれた人ありがとうございます！！')
+                else:
+                    want_boost = (14-message.author.guild.premium_subscription_count)
+                    embed.add_field(name='サーバーレベル3まで', value=f'{want_boost}個です')
+                await message.channel.send(embed=embed)
 bot.run(token)

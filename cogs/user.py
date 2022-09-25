@@ -1,6 +1,7 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from datetime import timedelta, timezone
+import datetime
 
 
 class User(commands.Cog):
@@ -33,6 +34,5 @@ class User(commands.Cog):
         )
         embed.add_field(name="アカウント作成日", value=created_at, inline=False)
         await ctx.reply(embed=embed)
-
 async def setup(bot):
     await bot.add_cog(User(bot))
