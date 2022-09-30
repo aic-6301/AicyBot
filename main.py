@@ -7,44 +7,59 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 import textwrap
 from typing import List
+from didyoumean_discordpy.message_generator import DefaultMessageGenerator, MessageGenerator
 
 load_dotenv()
 token = os.environ.get('token')
-bot = commands.Bot(command_prefix="a!", intents=discord.Intents.all())
 
-@bot.event
-async def on_ready():
-    bot.guild = bot.get_guild(949560203374915605)
-    bot.admin = bot.guild.get_role(1002599926670295152)
-    bot.guildadmin = bot.guild.get_role(957605810173796352)
-    bot.log_ch = bot.get_channel(1004387301293555803)
-    kidou = bot.get_channel(1011708105161179136)
-    try:
-        for file in os.listdir('./cogs'): # cogの中身ロード
-            if file.endswith('.py'):
-                await bot.load_extension(f'cogs.{file[:-3]}')
-                print(f'{file[:-3]}を読み込んだよ!!')
-    except:
-        traceback.print_exc()
-    try:
-        await bot.load_extension('jishaku') # jishakuの読み込み
-        print('jishakuを読み込んだよ!!')
-    except:
-        traceback.print_exc()
-    try:
-        await bot.load_extension("didyoumean_discordpy")
-        print('didyoumean-discordpyを読み込んだよ!!')
-    except:
-        traceback.print_exc()
-    print(f"Logged in as {bot.user}")
-    guilds=len(bot.guilds)
-    servers=str(guilds)
-    embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
-    embed.add_field(name='導入サーバー数', value=f'{servers}鯖')
-    embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
-    await kidou.send(embed=embed)
-    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人, サーバー数:{len(bot.guilds)}サーバー", type=discord.ActivityType.playing), status='online')
+class Aicybot():
+    def __init__(self):
+        super().__init__(
+            command_prefix="a!",
+            intents=discord.Intents.all()
+        )
+    async def on_ready(self):
+        bot.guild = bot.get_guild(949560203374915605)
+        bot.admin = bot.guild.get_role(1002599926670295152)
+        bot.guildadmin = bot.guild.get_role(957605810173796352)
+        bot.log_ch = bot.get_channel(1004387301293555803)
+        kidou = bot.get_channel(1011708105161179136)
+        UB_API_TOKEN = os.environ.get('UNB_TOKEN')
+        bot.ub_url = 'https://unbelievaboat.com/api/v1/guilds/949560203374915605/users/'
+        bot.ub_header = {'Authorization': UB_API_TOKEN, 'Accept': 'application/json'}
+        try:
+            for file in os.listdir('./cogs'): # cogの中身ロード
+                if file.endswith('.py'):
+                    await bot.load_extension(f'cogs.{file[:-3]}')
+                    print(f'{file[:-3]}を読み込んだよ!!')
+        except:
+            traceback.print_exc()
+        try:
+            await bot.load_extension('jishaku') # jishakuの読み込み
+            print('jishakuを読み込んだよ!!')
+        except:
+            traceback.print_exc()
+        try:
+            await bot.load_extension("didyoumean_discordpy")
+            print('didyoumean-discordpyを読み込んだよ!!')
+        except:
+            traceback.print_exc()
+        try:
+            with open('config.json', 'r+', encoding='utf-8') as file:
+                bot.config = load(file)
+            print('Config loaded')
+        except:
+            traceback.print_exc()
+        print(f"Logged in as {bot.user}")
+        guilds=len(bot.guilds)
+        servers=str(guilds)
+        embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
+        embed.add_field(name='導入サーバー数', value=f'{servers}鯖')
+        embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
+        await kidou.send(embed=embed)
+        await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人, サーバー数:{len(bot.guilds)}サーバー", type=discord.ActivityType.playing), status='online')
 
+bot = Aicybot()
 
 @tasks.loop(seconds=30)
 async def BotDD():
@@ -79,9 +94,9 @@ async def restart(ctx):
     await ctx.send('再起動します。。')
     exit()
 @bot.event
-async def on_command_error(ctx, error):
+async def on_command_error(self, error):
         if isinstance(error, commands.CommandNotFound):
-            await ctx.send("a")
+            await self._message_generator
 @bot.event
 async def on_message(message):
     if not message.author.bot:
@@ -89,6 +104,7 @@ async def on_message(message):
             if message == discord.MessageType.premium_guild_subscription:
                 member = message.author
                 await member.add_roles(discord.utils.get(member.guild.roles, id=1015602734684184677))
+                print(f'{member.name}へのVIPロールの付与完了')
                 embed = discord.Embed(title='ブースト!!!', description='ブーストありがとうございます!!')
                 embed.add_field(name='現在のブースト数', value=f'{message.author.guild.premium_subscription_count}個')
                 embed.add_field(name='現在のサーバーレベル', value=f'{message.author.guild.premium_tier}レベル')
@@ -98,4 +114,10 @@ async def on_message(message):
                     want_boost = (14-message.author.guild.premium_subscription_count)
                     embed.add_field(name='サーバーレベル3まで', value=f'{want_boost}個です')
                 await message.channel.send(embed=embed)
+@bot.event
+async def on_member_update(member, after, before):
+    booster_role = bot.guild.get_role(734392722462605352)
+    if booster_role in before.roles and booster_role not in after.roles:
+        await member.remove_roles(discord.utils.get(member.guild.roles, id=1015602734684184677))
+        print(f'{member.name}からのVIPロールの削除完了')
 bot.run(token)
