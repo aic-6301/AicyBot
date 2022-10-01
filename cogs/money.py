@@ -7,7 +7,6 @@ import discord
 import pytz
 from discord.ext import commands
 from discord.ext.tasks import loop
-
 timezone = pytz.timezone('UTC')
 
 
@@ -28,9 +27,9 @@ class money(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         voice_time_ch = self.bot.get_channel(1025370949840810044)
-        voice_money_min = int(self.bot.config['voice_money_min'])
-        voice_money_max = int(self.bot.config['voice_money_max'])
-        voice_give_per = int(self.bot.config['voice_give_per'])
+        voice_money_min = '10'
+        voice_money_max = '100'
+        voice_give_per = '10'
         if member.bot:
             return
 
@@ -73,7 +72,7 @@ class money(commands.Cog):
 
         if not before.channel == None and not after.channel == None:
             if before.afk and not after.afk:
-                await voice_time_ch.send(f'{member.id} {datetime.datetime.now(tz=timezone)}')
+                await voice_time_ch.send(f'{member.id}が{datetime.datetime.now(tz=timezone)}にVCに参加')
                 return
 
         if before.channel == None:
@@ -93,8 +92,8 @@ class money(commands.Cog):
     @loop(minutes=10.0)
     async def stage_check(self):
         #configロード
-        stage_money_min = int(self.bot.config['stage_money_min'])
-        stage_money_max = int(self.bot.config['stage_money_max'])
+        stage_money_min = '10'
+        stage_money_max = '100'
         if self.stage_check == True:
             for member in self.bot.stage.members:
                 if member.bot is False:

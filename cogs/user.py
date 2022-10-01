@@ -28,11 +28,11 @@ class User(commands.Cog):
             joined_at = member.joined_at.astimezone(timezone(timedelta(hours=9))).strftime(
                 "%Y/%m/%d %H:%M:%S"
             )
-            embed.add_field(name="サーバー参加日", value=joined_at, inline=False)
+            embed.add_field(name="サーバー参加日", value=joined_at)
         created_at = user.created_at.astimezone(timezone(timedelta(hours=9))).strftime(
         "%Y/%m/%d %H:%M:%S"
         )
-        embed.add_field(name="アカウント作成日", value=created_at, inline=False)
+        embed.add_field(name="アカウント作成日", value=created_at)
         await ctx.reply(embed=embed)
 async def setup(bot):
     await bot.add_cog(User(bot))

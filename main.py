@@ -11,20 +11,16 @@ from didyoumean_discordpy.message_generator import DefaultMessageGenerator, Mess
 
 load_dotenv()
 token = os.environ.get('token')
-
-class Aicybot():
-    def __init__(self):
-        super().__init__(
-            command_prefix="a!",
-            intents=discord.Intents.all()
-        )
-    async def on_ready(self):
+UB_API_TOKEN = os.environ.get('UNB_TOKEN')
+bot = commands.Bot(command_prefix="a!",
+            intents=discord.Intents.all())
+@bot.event
+async def on_ready():
         bot.guild = bot.get_guild(949560203374915605)
         bot.admin = bot.guild.get_role(1002599926670295152)
         bot.guildadmin = bot.guild.get_role(957605810173796352)
         bot.log_ch = bot.get_channel(1004387301293555803)
         kidou = bot.get_channel(1011708105161179136)
-        UB_API_TOKEN = os.environ.get('UNB_TOKEN')
         bot.ub_url = 'https://unbelievaboat.com/api/v1/guilds/949560203374915605/users/'
         bot.ub_header = {'Authorization': UB_API_TOKEN, 'Accept': 'application/json'}
         try:
@@ -59,7 +55,7 @@ class Aicybot():
         await kidou.send(embed=embed)
         await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人, サーバー数:{len(bot.guilds)}サーバー", type=discord.ActivityType.playing), status='online')
 
-bot = Aicybot()
+
 
 @tasks.loop(seconds=30)
 async def BotDD():

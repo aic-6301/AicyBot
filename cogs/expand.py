@@ -27,33 +27,6 @@ class ExpandDiscordMessageUrl(commands.Cog):
         if message.author.bot:
             return
         await dispand(message)
-    @app_commands.command(name='expand')
-    @app_commands.describe(season='expandの設定')
-    async def expand(self, ctx, interaction: discord.Interaction, yesno: Literal['true', 'false']):
-        print('Aa')
-        if interaction.author.guild_permissions.administrator: #コマンドの実行者がサーバーの管理者か判定しています
-            with open("./configs/settings.json") as file:
-                settings = json.load(file)
-                GUILD_ID = ctx.guild.id
-                guild = self.bot.get_guild(GUILD_ID) #サーバーIDからサーバーを取得しています
-                if settings in guild:
-                    json_data = {
-                    f"{ctx.guild.id}": {
-                        "expand":{yesno}
-                        }
-                    }
-                    json.update(json_data, file)
-                else:
-                    if settings in guild:
-                        if True:
-                            json_data = {
-                            f"{ctx.guild.id}": {
-                                "expand":{yesno}
-                                }
-                            }
-                            json.update(json_data, file)
-        else:
-            pass
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload: discord.RawReactionActionEvent):
         await delete_dispand(self.bot, payload=payload)
