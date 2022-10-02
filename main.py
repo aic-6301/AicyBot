@@ -35,7 +35,7 @@ async def on_ready():
         except:
             traceback.print_exc()
         try:
-            await bot.load_extension("didyoumean_discordpy")
+            await bot.load_extension("didyoumean-discordpy")
             print('didyoumean-discordpyを読み込んだよ!!')
         except:
             traceback.print_exc()
