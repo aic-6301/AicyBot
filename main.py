@@ -115,4 +115,4 @@ async def on_member_update(member, after, before):
     if booster_role in before.roles and booster_role not in after.roles:
         await member.remove_roles(discord.utils.get(member.guild.roles, id=1015602734684184677))
         print(f'{member.name}からのVIPロールの削除完了')
-bot.run('MTAwMzY1ODU0NDQzODA2MzI0NQ.Gln9Fb.HTT9jCMcuIP8TTqqBEoXLyZzX8052mqzbaYcTs')
+bot.run(token)
