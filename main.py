@@ -7,7 +7,6 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 import textwrap
 from typing import List
-from didyoumean_discordpy.message_generator import DefaultMessageGenerator, MessageGenerator
 
 load_dotenv()
 token = os.environ.get('token')
@@ -32,11 +31,6 @@ async def on_ready():
         try:
             await bot.load_extension('jishaku') # jishakuの読み込み
             print('jishakuを読み込んだよ!!')
-        except:
-            traceback.print_exc()
-        try:
-            await bot.load_extension("didyoumean-discordpy")
-            print('didyoumean-discordpyを読み込んだよ!!')
         except:
             traceback.print_exc()
         try:
