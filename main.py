@@ -12,8 +12,7 @@ from didyoumean_discordpy.message_generator import DefaultMessageGenerator, Mess
 load_dotenv()
 token = os.environ.get('token')
 UB_API_TOKEN = os.environ.get('UNB_TOKEN')
-bot = commands.Bot(command_prefix="a!",
-            intents=discord.Intents.all())
+bot = commands.Bot(command_prefix="a!", intents=discord.Intents.all())
 @bot.event
 async def on_ready():
         bot.guild = bot.get_guild(949560203374915605)
@@ -116,4 +115,4 @@ async def on_member_update(member, after, before):
     if booster_role in before.roles and booster_role not in after.roles:
         await member.remove_roles(discord.utils.get(member.guild.roles, id=1015602734684184677))
         print(f'{member.name}からのVIPロールの削除完了')
-bot.run(token)
+bot.run('MTAwMzY1ODU0NDQzODA2MzI0NQ.Gln9Fb.HTT9jCMcuIP8TTqqBEoXLyZzX8052mqzbaYcTs')
