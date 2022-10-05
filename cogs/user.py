@@ -34,5 +34,17 @@ class User(commands.Cog):
         )
         embed.add_field(name="アカウント作成日", value=created_at)
         await ctx.reply(embed=embed)
+    @commands.command()
+    async def avatar(self, ctx, user: discord.User=None):
+        if user == None:
+            user = ctx.author
+        member = ctx.guild.get_member(user.id)
+        if member is not None:
+            user = member
+        embed= discord.Embed(title=f'{user}のアバター', description=f'[Avatar Link]({user.avatar.url})')
+        embed.set_image(url=user.avatar.url)
+        embed.set_thumbnail(url=user.avatar.url)
+        embed.set_footer(text='')
+        await ctx.send(embed=embed)
 async def setup(bot):
     await bot.add_cog(User(bot))

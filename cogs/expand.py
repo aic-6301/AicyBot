@@ -91,8 +91,7 @@ async def dispand(message):
             embed.set_image(
                 url=attachment.proxy_url
             )
-            sent_attachment_message = await message.channel.send(embed=embed)
-            sent_messages.append(sent_attachment_message)
+
 
         for embed in m.embeds:
             sent_embed_message = await message.channel.send(embed=embed)

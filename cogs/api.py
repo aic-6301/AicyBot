@@ -28,6 +28,8 @@ class info(commands.Cog):
                 text = url.text
                 data = json.loads(text)
                 await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+            if url == 'websocket':
+                await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
             else:
                 try:
                     url = requests.get(f"https://api.aic-group.net/get/ping?type=json&ip="+url)
@@ -36,11 +38,7 @@ class info(commands.Cog):
                     await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
                 except:
                     await ctx.send('urlが存在しません。別のurlを試してみて下さい')
-    
-    @ping.command()
-    async def websocket(self, ctx):
-        await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
-    
+
     @commands.command()
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
