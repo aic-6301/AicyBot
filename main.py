@@ -7,8 +7,8 @@ import requests
 from json import load
 from dotenv import load_dotenv
 
-load_dotenv
-token = os.environ.get('token')
+load_dotenv()
+token = os.environ['token']
 
 class aicyserer(commands.Bot):
     def __init__(self):
