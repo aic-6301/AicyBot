@@ -19,6 +19,7 @@ class aicyserer(commands.Bot):
             )
     async def on_ready(self):
         print(f"{bot.user}でログイン中・・・")
+        await bot.change_presence(activity = discord.Activity(name=f"起動中・・・", type=discord.ActivityType.playing), status='dnd')
         try:
             await bot.load_extension("jishaku")
             print("Loaded jishaku")
@@ -38,20 +39,26 @@ class aicyserer(commands.Bot):
         bot.vc2_status = 'Normal'
         bot.vc3_status = 'Normal'
         bot.guild = bot.get_guild(949560203374915605)
+        bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)
+        await bot.tree.sync()
+        bot.maintenansmode = False
         print("定義完了")
-        for file in os.listdir('./cogs'): # cogの中身ロード
-            if file.endswith('.py'):
-                try:
-                    await bot.load_extension(f'cogs.{file[:-3]}')
-                    print(f'Loaded cogs.{file[:-3]}')
-                except:
-                    traceback.print_exc()
-        await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
-        embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
-        embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
-        await bot.boot_log.send(embed=embed)
+        if bot.maintenansmode == True:
+            pass
+        else:
+            for file in os.listdir('./cogs'): # cogの中身ロード
+                if file.endswith('.py'):
+                    try:
+                        await bot.load_extension(f'cogs.{file[:-3]}')
+                        print(f'Loaded cogs.{file[:-3]}')
+                    except:
+                        traceback.print_exc()
+            await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
+            embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
+            embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
+            await bot.boot_log.send(embed=embed)
         print(f"Login successful. {bot.user}({bot.user.id})")
 
     def getMyLogger(name):

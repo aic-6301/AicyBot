@@ -521,7 +521,10 @@ class vctool(commands.Cog):
                 except:
                     pass
                 embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
-                embed.add_field(name='現在のVCオーナー :',value=self.bot.vc1_owner.mention)
+                try:
+                    embed.add_field(name='現在のVCオーナー :',value=self.bot.vc1_owner.mention)
+                except:
+                    pass
                 embed.set_footer(text='"/vctool dashboard"でダッシュボードを再送信できます')
                 self.bot.vc1_dash = await interaction.channel.send(embed=embed, view=dashboard(self))
             elif interaction.channel is self.bot.vc2 and interaction.user.voice.channel is self.bot.vc2:

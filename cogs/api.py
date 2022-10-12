@@ -1,18 +1,18 @@
-from http.client import responses
 import discord
 from discord.ext import commands, tasks
+from discord import app_commands
 import requests
 import json
 import os
 
 
-class info(commands.Cog):
+class api(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.livestatus.start()
         self.message = None
         self.embed = None
-    @commands.group()
+    @commands.hybrid_group(with_app_command=True, description="APIのコマンド集")
     async def api(self, ctx):
         if ctx.invoked_subcommand is None:
             e=discord.Embed(title='Apiのヘルプ', description='Apiを使ったコマンド集です', color=discord.Colour.from_rgb(160, 106, 84))
@@ -39,7 +39,7 @@ class info(commands.Cog):
                 except:
                     await ctx.send('urlが存在しません。別のurlを試してみて下さい')
 
-    @commands.command()
+    @commands.hybrid_command(with_app_command=True, description="サーバーステーサスを取得")
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
             try:
@@ -101,8 +101,9 @@ class info(commands.Cog):
                     embed.add_field(name='配信状況', value=status)
                 await msg.edit(embed=embed)
             except:
-                await ctx.send('サイトへのアクセスに失敗しました。数秒後に実行してください。')
-    @api.command()
+                em = discord.Embed(title='ステーサスを取得できませんでした', description='サーバーが落ちている可能性があります。')
+                await msg.edit(embed=em)
+    @api.command(description="色を取得")
     async def color(self, ctx, color, size=None):
         try:
             size = size.replace('px', '')
@@ -117,7 +118,7 @@ class info(commands.Cog):
         else:
             new_size = size
         await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
-    @commands.command()
+    @commands.hybrid_command(with_app_command=True, description="ニュースを取得")
     async def news(self, ctx):
         e = discord.Embed(title='取得中', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
         msg = await ctx.send(embed=e)
@@ -134,10 +135,29 @@ class info(commands.Cog):
         except:
             em = discord.Embed(title='ニュースを取得できませんでした', description='数秒後に実施してみてください。')
             await msg.edit(embed=em)
-    @api.command()
+    @api.command(description="Nitroのコードを取得")
     async def nitro(self, ctx, count: int):
         response = requests.get(f"https://api.aic-group.net/get/nitro_gen.php?q={str(count)}")
         await ctx.send(response.text)
+    @commands.hybrid_command(with_app_command=True)
+    async def shorturl(self, ctx, url, id=None):
+        if id is None:
+            url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}')
+            text = url.text
+            data = json.loads(text)
+        if id is not None:
+            if self.bot.vip:
+                url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}&id={id}')
+                text = url.text
+                data = json.loads(text)
+            else:
+                await ctx.send('vipではないのでidを指定できません。')
+        if "はHTTP URIではありません。" in data['messeage']:
+            await ctx.send(data['messeage']+f'\nURLを直してお試しください。')
+        else:
+            e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました')
+            e.add_field(name='リンク', value=(data['url']))
+            await ctx.send(embed=e)
     @tasks.loop(minutes=1)
     async def livestatus(self):
         uri = requests.get("https://api.aic-group.net/get/status")
@@ -155,4 +175,4 @@ class info(commands.Cog):
                 self.embed = None
 
 async def setup(bot):
-    await bot.add_cog(info(bot))
+    await bot.add_cog(api(bot))

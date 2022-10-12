@@ -27,16 +27,14 @@ class money(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         voice_time_ch = self.bot.get_channel(1025370949840810044)
-        voice_money_min = '10'
-        voice_money_max = '100'
-        voice_give_per = '10'
+        voice_money_min = int('10')
+        voice_money_max = int('100')
+        voice_give_per = int('10')
         if member.bot:
             return
-
         if before.channel == None and not after.afk:
             await voice_time_ch.send(f'{member.id} {datetime.datetime.now(tz=timezone)}')
             return
-
         if not before.channel == None:
             if not before.afk and after.channel == None:
                 async for msg in voice_time_ch.history():
@@ -48,13 +46,10 @@ class money(commands.Cog):
                         now = datetime.datetime.now(tz=timezone)
                         delta = now - time
                         min = to_min(delta)
-                        print(min)
-                        money = random.randint(voice_money_min, voice_money_max)
+                        money = '50'
                         async with aiohttp.ClientSession(headers=self.bot.ub_header) as session:
-                            await session.patch(url=f'{self.bot.ub_url}{member.id}', json={'cash': (min // voice_give_per) * money, 'reason': f'ボイスチャット報酬({min}分)'})
+                            await session.patch(url=f'{self.bot.ub_url}{member.id}', json={'cash': (min // 10) * money, 'reason': f'ボイスチャット報酬({min}分)'})
                         return
-
-
         if after.afk and not before.channel == None:
             async for msg in voice_time_ch.history():
                 if msg.content.startswith(str(member.id)):
@@ -67,14 +62,12 @@ class money(commands.Cog):
                     min = to_min(delta)
                     money = random.randint(voice_money_min, voice_money_max)
                     async with aiohttp.ClientSession(headers=self.bot.ub_header) as session:
-                        await session.patch(url=f'{self.bot.ub_url}{member.id}', json={'cash': (min // voice_give_per) * money, 'reason': f'ボイスチャット報酬({min}分)'})
+                        await session.patch(url=f'{self.bot.ub_url}{member.id}', json={'cash': (min // 10) * money, 'reason': f'ボイスチャット報酬({min}分)'})
                     return
-
         if not before.channel == None and not after.channel == None:
             if before.afk and not after.afk:
                 await voice_time_ch.send(f'{member.id}が{datetime.datetime.now(tz=timezone)}にVCに参加')
                 return
-
         if before.channel == None:
             if after.afk:
                 return
