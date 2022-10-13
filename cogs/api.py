@@ -139,14 +139,14 @@ class api(commands.Cog):
     async def nitro(self, ctx, count: int):
         response = requests.get(f"https://api.aic-group.net/get/nitro_gen.php?q={str(count)}")
         await ctx.send(response.text)
-    @commands.hybrid_command(with_app_command=True)
+    @commands.hybrid_command(with_app_command=True, description="URLを短くします。")
     async def shorturl(self, ctx, url, id=None):
         if id is None:
             url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}')
             text = url.text
             data = json.loads(text)
         if id is not None:
-            if self.bot.vip:
+            if self.bot.vip.members:
                 url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}&id={id}')
                 text = url.text
                 data = json.loads(text)

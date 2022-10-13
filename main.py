@@ -43,9 +43,10 @@ class aicyserer(commands.Bot):
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)
         await bot.tree.sync()
-        bot.maintenansmode = False
+        bot.maintenansmode = True
         print("定義完了")
         if bot.maintenansmode == True:
+            await bot.change_presence(activity = discord.Activity(name=f"メンテナンスモードです。全機能が停止しています。", type=discord.ActivityType.playing), status='dnd')
             pass
         else:
             for file in os.listdir('./cogs'): # cogの中身ロード
@@ -55,7 +56,7 @@ class aicyserer(commands.Bot):
                         print(f'Loaded cogs.{file[:-3]}')
                     except:
                         traceback.print_exc()
-            await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
+                    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
             embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
@@ -73,13 +74,7 @@ class aicyserer(commands.Bot):
         logger.addHandler(handler)
         return logger
 
-    async def unload(self):
-        for file in os.listdir('./cogs'): # cogの中身ロード
-                if file.endswith('.py'):
-                    try:
-                        await bot.unload_extension(f'cogs.{file[:-3]}')
-                    except:
-                        traceback.print_exc()
+
 
 
 bot = aicyserer()
@@ -89,8 +84,13 @@ bot = aicyserer()
 async def maintenansmode(ctx, mode):
     if mode == 'True' or 'true' or 'yes' or 'on':
         bot.maintenansmode = True
-        await ctx.send('メンテナンスモードが有効化されました')
-        await bot.unload
+        await ctx.send('メンテナンスモードが有効化されました\n全機能を停止します。')
+        for file in os.listdir('./cogs'):
+                if file.endswith('.py'):
+                    try:
+                        await bot.unload_extension(f'cogs.{file[:-3]}')
+                    except:
+                        traceback.print_exc()
     if mode == 'False' or 'false' or 'no' or 'off':
         bot.maintenansmode = False
         await ctx.send('メンテナンスモードが無効化されました\n再起動をします')
