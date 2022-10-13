@@ -32,6 +32,11 @@ class Timesignal(commands.Cog):
         elif datetime.now().strftime('%M') == '30':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時30分をお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
+        if datetime.now().strftime('%m') == '03':
+            if datetime.now().strftime('%d') == '05':
+                if dt_now == '06':
+                    if datetime.now().strftime('%M') == '53':
+                        await self.bot.guild.system_channel.send('@everyone サーバー設立一周年！！！！！！！')
 
 
         if self.embed != None:

@@ -14,7 +14,7 @@ class aicyserer(commands.Bot):
     def __init__(self):
         super().__init__(
             command_prefix='a!',
-            allowed_mentions=discord.AllowedMentions(everyone=False, replied_user=False),
+            allowed_mentions=discord.AllowedMentions(replied_user=False),
             intents = discord.Intents.all()
             )
     async def on_ready(self):
@@ -61,7 +61,7 @@ class aicyserer(commands.Bot):
             await bot.boot_log.send(embed=embed)
         print(f"Login successful. {bot.user}({bot.user.id})")
 
-    def getMyLogger(name):
+    async def getMyLogger(name):
         logging.basicConfig(level=logging.DEBUG)
         logger = logging.getLogger(name)
         logger.setLevel(logging.DEBUG)
@@ -73,10 +73,28 @@ class aicyserer(commands.Bot):
         logger.addHandler(handler)
         return logger
 
+    async def unload(self):
+        for file in os.listdir('./cogs'): # cogの中身ロード
+                if file.endswith('.py'):
+                    try:
+                        await bot.unload_extension(f'cogs.{file[:-3]}')
+                    except:
+                        traceback.print_exc()
+
 
 bot = aicyserer()
 
-
+@bot.command()
+@commands.is_owner()
+async def maintenansmode(ctx, mode):
+    if mode == 'True' or 'true' or 'yes' or 'on':
+        bot.maintenansmode = True
+        await ctx.send('メンテナンスモードが有効化されました')
+        await bot.unload
+    if mode == 'False' or 'false' or 'no' or 'off':
+        bot.maintenansmode = False
+        await ctx.send('メンテナンスモードが無効化されました\n再起動をします')
+        exit()
 
 if __name__ == "__main__":
     print("プログラムを実行しています。")
