@@ -43,7 +43,7 @@ class aicyserer(commands.Bot):
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)
         await bot.tree.sync()
-        bot.maintenansmode = True
+        bot.maintenansmode = False
         print("定義完了")
         if bot.maintenansmode == True:
             await bot.change_presence(activity = discord.Activity(name=f"メンテナンスモードです。全機能が停止しています。", type=discord.ActivityType.playing), status='dnd')
