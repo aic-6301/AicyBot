@@ -18,7 +18,7 @@ class Join(commands.Cog):
                 await self.bot.guild.system_channel.send(embed = embed)
 
     @commands.Cog.listener()
-    async def on_member_update(self, before, after, member):
+    async def on_member_update(self, before, after):
         Member_role = self.bot.guild.get_role(957605646231019540)
         if Member_role not in before.roles and Member_role in after.roles:
             join_jst = after.joined_at + timedelta(hours = 9)
@@ -26,6 +26,6 @@ class Join(commands.Cog):
             embed.add_field(name='入った人へ', value='<#964090566210121738>で自己紹介をお願いします。')
             embed.set_author(name=after.display_name, icon_url=after.display_avatar.url)
             embed.add_field(name="サーバー参加日時", value=join_jst.strftime("%Y/%m/%d, %H:%M:%S"), inline=False)
-            await self.bot.guild.system_channel.send(content=member.mention,embed = embed)
+            await self.bot.guild.system_channel.send(embed = embed)
 async def setup(bot):
     await bot.add_cog(Join(bot))
