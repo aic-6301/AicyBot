@@ -140,7 +140,7 @@ class api(commands.Cog):
         response = requests.get(f"https://api.aic-group.net/get/nitro_gen.php?q={str(count)}")
         await ctx.send(response.text)
     @commands.hybrid_command(with_app_command=True, description="URLを短くします。")
-    async def shorturl(self, ctx, url, id=None):
+    async def shorten(self, ctx, url, id=None):
         if id is None:
             url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}')
             text = url.text
@@ -152,7 +152,9 @@ class api(commands.Cog):
                 data = json.loads(text)
             else:
                 await ctx.send('vipではないのでidを指定できません。')
-        if "はHTTP URIではありません。" in data['messeage']:
+        if url is None:
+            await ctx.reply('URLを入力してください。')
+        if data['type'] == 'URI Syntax Error':
             await ctx.send(data['messeage']+f'\nURLを直してお試しください。')
         else:
             e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました')
