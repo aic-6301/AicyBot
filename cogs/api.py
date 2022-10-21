@@ -1,3 +1,5 @@
+from concurrent.futures.process import _ThreadWakeup
+from typing import ValuesView
 import discord
 from discord.ext import commands, tasks
 from discord import app_commands
@@ -160,6 +162,20 @@ class api(commands.Cog):
             e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました')
             e.add_field(name='リンク', value=(data['url']))
             await ctx.send(embed=e)
+    @commands.hybrid_command(with_app_command=True, description='Powered by Google Trends')
+    async def googletrend(self, ctx):
+        response = requests.get('https://api.aic-group.net/get/trends')
+        text = response.text
+        data = json.loads(text)
+        embed= discord.Embed(title='現在のトレンド', description='Google trendsから取得しています。')
+        embed.add_field(name=data['channel']['item'][0]['title'], value=f"{data['channel']['item'][0]['description']}\n{data['channel']['item'][0]['link']}")
+        embed.add_field(name=data['channel']['item'][1]['title'], value=f"{data['channel']['item'][1]['description']}\n{data['channel']['item'][1]['link']}")
+        embed.add_field(name=data['channel']['item'][2]['title'], value=f"{data['channel']['item'][2]['description']}\n{data['channel']['item'][2]['link']}")
+        embed.add_field(name=data['channel']['item'][3]['title'], value=f"{data['channel']['item'][3]['description']}\n{data['channel']['item'][3]['link']}")
+        embed.add_field(name=data['channel']['item'][4]['title'], value=f"{data['channel']['item'][4]['description']}\n{data['channel']['item'][4]['link']}")
+        embed.set_footer(text='Powered by Google Trends')
+        await ctx.send(embed=embed)
+    # ライブステーサス
     @tasks.loop(minutes=1)
     async def livestatus(self):
         uri = requests.get("https://api.aic-group.net/get/status")
