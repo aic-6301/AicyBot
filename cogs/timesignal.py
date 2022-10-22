@@ -11,10 +11,10 @@ class Timesignal(commands.Cog):
         self.message = None
         self.embed = None
 
-    @tasks.loop(minutes=1)
+    @tasks.loop(seconds=10)
     async def timesignal(self):
         dt_now = datetime.now().strftime('%H')
-        if datetime.now().strftime('%M') == '00':
+        if datetime.now().strftime('%M:%S') == '00:00':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時ちょうどをお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
             if dt_now == '00':
@@ -44,6 +44,7 @@ class Timesignal(commands.Cog):
                 await self.message.delete()
             self.message = await self.bot.guild.system_channel.send(embed=self.embed)
             self.embed = None
+
 
     async def cog_unload(self):
             self.timesignal.stop()

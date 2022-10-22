@@ -1,0 +1,2287 @@
+
+くさ
+よかったね
+あ
+保存できた
+
+あいしぃー 主語 足らず
+主語つけない病
+まぁ日本だから遠い
+主語廃止論者
+とんだ詐欺師だなぁおい
+a!jsk reload cogs.autoreply
+📥⚠ `cogs.autoreply`
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.autoreply' could not be loaded.
+
+```
+🔁 `cogs.autoreply`
+そんなもん保存したらストレージが枯渇問題になるのでやめてください
+サーバーブースト欲しい
+保存するって言ったやる誰だよ
+お金を払わなければだめです
+サーバーブースト欲しい
+君の彼氏が言った
+<a:think:998072294792495114>
+同性愛って素晴らしい
+いやよくわからないけど
+全部保存されてるっていう
+セックス
+登録が完了しました。
+セックスすればサーバーブーストクレルの？
+なににほぞんすればいいわけ
+買った方が早いよ
+わいみたいに乞食するには
+もう間に合ってて性欲ないんですが
+声帯をりょうまに差し出さないといけません
+それの何がすごいの？
+知りません
+たかがお前の声帯だ
+そんくらいならいいよ
+ファイルはあるぞ晒せるぞ！♪
+しね
+https://media.discordapp.net/attachments/949560203886604293/977186437659263026/file.jpg
+さっさと寝ろ
+2周年記念のときに
+サイトに掲載しようかな
+https://www.aic-group.net
+えぇ
+かわってそう
+晒さないのだったらいいけど
+このサーバーが一年もつかだけどな
+911549934992494593 2022-10-13 12:11:59.440159+00:00
+911549934992494593 2022-10-13 12:11:59.183991+00:00
+<@911549934992494593>はVC-1の所有権を持っています
+<@911549934992494593>はVC-1の所有権を持っています
+我がホコリ高きあいしぃー様の声帯です
+なんで声帯もらったらNitroあげるのよ
+VC１
+964887498436276305 2022-10-13 12:12:30.250245+00:00
+964887498436276305 2022-10-13 12:12:29.994690+00:00
+それ晒してるのと同じだよ
+うるせえなこのbot
+なんであいしぃさん
+おはよう
+おはようございます
+あれ
+a!jsk load cogs.autoreply
+📥⚠ `cogs.autoreply`
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.autoreply' could not be loaded.
+
+```
+🔁 `cogs.autoreply`
+おはよう
+おはようございます
+<:wakutin:1011625504425652224>
+<:wakutin:1011625504425652224>
+反応しねえ
+いいや
+こたえうつそ
+すぐおわる
+眠い
+としんじたい
+としんじたい？
+と信じたい？
+いぇｓ
+デコードの能力あるわ
+しんどけ
+もういいや
+時報にサンドイッチされた
+今日は珍しくメンバーが一人しかオンラインじゃない
+何をどうしろと
+964887498436276305 2022-10-13 21:36:54.532828+00:00
+964887498436276305 2022-10-13 21:36:54.197673+00:00
+寝てたら5個のメンション来てた
+ねおちすんｎ
+ていううかVC1でずっと通知来てるんだけど
+着てません
+なかみとけばいいだろ()
+服は着てます
+VCは全員退出したら
+すべてのログが消えます
+784516723767640155 2022-10-13 21:39:25.995898+00:00
+<@784516723767640155>はVC-1の所有権を持っています
+<@784516723767640155>はVC-1の所有権を持っています
+784516723767640155 2022-10-13 21:39:26.331495+00:00
+911549934992494593 2022-10-13 21:39:28.624477+00:00
+911549934992494593 2022-10-13 21:39:28.284780+00:00
+VCの中のね
+色々たくさん気てた
+消えない
+そういうことです
+ややこしい
+ほんで人がいなくなるとこうなるってことね
+<@911549934992494593>はVC-1の所有権を持っています
+911549934992494593 2022-10-13 21:40:46.062392+00:00
+<@911549934992494593>はVC-1の所有権を持っています
+911549934992494593 2022-10-13 21:40:45.733749+00:00
+a!jsk sync
+a]
+are
+📡 Synced 4 global commands
+📡 Synced 4 global commands
+消えなくなった?
+なおったっぽいね
+誰に聞いてるの？変態？
+言ったら治る珍現象
+草
+設定をいじればデスクトップ音声にマイク音声を混入させることが可能
+a!jsk reload cogs.status
+📥⚠ `cogs.status`
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.status' could not be loaded.
+
+```
+🔁 `cogs.status`
+wtf
+やっぱり中身はただのVCで笑う
+ステージ＝VC
+?rtfm spotify
+a!jsk reload cogs.status
+📥⚠ `cogs.status`
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.status' could not be loaded.
+
+```
+🔁 `cogs.status`
+MSがスポンサーにめっちゃなってやがる。。！
+.amazon アンパンマン
+Amazonで検索しました。
+> URL: https://a.aic-group.net/CkjqSi7y
+くさ
+```py
+async def amazon(ctx,arg=None):
+     if arg is None:
+        msg = await ctx.reply('検索する言葉が入力されていません。\nこのメッセージは5秒後に削除されます。')
+        time.sleep(5)
+        await msg.delete()
+     else:
+        amzn = "https://www.amazon.co.jp/s%3Fk="+arg+"%26rh=p_6%3AAN1VRQENFRJN5%26tag=as0e91-22"
+        url = requests.get("https://api.aic-group.net/get/shorten?url="+amzn)   
+        jsonText = url.text
+        data = json.loads(jsonText)
+        await ctx.reply("Amazonで検索しました。\n> URL: "+data["url"])
+```
+リンクが送信されました。
+.amazon キャプボ
+Amazonで検索しました。
+> URL: https://a.aic-group.net/X7KNYQSW
+a!jsk sh cd cogs 
+ls
+```ansi
+$ cd cogs 
+ls
+
+```
+```powershell
+PS > cd cogs 
+ls
+
+```
+a!jsk sh cd cogs && ls
+だろ普通
+動くからいいの()
+.amazon カップヌードル
+Amazonで検索しました。
+> URL: https://a.aic-group.net/WBAg8Oys
+これでわかるわどっちが有能なのか…
+sb.trans TypeError: 'Button' object is not callable
+つべローダーは再設計します
+fujcamdkbasd
+fuckain
+a!jsk load cogs.vctool
+📥⚠ `cogs.vctool`
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\discord\ext\commands\bot.py", line 934, in _load_from_module_spec
+    spec.loader.exec_module(lib)  # type: ignore
+TypeError: 'Button' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.vctool' raised an error: TypeError: 'Button' object is not callable
+
+```
+🔁 `cogs.vctool`
+shit
+なにこれ
+https://www.youtube.com/watch?v=aWP1gHoDoOw
+リンクが送信されました。
+ぼたんこわれた？
+sb.trans TypeError: Cog.listener expected str but received 'function' instead.
+Login successful. Aicybot#8986(973928793154662410)
+🤔
+重複している
+youtube or つべろーだー
+Hydra#1214さん!! いらっさい!!
+https://www.aic-group.net/tools/%E3%81%A4%E3%81%B9%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/video?v=https://www.youtube.com/watch?v=aWP1gHoDoOw
+リンクが送信されました。
+直した
+またそとでろっていわれた
+引きこもってろ
+こっちにだって外に行く行かないは決める権利ある
+と主張すれば呆れてくれるよ
+ひきこもりたいです
+下僕かなにかなの？
+行きたくなきゃ行かなきゃいいじゃん
+いきたくない
+じゃあ行きたくないってい絵
+いった
+けど
+どうなった
+しつこい
+通報すんぞゴラァって言っとけ
+草
+行く義務はない
+まあいきますわあ
+どうせ暇
+折れちゃってるやん
+暇なのは事実
+結果:外
+3G<:ygt:960354232916148224>
+https://www.aic-group.net/tools/%E3%81%A4%E3%81%B9%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/video/https://www.youtube.com/watch?v=aWP1gHoDoOw
+リンクが送信されました。
+あ
+おそい
+https://www.aic-group.net/tools/files/aWP1gHoDoOw.webm
+リンクが送信されました。
+4G<:ygt:960354232916148224>
+2日連続で同じ時間にどこ行ってるんだよ
+そのへ？
+そのへ？
+そのへん
+何しに行ってんだろう
+歩くだけ
+つまんなそ
+じっさいつまらん
+じゃあ行かなきゃいいじゃん
+()
+PCつけっぱなし
+スマホからアクセスできるんですけどね
+Python起動しっぱなし
+()
+.amazon python
+.amazon python
+.amazon hahah
+.amazon python
+.test
+.help
+<https://notsobot.com/commands> (Join our support server <https://notsobot.com/support/invite>)
+```
+​No Category:
+  amazon 
+  help   Shows this message
+  sh     
+  shlink 
+  test   
+  title  
+
+Type .help command for more info on a command.
+You can also type .help category for more info on a category.
+```
+.amazon python
+Amazonで検索しました。
+> URL: https://a.aic-group.net/yWSHpkX3
+.sh
+URLが入力されていません。
+このメッセージは5秒後に削除されます。
+.sh https://a.aic-group.net/yWSHpkX3
+指定されたURLから短縮URLを生成しました。
+> 生成したURL:https://a.aic-group.net/w6Eh2OTW
+これはまずい
+プレフィックスを
+Ｒ！
+r!
+とかにしよう
+しませんょ
+,help
+.help
+<https://notsobot.com/commands> (Join our support server <https://notsobot.com/support/invite>)
+```
+​No Category:
+  amazon 
+  help   Shows this message
+  sh     
+  shlink 
+  test   
+  title  
+
+Type .help command for more info on a command.
+You can also type .help category for more info on a category.
+```
+クソ反応する件
+.help sh
+```
+.sh
+
+Arguments:
+  arg No description given (default: None)
+```
+r.sh
+.play
+URLが入力されていません。
+このメッセージは5秒後に削除されます。
+シェルスクリプトやんけ
+r.sh
+URLが入力されていません。
+このメッセージは5秒後に削除されます。
+r.sh
+r.help
+```
+​No Category:
+  amazon 
+  help   Shows this message
+  sh     
+  shlink 
+  test   
+  title  
+
+Type r.help command for more info on a command.
+You can also type r.help category for more info on a category.
+```
+URLが入力されていません。
+このメッセージは5秒後に削除されます。
+r.ping
+🏓pong!
+Command.NotFound
+それの処理どうしたらいいの
+？
+a!glp
+これ？
+そうんなの
+まってね
+https://youtu.be/IgnZkLEEabc
+リンクが送信されました。
+bot.commands.errors.CommandNotFound
+@bot.event
+async def on_command_error
+関数が
+on_command_error
+のやつ
+onね
+```py
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, discord.ext.commands.errors.MissingPermissions):
+        embed = discord.Embed(title="❌ 失敗 -MissingPermissions", description=f"実行者の必要な権限が無いため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed)
+    elif isinstance(error, discord.ext.commands.errors.BotMissingPermissions):
+        embed = discord.Embed(title="❌ 失敗 -BotMissingPermissions", description=f"Botの必要な権限が無いため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed)
+    elif isinstance(error, discord.ext.commands.errors.CommandNotFound):
+        embed = discord.Embed(title="❌ 失敗 -CommandNotFound", description=f"不明なコマンドもしくは現在使用不可能なコマンドです。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed)
+    elif isinstance(error, discord.ext.commands.errors.MemberNotFound):
+        embed = discord.Embed(title="❌ 失敗 -MemberNotFound", description=f"指定されたメンバーが見つかりません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed)
+    elif isinstance(error, discord.ext.commands.errors.BadArgument):
+        embed = discord.Embed(title="❌ 失敗 -BadArgument", description=f"指定された引数がエラーを起こしているため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed) 
+    elif isinstance(error, discord.ext.commands.errors.MissingRequiredArgument):
+        embed = discord.Embed(title="❌ 失敗 -BadArgument", description=f"指定された引数が足りないため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
+        embed.set_footer(text="お困りの場合は、サーバー管理者をメンションしてください。")
+        await ctx.send(embed=embed) 
+    else:
+        raise error
+```
+(ctx, error)
+r.e
+そんなコマンドはありません。
+このメッセージは5秒後に削除されます。
+from discord.ext import commands
+やってあるよね
+やってある
+じゃぁ知らん()
+r.e
+そんなコマンドはありません。
+このメッセージは5秒後に削除されます。
+r.ping
+🏓pong!
+そんなコマンドはありません。
+このメッセージは5秒後に削除されます。
+r.sex
+そんなコマンドはありません。
+このメッセージは5秒後に削除されます。
+r.ping
+🏓pong!
+そんなコマンドはありません。
+このメッセージは5秒後に削除されます。
+a!ping
+🏓pong!
+ping値12.712 ms
+ping先:www.aic-group.net
+ping値12.495 ms
+ping先:www.aic-group.net
+urlが存在しません。別のurlを試してみて下さい
+urlが存在しません。別のurlを試してみて下さい
+🤔
+しゃわーあびてくるからばいばい
+なんで読み込まれないかなって見た結果
+かっこがないだけ
+1004591087660314754 2022-10-16 02:34:36.872765+00:00
+1004591087660314754 2022-10-16 02:34:37.899701+00:00
+784516723767640155 2022-10-16 02:35:15.236875+00:00
+784516723767640155 2022-10-16 02:35:14.203423+00:00
+sb.trans TypeError: Vctool.on_voice_state_update() takes 3 positional arguments but 4 were given
+Ryouma
+今日もやるのね
+マイク音声は入らず
+Ryooma
+Tinnko
+Ryohma
+うるさいな
+Unnnnko
+Toyama
+Thyama
+Tohyama
+tooyama
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+送信しました
+Osaka
+切断扱いにしました。
+今日もやります
+NSFWを設定しました
+NSFWを解除しました
+チャンネル名を`新潟県糸魚川市`に設定しました
+1004591087660314754 2022-10-16 02:38:31.386715+00:00
+1004591087660314754 2022-10-16 02:38:30.342145+00:00
+sb.trans v
+sb.trans TypeError: Vctool.on_voice_state_update() missing 1 required positional argument: 'after'
+キャプボは買ったけど
+さっき届いたけど
+やり方が全くわからないので
+後回し
+説明書読めばええ
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+今そんな気力はない
+1004591087660314754 2022-10-16 02:40:14.347880+00:00
+1004591087660314754 2022-10-16 02:40:13.316330+00:00
+1004591087660314754 2022-10-16 02:42:14.448841+00:00
+1004591087660314754 2022-10-16 02:42:13.460140+00:00
+a
+チャンネル作成できた
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+1004591087660314754 2022-10-16 02:43:15.563308+00:00
+1004591087660314754 2022-10-16 02:43:14.526471+00:00
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+1004591087660314754 2022-10-16 02:44:21.142525+00:00
+1004591087660314754 2022-10-16 02:44:20.104371+00:00
+無駄に色々技術がある
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+1004591087660314754 2022-10-16 02:45:27.169041+00:00
+1004591087660314754 2022-10-16 02:45:28.201677+00:00
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+何が聞こえる？
+popopopopopopo
+popopopopopopop
+いまは
+dedededeeeeeeeeen
+そういう事聞いてるんじゃなくて
+ちるのはきこえる
+1004591087660314754 2022-10-16 02:46:49.066030+00:00
+1004591087660314754 2022-10-16 02:46:50.091746+00:00
+ちるの＿
+<@964887498436276305>は新潟県糸魚川市の所有権を持っています
+チャンネル名をリセットしました
+Spotify止めていいですよ
+こっちで流してるので
+a!jsk unload cogs.money
+📤 `cogs.money`
+📤 `cogs.money`
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+?rtfm connect
+?rtfm on_connect
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+a!jsk reload cogs.vctool
+🔁⚠ `cogs.vctool`
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\discord\ext\commands\bot.py", line 934, in _load_from_module_spec
+    spec.loader.exec_module(lib)  # type: ignore
+  File "C:\Users\rx435\OneDrive\ドキュメント\GitHub\discord.bot\cogs\vctool.py", line 166
+    if after.channel == discord.VoiceChannel
+                                            ^
+SyntaxError: expected ':'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionFailed: Extension 'cogs.vctool' raised an error: SyntaxError: expected ':' (vctool.py, line 166)
+
+```
+🔁 `cogs.vctool`
+a!jsk reload cogs.vctool
+世界地図手に入れた
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+はらへった
+なんかくってくるか
+なんか青い帽子かぶったやついる
+だれ
+ケッパーとかいうやつが家に来るって
+Discord.Aic
+くってきた
+おかえろ
+さあくったくった
+ねむい
+この歌は何でしょう
+しらん
+とりま
+ETS2
+https://tenor.com/view/omg-wow-really-surprised-feeling-it-gif-15881647
+リンクが送信されました。
+この女思春期に突入したそうです
+部屋を作れと
+要求されてます
+kusa
+a
+急に呼ばれた
+やってるわ
+12:35のいちこめ
+**🎉 GIVEAWAY 🎉**
+抜けない
+百合じゃない方がいいですか？
+えっちな女の子とえっちな女の子が並んでだぶるえっちだと思ってましたが
+ふたなり百合えっちもありますが、男がいた方がいいっすかね
+出直してきます
+https://twitter.com/yuutokagura/status/1581283762255515648?s=21
+リンクが送信されました。
+https://twitter.com/moekawa18/status/1580090902646640640?s=21
+リンクが送信されました。
+エアポッズが　タバコのカスだらけに……
+なんでそんなことに？
+ポケットの中に　タバコいれてて
+2・3本飛び出てた
+喫煙者だったようです
+だからなんだと言うわけじゃないけど
+ポッケの中温まってたら燃えてたね
+いやいやいや　火が付いたタバコじゃないからw
+キャメルのタバコが値下がりしました!!
+これどこか分かりますか
+知らん
+空
+チョモランマ?
+昨日行ってきたところ
+おお!!
+名古屋なんて車でいける屋
+いや今九州にいるんですけど😫
+名古屋　島にしよう
+何しに一点の
+名古屋より岡崎の野郎は運転が危ない
+みんな危ない
+旅行
+3連休でもないのに何してんだ
+北海道のほうが　運転荒いと思うよ
+岡崎のやつはみんな一時停止なんてしないよ
+東京のやつは9割一時停止なんてしてないよ
+ｸｻ(ง ˘ω˘ ;)วｸｻ
+北海道　普通の道路で　80km/hだよ
+というか全国的にそうだと思う
+8日に一回みる
+めちゃ速い車
+（8日に一回くらいしか運転しないから）
+鹿とかキツネとかでるよ
+残念オリンピックが走ってんの
+ど田舎
+田舎にすらなっていない　未開の地だよw
+<#959712448338870272>でミスチル流しています
+りょ!!
+喋ったりとかは一切ない
+おちー!!
+親が初めてアクア運転したんだけどさ
+あれエンジンブレーキない
+あくあ？
+トヨタ アクア
+ちょょた
+?
+ちょよた
+木が歩いてる！？
+どうやら毒沼に来たらしい
+みたい
+うりゃ
+主人公素っ裸になった
+Bレンジない？
+シフトをBにしたらエンジンブレーキになるけど
+このサーバー専門家多いよね
+みんな将来有望
+れふとℛ公式✓#9809さん!! いらっさい!!
+こんにちは
+こんにちは
+<@987764271410708500> さんは<#964090566210121738> で自己紹介を済ませてください。
+名前:れふと
+一言:Pythonでなんかやってる
+ありがとうございます
+やっぱり専門家多い
+Pythonまた出てきた
+www
+僕もPythonは出来るけどさ
+おお、
+HTML,CSS,jQuery,PHP,Python,Java,C,C#はまぁ出来ます
+Javaができない...
+CとかできればJavaは全然出来るとは思う
+みんな同じようなコード
+なるほど
+適当に作ったボット
+.sh https://www.aic-group.net/
+r.sh https://www.aic-group.net/
+リンクが送信されました。
+指定されたURLから短縮URLを生成しました。
+> 生成したURL:https://a.aic-group.net/web
+これはあいしぃーがつくったやｔ
+hi
+こいつが一番このサーバーで大したことない人です
+😅
+oh...
+横転事故起こしてきた
+この通り
+まじかw
+はいしんみるといいよ（
+https://live.aic-group.net
+リンクが送信されました。
+ローソンのトラック邪魔じゃあ
+ブットバシテキタ
+ぶっ飛ばしてきた
+あぁぁ
+うごけません
+誰も聞いてないそんなことシリーズ
+変なの作った
+麺食べた
+ものすごい
+```html
+<h1>Left Server</h1>```
+感
+Www
+...
+ものすごいヒカキン感じる
+草
+事故起こりすぎ
+困ります運転手さん
+運転手自分じゃないの
+そうやん
+どこまでアホなのか…
+ちょっとやばいね
+また金はいらないな
+🤔 🤔 🤔 🤔 🤔 🤔
+なーに大したことない
+わいでも700GBだぞ
+😎
+あ
+横転事故
+うちのサーバーで今年68TBくらい通信してるから
+これだめだな
+12万が0だ
+a!status
+うちのサイト一覧です
+https://www.aic-group.net
+やっばw
+CloudFlareのどこかに書いてた
+ets2の日本道路狭すぎ
+誰も聞いてないそんなことシリーズ #2やんないで
+なんかめちゃでかい城まできた
+城全部崩そうかな
+こわそう
+20時間を
+あしたまでにはこべだつまえよ
+貴族の椅子かっこいい
+アホみたいに豪華なベッド発見
+キングベッドだ
+つまった
+いけあ
+ドレッサーだ
+お金大好き
+ぬさ
+人間なんて金好き
+oh.
+なんかなぁ
+両方とも否定できない
+草
+冗談と変態でできてる
+否定は難しいよ。
+ふぁっきｎ
+https://live.aic-group.net
+リンクが送信されました。
+なわけ
+名前変える身体よく
+まだアーカイブなんて生成してないからね
+またしたの…？
+?
+なにもしてないけど
+西ってえいごで なんていうっけ
+ねね　りょうまさん　C#とC＋＋って　全然違うのー?
+両方とも派生
+ユニチーと　アンレアルエンジン　どっちいいのー?
+UnityとUnrealEngine?
+うんうん
+特にこだわりがなければUnity
+ふむふむ
+りょ
+ありがとうー!!
+ゲームなんて作らない…
+女の子が飛び出してくるゲームが作りたいです
+女の子をなぜ飛び出す必要がある？
+んー　何が飛び出すといいですかー?w
+飛び出すっていうのがよくわからない
+画面から？
+うんうんww
+3Dでw
+青赤メガネをご用意ください
+偏光グラスで
+めちゃめちゃ作るのめんどくさいやつ
+初めて　電気屋さんで　3DTV見たとき
+ほんとに　ゴルフボールが飛んでくるように見えて
+感動したんだよねww
+飛び出さない3Dも3D
+錯覚を用いれば行けそう
+そこらへんにライブラリあるでしょ
+錯視
+いやいやいや
+それで女の子が飛び出してくるやつ言ってるのね
+エースコンバット3DSを　大画面でやりたい!!
+あれも目の錯覚じゃん
+女の子　諦めた
+お店に行きましょう
+🤪
+んー　お店の女の子は　いいです
+実体の方が絶対いいですよ
+（たいだけに）
+エースコンバットにします
+対応するディスプレイが必要
+マッハ2で　飛んでくる　ゲーム!!
+北朝鮮のミサイルはマッハ10らしい…
+じゃ　待った20　で迎撃するウルトラマンで!!
+おちですー
+ウルトラマンわかんあい
+またねー!!
+ウルトラマン　人気ないからなぁ…
+仮面ライダーを大砲で飛ばしましょう
+仮面ライダーもわかりません
+じゃ　桜井さんを　大砲で…
+やめい
+りょうまさんがわかるの　プログラムと　ミスチルだけやん
+まだまだあるわああああ
+そかそかぁ…
+いわし
+おちですー!!
+またねー!!
+ねむたい
+アーカイブ生成されたよ
+タイトルとかつけ的な
+@everyone 
+2022/10/16に配信したライブのアーカイブを公開しました
+
+https://live.aic-group.net/archive/20221016123212/
+リンクが送信されました。
+everyoneいらないと思います
+<@&1010941281989566525>
+じゃあどうしろと
+そのロール持ってる人いない
+つけれるから()
+ねむすぎ
+えろすぎ
+すごい
+同じような
+botが
+いくつも
+いやらしい 妄想をして 自分を慰めたあとで
+今何がなってるか知ってんの？
+?
+聞いてないのか
+することがねえ
+きいとけ
+妹が喋ってるかも知らんやん（ない）
+ぼかろききたい
+きいてくようかな
+みすちるとめた
+過去形
+<:windows:965510941838041129>
+よ
+することが
+ないyおおおおおおおおお
+知らん
+知らん
+そ、そこは...
+あなたの鯖です
+国家級の技術あり
+しってた
+a!jsk reload cogs.vctool
+🔁 `cogs.vctool`
+🔁 `cogs.vctool`
+よし
+これで
+vcgenerator完成
+VCを作れるようにはなった
+オーナーの指定はまだできていません
+訳：声連絡生成器完成
+砂漠に来たんだけど
+アホでかい
+サソリがいる
+a!jsk py ```py
+channel = _bot.get_channel('1031092510036070511')
+channel.members
+```
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/python.py", line 189, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "/usr/local/lib/python3.9/site-packages/jishaku/repl/compilation.py", line 210, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    channel.members
+AttributeError: 'NoneType' object has no attribute 'members'
+
+```
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\python.py", line 156, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\repl\compilation.py", line 154, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    channel.members
+AttributeError: 'NoneType' object has no attribute 'members'
+
+```
+生肉ゲットおお
+a!jsk py ```py
+channel = _bot.get_channel('1031092510036070511')
+channel
+```
+a!jsk py ```py
+channel = _bot.get_channel('1031092510036070511')
+await _ctx.send('channel')
+```
+channel
+channel
+<Message <https://discord.com/channels/949560203374915605/949560203886604293/1031093095128899614>>
+<Message <https://discord.com/channels/949560203374915605/949560203886604293/1031093095082762270>>
+まずそう
+a!jsk py ```py
+channel = _bot.get_channel('1031092510036070511')
+await _ctx.send(channel)
+```
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/python.py", line 189, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "/usr/local/lib/python3.9/site-packages/jishaku/repl/compilation.py", line 210, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    await _ctx.send(channel)
+  File "/usr/local/lib/python3.9/site-packages/discord/ext/commands/context.py", line 841, in send
+    return await super().send(
+  File "/usr/local/lib/python3.9/site-packages/discord/abc.py", line 1539, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/usr/local/lib/python3.9/site-packages/discord/http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50006): Cannot send an empty message
+
+```
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\python.py", line 156, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\repl\compilation.py", line 154, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    await _ctx.send(channel)
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\discord\ext\commands\context.py", line 842, in send
+    return await super().send(
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\discord\abc.py", line 1536, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\discord\http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50006): Cannot send an empty message
+
+```
+っていうか一度もまだ
+死んだことない
+ねむい
+ねろ
+やだ
+じゃあどうする？
+しぬ
+a!jsk py ```py
+channel = _bot.get_channel(1031092510036070511)
+await _ctx.send(len(self.bot.vc2.members))
+```
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\python.py", line 156, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\repl\compilation.py", line 154, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\functools.py", line 125, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    await _ctx.send(len(self.bot.vc2.members))
+NameError: name 'self' is not defined
+
+```
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/python.py", line 189, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "/usr/local/lib/python3.9/site-packages/jishaku/repl/compilation.py", line 210, in traverse
+    async for send, result in AsyncSender(func_g(*self.args)):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "<repl>", line 3, in _repl_coroutine
+    await _ctx.send(len(self.bot.vc2.members))
+NameError: name 'self' is not defined
+
+```
+しなないでもろて
+a!jsk py ```py
+channel = _bot.get_channel(1031092510036070511)
+await _ctx.send(len(channel.members))
+```
+1
+1
+<Message <https://discord.com/channels/949560203374915605/949560203886604293/1031093506296533053>>
+<Message <https://discord.com/channels/949560203374915605/949560203886604293/1031093506304917504>>
+強制認証なり！
+kusa
+ちゃんとおときてますよねん
+hm
+hmhm
+ドラクエ関係ですね
+そして今から流れるのは…
+ジャンプ音的に本編じゃ無い気がする
+んで何が流れているでしょうか
+愛されなくても君がいる
+どうでもいいわ
+は
+<@475948663366221824>はVC-1(128Kbps)の所有権を持っています
+どうさ
+した
+<@964887498436276305>はVC-1(128Kbps)の所有権を持っています
+送信しました
+VCチャンネルのオーナーではないため実行できません
+VCチャンネルのオーナーではないため実行できません
+?rtfm leave
+じしんじょうほうとれるところはっけーん
+気象庁のXMLがある
+p2pがあった
+json()
+<@987764271410708500>はVC-3の所有権を持っています
+pythonのぷろでもいないかな
+Pythonならよく仕事で使ったけど？
+jsonが
+前と違ったら
+送信とかできないかなって
+どういうこと？
+jsonが更新されたら
+送信
+そんなのずっとアクセスし続けるしかないじゃん
+1分に10回アクセスできるらしい
+じゃあループすればいい
+どうやってその処理やろうかなって
+tasks.loopはいくらでもできるけど
+どうやって処理しようか()
+要は
+古いのと新しいのを検知したいってことでしょ
+そんなの今の時間とJsonに乗ってる時間と比べさせるしかないじゃん
+最新情報ずっと更新し続ければいいかな
+1分に10回だけなのか
+めんどっちいな
+ならXMLでいい
+Jsonと大して変わらん
+違いのひかくがわからｎ
+気象庁が公開してるやつは
+もう全部でyそ
+ファイルを比較するには、 filecmp モジュール の cmp() 関数 を使います。 f1 と f2 に指定した名前のファイルを比較して同じファイルなら True 、異なるファイルなら False を返します。
+というか気象庁名の？
+p2p
+人の言ってることわからないか
+今の時間と
+Jsonに時間あるでしょ流石に
+何時何分発表とか
+それを比較演算子で今の時間と差があるかチェック
+time*
+なるべく分で
+雷来たかも
+e
+ぴかぴっかってした
+kusa
+親帰宅
+音を聞きましょう
+まだ散歩行ってたのかよ
+家ですけど
+扇風機つけて
+ひきこもってます」
+ゴロゴロって言わねえ
+Lofi Radioずっとながれてるね
+よかったね
+どうやるんだ(;´･ω･)
+そうやる
+こうやる
+あーやる
+おまえやる
+じゃじゃーん
+れふとさん
+まってました
+？？
+何だこの悪趣味なgifは
+地震情報のやつを教えてほしくででしてね(?)
+時間と比較しろっていったはずなんだけどなあ
+はい?
+めんどk
+<#1028166784639062036>
+じゃあどれだけ方法きこうが
+こいつです
+めんどくさいで終わっちゃうじゃん
+()
+ねえ…
+アホでかいドラゴンがいるんだけど
+ころせ
+寝てる
+では音だけ聞いていてください
+今スマホステータスなのをご存知でしょうか
+3とか1しか
+ダメージ行かねえ
+くさ
+```@tasks.loop(minutes=1)
+async def eew_check():
+    with open('data/cache.json', 'r') as f:
+        eew_updatekey = json.load(f)['eew_updatekey']
+    request = requests.get(
+        "https://api.p2pquake.net/v2/history?codes=551&limit=1")
+    response = request.json()[0]
+    if (response['earthquake']['maxScale'] / 10) <= int(
+            config['notify_scale']):
+        if request.status_code == 200:
+            if eew_updatekey != response['id']:
+                print(Fore.MAGENTA + "地震情報の更新を確認しました" + Fore.RESET)
+                with open('json/config.json', 'r') as f:
+                    channel_id = int(json.load(f)['eew_channel'])
+                channel = bot.get_channel(channel_id)
+                embed = eewdata.eew_embed(response)
+                await channel.send(embed=embed)
+                print(Fore.MAGENTA + f"地震情報を{channel.name}へ送信しました" +
+                      Fore.RESET)
+                with open('data/cache.json', 'r') as f:
+                    eew_updatekey = json.load(f)
+                    eew_updatekey['eew_updatekey'] = response['id']
+                with open('data/cache.json', 'w') as f:
+                    json.dump(eew_updatekey, f, indent=4)
+        else:
+            return```
+？
+コード文送ったら**された()
+英語の通り
+こむ　とぅー　でぃえむ
+DMに送りつけろ
+うい
+戦い始めて2日目やっと半分
+２章？
+1
+半分?
+ゴーレムぶったおすはずだけど
+ドラゴンのダメージ
+ドラゴンなんて戦ったっけ
+たおせと行ったのは誰？
+しらん
+お前だよ
+まあたおしておけばいいんじゃない
+やったあああ
+ゲーム内で3日使いました
+ドラゴンを倒すのに
+くさ
+りゅうのうろことか言うのゲットした
+りま何ナノこれ
+CM
+CM?
+どういうこと？
+ゲーム？
+げーむ
+switchの音
+日本の首都高ってこれ好きなの
+また言ってるよ
+なんかめちゃくちゃ遠いところ来たんだけど平気かな
+キメラのつばさは56個ある
+この悪趣味なmp4はなんだ
+草
+やべえあの女
+砂漠に来てる
+これは？
+だれですかねこれ
+さあ
+おっぱい小さい嘔吐
+あーな
+うわ
+これは
+あぁ目が肝い
+ちっぱいこそさいきょう
+これも妹より小さい
+どんだけ大きいんだよ！wwwwww
+もう髪も目も鼻も無理
+くさ
+面白いやつだと思ったかね
+ナニコレwww美少女コンテストか何かですか？
+うい
+おぇ
+Wwwwwww2w22wwww3wwwwwww
+ハンバーガの食べ方を間違えた女
+にしてもまぁよく妹の顔にそっくりなの持ってくるね
+知り合い？
+妹の画像なのでは
+🤔
+ちゃう
+ちょっと違う
+うん！
+似ているなぁくらいの話
+restartとか
+admin専用にしてみる?
+鉄を作りました
+統括専用で
+公序良俗に反する画像あったよね
+それは消しといた
+<#1019565038706626672> なら
+いくらでも
+草
+どうぞ
+ただ未成年はだめ
+Discord の規約にそう書いてる
+https://aic-group.net/rule/
+百合でもBLでもなんでも
+え
+というか法律的にはそう
+ｼﾞﾎﾟ
+Lobbybotやってたらきもいのきた
+ロリの何がいいのかさっぱり
+🤔
+discord.php
+やっとここまで来て鉄装備が作れるようになりました
+安心しろ鉄ならもう500個くらいあるから。
+わいのこーどはくっそきたねえです
+誰かきれいにしてください
+No
+No
+この時点で汚い
+フォルダにぶち込めばいいのか
+AicyWebのYouTubeダウンローダーも汚い
+くさ
+うわお
+ちなみに空っぽのフォルダもある
+あたまおかしい
+自己紹介どうもありがとう。
+焼ききのこが180子になった
+are
+何書こうとしたか忘れた
+米混ぜてくる
+のんでら
+a!jsk py ```py
+request = requests.get("https://api.p2pquake.net/v2/history?codes=551&limit=1")
+ response = request.json()[0]
+if request.status_code == 200:
+     embed = eewdata.eew_embed(response)
+     await _ctx.send(embed=embed)
+else:
+   embed=nextcord.Embed(title='APIリクエストでエラーが発生しました',timestamp=ctx.message.created_at,color=nextcord.Colour.purple())
+   await _ctx.send(embed=embed)
+```
+リンクが送信されました。
+```py
+  File "<string>", line 3
+    response = request.json()[0]
+IndentationError: unexpected indent
+
+```
+a!jsk py ```py
+import json
+import requests
+from data import eewdata
+request = requests.get("https://api.p2pquake.net/v2/history?codes=551&limit=1")
+response = request.json()[0]
+if request.status_code == 200:
+     embed = eewdata.eew_embed(response)
+     await _ctx.send(embed=embed)
+else:
+   embed=nextcord.Embed(title='APIリクエストでエラーが発生しました',timestamp=ctx.message.created_at,color=nextcord.Colour.purple())
+   await _ctx.send(embed=embed)
+```
+リンクが送信されました。
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/python.py", line 189, in jsk_python
+    async for send, result in AsyncSender(executor):  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/jishaku/functools.py", line 124, in _internal
+    value = await base.asend(self.send_value)
+  File "/usr/local/lib/python3.9/site-packages/jishaku/repl/compilation.py", line 214, in traverse
+    yield await func_a(*self.args)
+  File "<repl>", line 4, in _repl_coroutine
+    from data import eewdata
+ModuleNotFoundError: No module named 'data'
+
+```
+メッセージ保存しまくった結果
+a!jsk load asdghsakjld
+📥⚠ `asdghsakjld`
+```py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jishaku/features/management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'asdghsakjld' could not be loaded.
+
+```
+📥⚠ `asdghsakjld`
+```py
+Traceback (most recent call last):
+  File "C:\Users\rx435\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\jishaku\features\management.py", line 61, in jsk_load
+    await discord.utils.maybe_coroutine(method, extension)
+discord.ext.commands.errors.ExtensionNotFound: Extension 'asdghsakjld' could not be loaded.
+
+```
+チャンネルにためるなり
+その手もあるね
+でも
+この鯖に貯めるとめんどくさい子となるから
+別鯖に作ろうかなって考えてもいる
+この鯖に集結させるか
+ちなみにdiscordもきたない
+わーお
+わいこう見えても
+きれい好きで入る
+めんどくさくて
+やる気が出ない
+なるほどw
+部屋もかたずけたい
+けど
+めんｄ
+...
+それを人は汚い好きという
+🤔
+きれい好きなら
+あたふたしちゃうね
+日本人は何型が多い？
+日本人におけるABO式血液型の割合は、おおよそＡ型40％、Ｏ型30％、Ｂ型20％、ＡＢ型10％といわれています
+A型は僕のことです
+784516723767640155が2022-10-16 08:39:24.801326+00:00にVCに参加
+赤の扉の先は行ったけど
+何すればいいのかわかんない
+クエストもクリアしたし
+詰んでる気がする
+赤の扉？
+あクリアしてないの合った
+ああ
+今の状態をまた画像で送るね
+急激に進化しました
+震度3?
+千葉
+おきてますね
+M3.7
+それは14時の話でしょ
+今
+あああでっかいのぜったいくるうううう
+それでこの状態は問題あり？
+操作にはだいぶなれてきました
+僕の超汚いServerManagerのコード
+https://FatalInferiorBug.5rhfwdjfr3dhbdettwu.repl.co
+↑↑からダウンロードできる！
+リンクが送信されました。
+<#1007922805456777297> でお願います
+うい
+ServerManager汚いコード
+https://FatalInferiorBug.5rhfwdjfr3dhbdettwu.repl.co
+↑DL
+リンクが送信されました。
+にしても不完全なHTMLだなぁ
+中にscreenchotはいってるけど
+大丈夫そうでしょうか
+公開はそもそも自己責任だし
+そんなこと君が気にすることない
+nood
+ヌード…
+あ
+消しますね
+規約的にまずいので
+https://aic-group.net/rule/
+ギリセーフかもしれないけど
+ギリアウトかもしれない
+そういうのを取り除いたら
+再度宣伝してどうぞ
+ピラミッドの中に突入
+...
+そのzipの中身ってことでしょ
+Yes
+なので責任を持って僕が確認します
+くさー
+一生終わらないんだけど
+100MBぐらいかな
+https://discord.com/channels/949560203374915605/957605381029363822/979004769970581505
+すいません
+リンクが送信されました。
+すいません
+??????????????
+アホ思い
+メルキドグリーブってなに？
+手に入れた
+落下ダメージ受けないって言ってる
+めし
+あの時はDM宣伝は害悪とは思ってなかったです(;´･ω･)
+かもしれない
+DM宣伝は害悪これは常識
+そらそうだろ
+初心者だったんです(;´･ω･)
+⇧言い訳
+それを言い訳って言います
+自分が
+DM宣伝されて
+どう思うか
+どうぞ
+Discord に招待するメニューが有って
+よく誤爆するのはある
+試しに誤爆するか
+<@1004591087660314754>
+wip
+ゆきさんい同じことしてやった
+kうさ
+もうそろそろだ
+ヌードを拝む
+ナニ
+ナニはナニ
+僕のナニ
+めんしょんすんんあｋｓ
+日本語でお願いします
+めんしょんスンナ
+メンションすんなシコザル
+えぇ
+とのことです
+くさ
+1004591087660314754 2022-10-16 09:01:45.637098+00:00
+追記で100回戦くらいは耐えれるようにしろよシコザル
+とのことです
+<#1015209571213643807>っている？
+ライターしか見れません
+いる？
+めし
+まぁ使いたい人が使えばいい
+合って困ることはない
+めしはあげない
+いいですよ
+🙄
+もうたべたので。
+くさ
+今日は寿司らしい
+寿司じゃねぇ
+なんかネタが小さそう
+なんだこれ
+すしか
+写真撮って送れ命令
+やだね
+<:ygt:960354232916148224>
+粗チンに何を言っても無駄です
+こいつも粗チンね
+粛清されかねない発言
+そろそろもういいです
+https://youtu.be/epfPe2U_2Xk
+リンクが送信されました。
+久しぶりに見たVictor
+寿司
+だ
+sb.ar add 寿司 pingreply:SUSHI食べたい
+寿司
+SUSHI食べたい
+顔がひどい
+寿司
+SUSHI食べたい
+寿司より刺し身がいい
+SUSHI食べたい
+寿司
+SUSHI食べたい
+ああ言えばこういう、<@784516723767640155>
+PAKU
+https://tenor.com/view/%E5%AF%BF%E5%8F%B8%E9%A3%9F%E3%81%B9%E3%81%9F%E3%81%84-gif-25703781
+リンクが送信されました。
+ttositaiwa-
+テストに出るから覚えておこう
+ミスチルの曲7割は暗記してる
+歌詞のフレーズで曲を当てれます
+ミスチルの曲何も暗記してない
+<:ygt:960354232916148224>
+ac部に謝れ
+草
+いや一般論でひどいです
+あ
+<@614109280508968980>
+お前やっと対応したか
+おせえ
+24/7せっとするぞごら
+<@784516723767640155>はVC-1(128Kbps)の所有権を持っています
+せっとできないのかよ
+くそやん
+<@547905866255433758>
+.play https://open.spotify.com/playlist/3eUcxHRqKdSCtuztHYzTiO?si=-GPeifm3TpGE-rTOwZmsEg&utm_source=copy-link
+<@987764271410708500>なぁ…
+とんでもない動画はいってるんだけど？！
+.play https://open.spotify.com/playlist/3eUcxHRqKdSCtuztHYzTiO?si=-GPeifm3TpGE-rTOwZmsEg&utm_source=copy-link
+これは規約にアウトどころか
+https://aic-group.net/rule/
+.247
+わいせつ物頒布等の罪
+...........
+の下がやばいねん
+広告ねそれは！
+じゃあなんでわざわざスクショする意味があった？
+だめやんk
+全部変態向けに載せることにします
+ある機能のために
+わいせつなもの検知するAIでも作ってた
+くらいしか
+覆せるものないぞ
+https://appli-world.jp/posts/16908
+リンクが送信されました。
+これか
+<@987764271410708500> が公開した画像と動画です
+草
+TOされててくさ
+<@987764271410708500> が公開したやつ
+この機能ね
+例のやついるw
+極めつけはこれです
+Wwww
+784516723767640155 2022-10-16 09:17:12.140287+00:00
+<@784516723767640155>はVC-1の所有権を持っています
+987764271410708500が2022-10-16 09:17:22.756525+00:00にVCに参加
+？
+ベータ教祖
+崇めてるんかい
+夕中バー❓
+ゆうちゅうばー
+大したことないチンカスでしょ
+nukebot
+？
+誰も聞いてないそんなことシリーズ #3
+sb.lm active **誰も聞いてないそんなこと**
+さあて
+nukebotはいくらでも作れるよ
+あ
+あまり大したことない…ということを言われてますよ
+⇩これうざくない？
+知ってる
+sb.lm off
+誰のおかげでそのスタンプが送れるか考えたことあるか？
+🙂
+あるか？
+🙂
+あるか
+来月もあげようかなと思ったけどやめとく
+えぇ
+ギフトって貯めれるからいつ貰ってもすぐ有効化できる(((((
+<@911549934992494593>にあげるか、お
+なんかさ
+響いてるんだけどっておもったら
+Anydeskつなげてた
+無駄に迷惑かけるなエコー
+964887498436276305 2022-10-16 09:57:15.545830+00:00
+https://media.discordapp.net/attachments/974260888041320538/1027538915982315531/e0a199fe44afefa4.mp4
+リンクが送信されました。
+何だこのクソ動画は
+w
+https://youtu.be/2d2A11U1_Ho
+これは？
+リンクが送信されました。
+よくわからんが
+よくわからん
+まあみてよ！
+見ません
+ある程度何を目的にしてるか冊子が付くので
+？
+？
+まあいいや
+784516723767640155 2022-10-16 10:09:04.960545+00:00
+<#1007922805456777297> に行ってください
+なんだかんだ一日中PCつけっぱ
+どんだけ宣伝したがるの？この人は。
+宣伝してないっすよ
+じゃあなぜ動画のチャンネルのヘッダーにこれがあったのか
+というかある時点であなたが何かしら関わっているので
+無理です
+おけ
+ただいま
+おかえり
+えろれおｒ
+なにしよう
+しｋ
+こんなもん作ったらもう
+平気でしょ
+草
+いつも通り作業量が半端ない
+こういう事するのが好きなんですわよ
+キメラのつばさの量に注目
+なに
+XboxGamebarSpotify.exeなんてあるの
+これでわかるでしょう。
+城ぶっ壊したん？
+うん
+草
+江口
+えぐち？
+だれ
+えぐ
+784516723767640155 2022-10-16 10:36:54.593599+00:00
+784516723767640155 2022-10-16 10:36:54.569309+00:00
+わいしにまくってます
+あれ
+784516723767640155 2022-10-16 10:37:19.451908+00:00
+784516723767640155 2022-10-16 10:37:19.418114+00:00
+おちた?
+クライアントが落ちまくり
+ちなみに何だけど
+まだ一度もこのゲームで死ぬ？ことない
+そもそも死ぬの？
+しぬよ
+一回も死んでない
+セーブのところまで戻るはず
+くそだる仕様
+あーそんな事ない
+一度もない
+ふつう？
+https://spotify-overlay.raphaelmarco.com/now_playing?accessToken=BQBwUmerM3V19l0mkOjRTPdcjmHFL0bZkFdCQnsRGUNjI3VwhRC8HJU-veCcQCD_zRCfI_WXMcl-BA6L6bV-RknlFpopBjv9fL_vd8_7_4Xactsrp_hXzetiD8jtdKfuiq4gvdE39KsITxP4UD1lUMPiHjf_Cx0c5uEKGqe8YEWNxpLlOH2TVm4qrGPX3_hJRSqWkoWS&showAlbumArt=true&showArtist=true&showSpotifyLogo=true
+リンクが送信されました。
+薄くね
+a
+とけｎあるやｎ
+accesstokenってなんかあるんかな
+全部晒し上げます
+https://spotify-overlay.raphaelmarco.com/now_playing?accessToken=BQBwUmerM3V19l0mkOjRTPdcjmHFL0bZkFdCQnsRGUNjI3VwhRC8HJU-veCcQCD_zRCfI_WXMcl-BA6L6bV-RknlFpopBjv9fL_vd8_7_4Xactsrp_hXzetiD8jtdKfuiq4gvdE39KsITxP4UD1lUMPiHjf_Cx0c5uEKGqe8YEWNxpLlOH2TVm4qrGPX3_hJRSqWkoWS&showAlbumArt=true&showArtist=true&showSpotifyLogo=true
+リンクが送信されました。
+うすくね
+s
+そんなこともなかった
+どれが
+OBSだとくそうすい
+これ
+cssわかんなあai
+カスタムCSSの出番ですね
+お助けします
+やったああ
+まずはClass名を教えて下さい
+IDでもいいです
+しりません
+.media[data-v-1e2f0625]
+ですね
+.media {
+  background: rgba(10,10,10,.75);
+  border-radius: 1em;
+  backdrop-filter: blur(8px);
+}
+どうぞ
+ありがとうごあじｍす
+背景にぼかしを入れた
+丸みを強くした
+はい
+かわりませんね
+どうなった
+丸くはなったでしょ
+こうなりました
+丸くもなってません
+適用できてないじゃん
+再読み込み的なので機内の
+したけど
+むり
+```css
+.media {
+  background: rgba(10,10,10,.75) !important;
+  border-radius: 1em !important;
+  backdrop-filter: blur(8px) !important;
+}
+```
+困った時の!important
+mうり
+あ
+はっ倒すぞ
+丸くはなったでしょ
+まるくはなった
+よしよし
+こくはなってない
+何色にしたい？
+なんでｍ
+背景にぼかし入れられないの？
+OBSで
+背景こくしてくれれば
+完全に濃いほうがいい？
+後ろ側がちょっと見えるほうがいい？
+少し見えたほうがいいかな
+```css
+.media {
+  background: #558c77e3 !important;
+  border-radius: 1em !important;
+  backdrop-filter: blur(8px) !important;
+}
+```
+ty
+どうなった
+なんか無駄にかっこよくてハラタツ
+影も入れちゃう？
+枠線つけちゃう？
+グラデーションしちゃう？
+アニメーションいれちゃう？
+<@964887498436276305>MAX LV5ってのになったんだけどLV6ないの？
+?
+MAX5って？
+CAMP MAX LV5
+なにが5
+CAMP??
+DQBやったの
+拠点レベルとか言われてるやつ
+一年前とかだから覚えてね
+多分最大5なんやろ
+もうクリアしたってことか
+ゴーレム倒したらクリア
+どのくらいかかるかね
+配信画面だけ整えてる
+戦ったことないからわからん
+著作権の侵害しちゃいけないよ
+Spotifyなんて流しちゃだめ
+Lofiは
+表記すればSafe
+Spotifyのっけてるじゃん
+答えになってない
+<a:think:998072294792495114>
+だめだっけ
+え？アホ＿
+あほ
+今こうやって垂れ流してるけど
+そういうのとは違うじゃん
+というか
+webではいしんするきなかった
+どこでする気だよ
+する気がない
+そもそも()
+あやしい…
+OBS閉じておきました
+BF4やります
+作業用BGMにどうぞ
+ぼかろつけました
+名作を再生しています
+ボカロよりも売れてるものを流しています
+on Download feat. 初音ミク
+Toy's Factoryだっけ
+しらｎ
+Toys Factoryだっけ
+はしごとか
+こいつら作ってるんだけど
+僕には作れないんですけど…
+バスタブとかどうやって作ってんの
+739709547010326640 2022-10-16 11:10:35.334068+00:00
+739709547010326640 2022-10-16 11:10:35.346573+00:00
+hmhm
+キャプボの使い方…
+あるのに画面を配信できない
+めちゃくちゃ順番について歌ってたな
+現状です
+hm
+ジャンプ置き便利
+やっぱり便利ですよね...
+マイクラやってる時も移動しないでブロック配置することはまずないですし
+初めてプレイしてるんだけど
+一度も死んでない（自慢）
+特定サイト発行した
+https://rinu.cf/26**a7tayfxc
+リンクが送信されました。
+https://www.aic-group.net
+これがなんなの
+暇
+whoisします
+URL短縮サービスをご利用いただき、誠にありがとうございます。
+申し訳ございませんが、指定されたURLのページは見つかりませんでした。
+URLの再送を依頼してください。
+？？？？
+ってかいとうがきた
+踏んだ相手のを抜くタイプの奴かな？
+うちの短縮サービス使えば・
+hmhm
+メルキドシールドってなに
+盾
+そのまんまやん
+何が出来るのか
+めちゃ硬い壁ってことは言ってる
+ストーリー忘れたなぁ
+初見プレイつらい
+防衛用の施設的な奴だっけ？
+アイテムらしい
+やべえ
+12kill/28death
+lol
+とげわな
+放置してるだけで死ぬ
+くさ
+と思ったら
+体調に
+石垣壊された
+旅の扉緑げっと
+やべえ
+ギャル来た
+多分っていうか絶対ギャル
+見た目の空気が読めてない女が空気読めるって言ってる
+悪用されないように**にした
+つまんなやつだな
+みんなのIPくらいわかるわ
+ただIPを記録してないからなぁ
+一王寺町本物を
+
+
+
+https://rinu.cf/em41fzt7g2og
+リンクが送信されました。
+IDEでてｋちあ
+開くなよ
+へぇしょぼいjね
+開いた
+うい
+これ誰のだろうね
+横浜には僕住んでないけど
+取得コード: 5028423
+取得時間: 2022/10/16 20:32:02
+IPアドレス: 126.75.68.25
+> IPinfo.ioで閲覧
+UserAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko/20100101 Firefox/106.0
+対応言語: ja,en-US;q=0.7,en;q=0.3
+対応形式:
+Referer: https://replit.com/~
+
+緯度:
+経度:
+高度:
+精度:
+スピード:
+> GoogleMapで閲覧
+
+ディスプレイ:
+ブラウザの言語:
+ブラウザの正式名称:
+ディスプレイの色彩:
+ネットワーク情報:
+
+リダイレクト先:
+リンクが送信されました。
+これ誰でも取得できる情報だよね
+うい
+僕にでも撮れる
+うん
+https://www.aic-group.net/tools/ip/
+リンクが送信されました。
+似たようなのがあるよ
+うん
+サーバーのIPに切り替えたから
+Nuroの方のIPはわからんでしょ
+位置情報: 位置情報の取得が拒否されました。らしい
+それは出てこなかった
+おめ
+通知だけ確認北
+IPアドレス: 126.75.68.25
+自動的にOFFになってるんやろ
+どうぞ晒していいよ
+それ接続したらWEBにアクセスするよ()
+https://ip4.aic-group.net/
+リンクが送信されました。
+ip.json
+
+
+```{"T_IntFlag":"5028423","T_IPadd":"126.75.68.25","T_Time":"2022\/10\/16 20:32:14","T_UnixTime":"1665919934","T_RidirectURI":"https:\/\/replit.com\/~","T_UserAgent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko\/20100101 Firefox\/106.0","T_LANG":"ja,en-US;q=0.7,en;q=0.3","T_MIME":"","T_Referer":"https:\/\/replit.com\/~","T_ErrorCode":"\u4f4d\u7f6e\u60c5\u5831\u306e\u53d6\u5f97\u304c\u62d2\u5426\u3055\u308c\u307e\u3057\u305f\u3002","T_Map_Ido":"","T_Map_Keido":"","T_Map_Koudo":"","T_Nap_Seido":"","T_Map_Speed":"","T_DisplaySize":"1920px\/1080px","T_DisplayColor":"30\u30d3\u30c3\u30c8\u30ab\u30e9\u30fc","T_browser_lang":"ja","T_browser_name":"Netscape","T_iceinfo":"candidate:0 1 UDP 2122187007 b9ed750f-21d9-4d35-8b4a-2a806b52dec0.local 59849 typ host","T_ADMIN_IntFlag":"70f0014abb695f02f771f00d0efacda3"}```
+これもちょくでAレコードにIP入れてるから
+UserAgent出してどうするの
+https://126.75.68.25
+リンクが送信されました。
+ほんで結局何がわかった？
+404
+🙄
+聞かなくていいyね
+無視された
+スパム
+じゃない
+別にファンの声なんていらんやろ
+金はいりゃいいねん
+ということで
+フレンドなってくれた
+ブログネタを募集
+d.pyでもなんでも
+ブログで広告見ないなーって思ってたら
+<@987764271410708500>特定するならまずはサイトドメインのAAAAレコードをipv6にしようね★
+https://www.aic-group.net
+広告ブロックしてたの忘れてたんですよね
+あそうだ
+ipv6の住所特定って結構高度らしい
+うい
+サーバーはNginx?
+味忘れてた
+わいの場合は違ったけどね
+それともnode.js
+ここほんとにまがってるやん
+かね
+Apache?
+repl.it
+Apache HTTP Serverでしたすいません
+Replitかみ
+Project Japan更新待ってます
+https://replit.com
+リンクが送信されました。
+草
+aic-group.comは早いところ買います
+🤔
+は？
+なんでや
+悪意があると思うから（暴論）
+ある程度わかるんでしょ
+Replitは神！
+AutoModで規制しました
+りょうまのさばはかるい！
+非常にな
+64core/128threadの鯖は動いてない模様
+load average: 0.12, 0.11, 0.09
+衝撃
+1にも達してない
+🤔
+Androidのさ
+再生中の
+CPU使用率は1%手前
+topコマンド有能
+1%🤔
+マイクラが重かったんやね()
+あれ時限爆弾
+Modなんて入れたら
+えー
+ろー
+規約にあるとおりです
+https://aic-group.net/rule/
+いー
+あー
+いー
+し
+<:wakutin:1011625504425652224> <:wakutin:1011625504425652224>
+ぃー
+本来悪用するために用意されていないことを
+悪意ある使用方法で
+使ってるしなぁ
+危険（詐欺やスパム、違法な内容を含む）なサイトURLを画像・テキスト・動画等で送信する行為
+https://www.aic-group.net
+に該当します
+aurorabot完備なのくさ
+14歳が作ったBotがここまで広がるものなのかね
+?
+WebでPythonできるんだからいいほうになるやん
+意味わからん
+ねーうがつくったぼっと
+名無しさんは14歳だそうです
+おないどしやんけ
+ほえ
+後そもそも
+自分が制作した/関わったサイトは
+https://www.aic-group.net
+<#1007922805456777297> でしなさい
+<@964887498436276305>緑の扉くぐった
+？
+え？＿
+旅の扉・緑
+それ最初じゃなかったっけ
+何色まであるんだうよ
+最初青か
+3色
+青赤緑まできた
+え
+もう終わるやん
+そうですよ
+ばくだんいしってなに
+ばくだんつくれる
+金発見
+ほれません
+爆弾で掘る
+これは金？
+そうなんだ
+はず
+攻略サイト見ればわんぱん（）
+https://www.aic-group.net
+そういうことはしたくない
+今の所詰まったりはない
+サクサク進行してます
+この洞窟めちゃ長いけど
+なにもなかったころすぞ
+ブロックが敵だと？？
+くさ
+なにもなさそう(こなみ)
+スライムみたいな顔してた
+なにもねええ
+はぁ…
+とりあえず爆弾は
+100個くらい作れば十分
+だと思う
+10個でいいらしいけどね()
+めちゃ大変そう
+100個作ってみせるぜ
+草
+まあがんばれ
+99+1
+なんというきりがわるい
+100個…・
+ばくだんいわ
+ワンパンやで
+何がワンパン
+ダメージ受けたら
+ばくだんいわ
+ぱくはつする
+mob
+わかんない
+敵は連打しまくって殺すから
+こいつ（攻略サイトより
+https://www.aic-group.net
+着ている服がいまのよりダサい
+くさ
+はがねそうび
+キャプボってどうなりましたか
+使い方わからん
+説明書みろ
+間違えて捨てた
+<a:think:998072294792495114>
+なんでや
+ほんでゴミ袋の中
+どれかったん
+r.amazon キャプボ
+Amazonで検索しました。
+> URL: https://a.aic-group.net/X7KNYQSW
+お前がリンクで送ったやつ
+https://www.amazon.co.jp/AVerMedia-GC550-PLUS-4K%E3%83%91%E3%82%B9%E3%82%B9%E3%83%AB%E3%83%BC%E5%AF%BE%E5%BF%9C-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AD%E3%83%A3%E3%83%97%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9/dp/B07DFR38WG/ref=mp_s_a_1_1?keywords=%E3%82%AD%E3%83%A3%E3%83%97%E3%83%9C&m=AN1VRQENFRJN5&qid=1665921602&qu=eyJxc2MiOiI0LjQ3IiwicXNhIjoiNC4wMiIsInFzcCI6IjMuODEifQ%3D%3D&refinements=p_6%3AAN1VRQENFRJN5&sr=8-1
+リンクが送信されました。
+これだっけ？
+それそれ
+こうだってよ
+そうなのか
+ちょっとまってて
+HDMIぶっさして
+あのすいません
+ん？
+箱ごと捨てちゃったかも
+？？？？？
+ない
+あほすぎる
+アホだよ♥
+また買うん?
+そうなるねー
+あはは…
+なぜ捨てたのか
+届いたら見ろよ
+え…
+また買うの
+しらん
+はぁ
+探せば(?)
+2.2万
+もうないね
+まだ上のほうかもしれない
+えぇ
+とうに外
+😅
+なぜ捨ててしまったのか
+それさ
+自分が一番聞きたい
+くさ
+2.2万を捨てました
+爆弾石11個
+https://amzn.asia/d/00Jf6qF
+リンクが送信されました。
+1.6万
+1.2だった
+中華製?
+4000円でどうぞ（残高）
+草
+もう使ったって言ったじゃん！！！！！！！
+MacPrrrorororor
+switchだからなあ
+PS4じゃないんだよねえ
+PS4だったらできたかもしれない(?)
+同じHDMIだよ
+switch乗っけるだけ
+PS4は
+配信できるから
+Youtubeとかに
+PS4,5は妹が占領しています
+草
+4くらい返してもらえばいいのに
+5でできるんだから()
+かわいいから許しちゃう悪い人間ですいません
+kusa
+相手はただのにーと
+kusa
+まじでニート
+24にもなって
+あれ23だっけ
+まさかの妹の年齢を知らない
+忘れた
+わいもあいまいだけｄ
+24です
+あってました
+3歳差
+野獣先輩
+だれですか
+ネットのおもちゃにされた人です
+知らんけど
+おもちゃにされそうです
+いかにも中華性
+発熱問題過ごそう
+480p出力なきがする
+画質が良ければ480pでもいい
+言ってることが矛盾しています
+w
+ばくだんいし19個集まった
+画質が良ければなんでもいいって言うのは本当
+遅延がないとか嘘こくな
+遅延なし(レビュー:遅延がある)
+さくらちぇっかーへGO
+https://www.amazon.co.jp/dp/B08LNVN7D6#customerReviews
+リンクが送信されました。
+君等が金だせばいくらでもいいぞ
+||そりゃ当然だわ||
+これ家にあるけど
+だって
+使えたことない
+クレカの残高的な問題よ
+HDMI to HDMIだからか
+正直金は余ってます
+特定したら怒られた
+だから誰もそんな事聞いていない
+定期
+ごめんなさい！
+草
+はい！
+むやみに特定したとか言わなくていい
+何も特定できてない
+えー
+えーって言われても
+そんなのちょっと詳しければ知れる情報
+特定とは言えない
+すみません！
+それであまり詳しくない人は
+特定とか言われると
+困るので
+怖いし
+はい！
+やめてあげましょう
+わかりました
+以上お得意の正論飛ばしでした
+はいw
+これを人間は論破という
+論破なの？
+論破とは
+よくわかんねえよ
+結果がChina
+> 論 破（ろんぱ）
+> 
+> 議論によって相手の説を破ること
+非常に簡潔で良い
+こういうのが好き
+by wikipedia
+じゃなかった
+wiktionary
+お前も詐欺師か
+w
+wiktionaryってなんやねん
+Wikimedia Foundationが運営するやーつ
+もはや辞書だよ
+テキストはクリエイティブ・コモンズ 表示-継承ライセンスのもとで利用できます。
+Wikimedia Foundationに50万くらい寄付した記憶あり
+kusa
+どうせ暇だしな
+暇+金がある
+ばくだんいし23個ある」
+(上限が迫っている)
+クレカの上限リセットっていつ何
+まほうのたまってなんだけｋ
+月初めじゃないっけ
+ばくだｎ
+魔法の玉70個ゲット！！！
+あと30個
+あとちょっとやん
+余裕
+150個いくわ
+草
+そんな作って何するんていう
+えわからん
+何に使うのかもわからん
+ゴーレム倒すのには
+キャラに集めろって言われたから
+10個程度でいいらしい
+倍つくってる
+あと何度も言うけど
+まだ一度も死んでない
+()
+すごい？
+わいばくたんいわでしにまくってたなあ
+DQB初代はむずかしい
+親は全クリしたけど
+わいは
+1章も終わってない気がする
+親若そう
+机の上がプリントだらけです
+大体年齢の計算くらい出来ますよ
+片づけたいですが
+あなたの年齢から
+片づける場所がありません
+お兄ちゃんお姉ちゃんいる？
+いませｎ
+30代
+中半かね
+いやわかんね
+都合が悪いと黙るシリーズ
+the 親フラ
+親の話すると丁度親フラするなんて
+すごい奇遇
+頻度が高すぎる
+何しにくるの
+しらん
+何してるの
+なんかしてる
+あのさ…
+もういいや
+くさ
+やる気なし
+現在まほうのたまたま
+111個
+くさ
+もういいかね
+秋田
+魔法の玉20個で済むなんて聞いてねえ…
+()
+間違えた110個だった
+証拠です
+一人で頑張って戦ってね
+あいてしろお
+何もう終わっちゃうのか
+8000円くらいしたぞ全く…
+金はあるが、ケチなのは確かです…
+6000円では
+しかも1勝だから
+まだ序の口
+なんかそこら変だよ
+いわし
+4章まである
+まほうのたまたま5つ同時に爆破したら
+軽く鼓膜逝くよ
+聞けてない
+聞いてみて
+やるかｒあ
+iあ
+音量は下げました
+リミッターも設定しました
+鼓膜は無事になることを保証します
+聞いてる？
+uん
+うるせ
+初めて死んだ
+草
+アイテム落ちすぎ
+はいおわり
+あと78こになりました
+くさ
+と思ったか若造
+すまほなう
+じゃあ何流れてますか円
+しらん
+https://tenor.com/view/okashii-crazy-nuts-gif-11652886
+リンクが送信されました。
+メルキドシールド作れるぜべいべぁ
+PCにかえります
+というかねていいですか
+ゴーレムとやらを倒したら寝よう
+もう終わるんだろう？
+1章はね
+2章も頑張って終わらせとく
+オリハルコンって何
+ゴーレム岩って何
+オリハルコンって金か
+完成した～
+ただ画像表示させただけ…
+埋め込みで
+それだけ…
+えー
+Api探すの大変だったのに！
+画像があれば2分くらいでできそう…
+まぁとにかく
+おつかれさま
+Apiないとね
+お疲れ様ー!!
+そもそもAPIの意味わかる？
+https://fortnite-api.com/v2
+リンクが送信されました。
+これ
+自前の画像じゃなかったのか
+https://fortnite-api.com/v1/map?language={lang}
+リンクが送信されました。
+https://fortnite-api.com/v1/map?language=ja
+リンクが送信されました。
+というか
+api.fortnite.comのほうが
+あるのかしらないけど
+うん
+サブドメインにしたほうが経費安くなるよ
+しらんそんなのw
+そりゃまぁそうだな
+うん
+https://api.aic-group.net
+リンクが送信されました。
+phpのスクリプトがたくさんありまｓｊ
+使っていいと思います
+なんかできた
+表記してくれれば()
+GPL定期
+わいのぼっとは公式だから(????????
+a!api
+二重起動すな

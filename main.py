@@ -4,7 +4,9 @@ import traceback
 from discord.ext import commands, tasks
 import logging
 import requests
+from data.data import is_admin
 from json import load
+from git import Repo
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,6 +27,12 @@ class aicyserer(commands.Bot):
             print("Loaded jishaku")
         except:
             traceback.print_exc()
+        try:
+            with open('config.json', 'r+', encoding='utf-8') as file:
+                bot.config = load(file)
+            print('Config loaded')
+        except:
+            traceback.print_exc()
         print("定義中")
         bot.vc1 = bot.get_channel(959712448338870272)
         bot.vc2 = bot.get_channel(972040097358831627)
@@ -42,12 +50,11 @@ class aicyserer(commands.Bot):
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)
-        await bot.tree.sync()
-        bot.maintenansmode = True
+
+        bot.maintenansmode = False
         print("定義完了")
         if bot.maintenansmode == True:
             await bot.change_presence(activity = discord.Activity(name=f"メンテナンスモードです。全機能が停止しています。", type=discord.ActivityType.playing), status='dnd')
-            pass
         else:
             for file in os.listdir('./cogs'): # cogの中身ロード
                 if file.endswith('.py'):
@@ -60,6 +67,7 @@ class aicyserer(commands.Bot):
             embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
+            await bot.tree.sync()
         print(f"Login successful. {bot.user}({bot.user.id})")
 
     async def getMyLogger(name):
@@ -78,6 +86,7 @@ class aicyserer(commands.Bot):
 
 
 bot = aicyserer()
+_repo_path = os.path.join('./', 'repo')
 
 @bot.command()
 @commands.is_owner()
@@ -95,6 +104,26 @@ async def maintenansmode(ctx, mode):
         bot.maintenansmode = False
         await ctx.send('メンテナンスモードが無効化されました\n再起動をします')
         exit()
+
+@bot.command()
+async def restart(ctx):
+    if ctx.author.roles:
+        await ctx.reply('再起動します。', mention_author=False)
+        exit()
+    else:
+        await ctx.reply('このコマンドは管理者専用です。')
+
+@bot.command()
+@commands.is_owner()
+async def git(self, ctx):
+    git_repo= git.Repo(_repo_path)
+# fetch all
+    git_repo.remotes.origin.fetch()
+    # origin/hogehoge があればここで自動でhogehogeになる。gitと動きは同じ
+    git_repo.git.checkout('hogehoge') 
+    git_repo.git.pull()
+
+
 
 if __name__ == "__main__":
     print("プログラムを実行しています。")
