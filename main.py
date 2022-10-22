@@ -50,7 +50,11 @@ class aicyserer(commands.Bot):
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)
+<<<<<<< HEAD
 
+=======
+        await bot.tree.sync()
+>>>>>>> 5106b2992a44a3a0214532246be14134500e721d
         bot.maintenansmode = False
         print("定義完了")
         if bot.maintenansmode == True:
