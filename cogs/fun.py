@@ -4,6 +4,7 @@ import asyncio
 from discord.ext import commands
 import requests
 import bs4
+import json
 
 
 
@@ -38,35 +39,28 @@ class Fun(commands.Cog):
                 await ctx.send(f"{comp_choice} 引き分け🙄")
         if choice not in choices:
             await ctx.send("じゃんけんにならないよ！！グーかチョキかパーを選んでね！！")
-    @commands.command()
-    async def google(self, ctx, keyword):
-        response = requests.get('https://www.google.co.jp/search?hl=jp&gl=JP&num=10&q=' + keyword)
-        url = 'https://www.google.co.jp/search?hl=jp&gl=JP&q=' + keyword
-        # ステータスコードが200以外なら例外を発生させる
-        response.raise_for_status()
-
-        # 取得したHTMLをパースする
-        bs = bs4.BeautifulSoup(response.text, "html.parser")
-
-        # 検索結果のタイトルとリンクを取得
-        element = bs.select('.r > a')
-
-        title_list = []
-        url_list = []
-
-        for i in range(len(element)):
-            # タイトルのテキスト部分のみ取得
-            title = element[i].get_text()    
-            # リンクのみを取得し、余分な部分を削除する
-            url = element[i].get('href').replace('/url?q=','')
-
-            title_list.append(title)
-            url_list.append(url)
-
-        # 出力
-        for i in range(len(title_list)):
-            embed= discord.Embed(title='Google検索結果', description='上位五件を表示しています。')
-            embed.add_field(name=title_list[i], value=url_list[i], inline=False)
-            embed.set_thumbnail(url='https://i0.wp.com/osunbook6.com/wp-content/uploads/2020/03/icons8-%E3%82%AB%E3%83%A9%E3%83%BC-480.png?resize=300%2C300&ssl=1')
+    @commands.hybrid_command(with_app_command=True, description='Powered by Google Trends')
+    async def googletrend(self, ctx):
+        response = requests.get('https://api.aic-group.net/get/trends')
+        text = response.text
+        data = json.loads(text)
+        if data['channel']['item'][0]['description'] == '{}':
+            description0 = 'なし'
+        if data['channel']['item'][1]['description'] == '{}':
+            description1 = 'なし'
+        if data['channel']['item'][2]['description'] == '{}':
+            description2 = 'なし'
+        if data['channel']['item'][3]['description'] == '{}':
+            description3 = 'なし'
+        if data['channel']['item'][4]['description'] == '{}':
+            description4 = 'なし'
+        embed= discord.Embed(title='現在のトレンド', description='Google trendsから取得しています。')
+        embed.add_field(name=data['channel']['item'][0]['title'], value=f"説明：{description0}\n{data['channel']['item'][0]['link']}")
+        embed.add_field(name=data['channel']['item'][1]['title'], value=f"説明：{description1}\n{data['channel']['item'][1]['link']}")
+        embed.add_field(name=data['channel']['item'][2]['title'], value=f"説明：{description2}\n{data['channel']['item'][2]['link']}")
+        embed.add_field(name=data['channel']['item'][3]['title'], value=f"説明：{description3}\n{data['channel']['item'][3]['link']}")
+        embed.add_field(name=data['channel']['item'][4]['title'], value=f"説明：{description4}\n{data['channel']['item'][4]['link']}")
+        embed.set_footer(text='Powered by Google Trends')
+        await ctx.send(embed=embed)
 async def setup(bot):
     await bot.add_cog(Fun(bot))

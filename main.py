@@ -47,6 +47,7 @@ class aicyserer(commands.Bot):
         bot.vc2_status = 'Normal'
         bot.vc3_status = 'Normal'
         bot.guild = bot.get_guild(949560203374915605)
+        bot.admin_guild = bot.get_guild(1033496363897475163)
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.boot_log = bot.get_channel(1011708105161179136)

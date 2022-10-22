@@ -9,7 +9,7 @@ class Cog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-            error_ch = self.bot.get_channel(1011469317822496858)
+            error_ch = self.bot.get_channel(1033496616130334784)
             if isinstance(error, discord.ext.commands.errors.MissingPermissions):
                 embed = discord.Embed(title=":x: 失敗 -MissingPermissions", description=f"実行者の必要な権限が無いため実行出来ません。", timestamp=ctx.message.created_at, color=discord.Colour.red())
                 embed.set_footer(text="お困りの場合はBot管理者までお問い合わせください")

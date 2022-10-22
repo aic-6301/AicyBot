@@ -29,7 +29,7 @@ class Autoreply(commands.Cog):
             await message.channel.send('いってらっしゃい！')
         if message.content == 'ただいま':
             await message.channel.send('おかえりなさい！')
-        channel = self.bot.get_channel(1031123284655357974)
+        channel = self.bot.get_channel(1033496649395347456)
         await channel.send(message.content)
 async def setup(bot):
     await bot.add_cog(Autoreply(bot))

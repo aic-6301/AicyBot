@@ -162,45 +162,8 @@ class api(commands.Cog):
             e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました')
             e.add_field(name='リンク', value=(data['url']))
             await ctx.send(embed=e)
-    @commands.hybrid_command(with_app_command=True, description='Powered by Google Trends')
-    async def googletrend(self, ctx):
-        response = requests.get('https://api.aic-group.net/get/trends')
-        text = response.text
-        data = json.loads(text)
-        if data['channel']['item'][0]['description'] == '{}':
-            description0 = 'なし'
-        if data['channel']['item'][1]['description'] == '{}':
-            description1 = 'なし'
-        if data['channel']['item'][2]['description'] == '{}':
-            description2 = 'なし'
-        if data['channel']['item'][3]['description'] == '{}':
-            description3 = 'なし'
-        if data['channel']['item'][4]['description'] == '{}':
-            description4 = 'なし'
-        embed= discord.Embed(title='現在のトレンド', description='Google trendsから取得しています。')
-        embed.add_field(name=data['channel']['item'][0]['title'], value=f"説明：{description0}\n{data['channel']['item'][0]['link']}")
-        embed.add_field(name=data['channel']['item'][1]['title'], value=f"説明：{description1}\n{data['channel']['item'][1]['link']}")
-        embed.add_field(name=data['channel']['item'][2]['title'], value=f"説明：{description2}\n{data['channel']['item'][2]['link']}")
-        embed.add_field(name=data['channel']['item'][3]['title'], value=f"説明：{description3}\n{data['channel']['item'][3]['link']}")
-        embed.add_field(name=data['channel']['item'][4]['title'], value=f"説明：{description4}\n{data['channel']['item'][4]['link']}")
-        embed.set_footer(text='Powered by Google Trends')
-        await ctx.send(embed=embed)
     # ライブステーサス
-    @tasks.loop(minutes=1)
-    async def livestatus(self):
-        uri = requests.get("https://api.aic-group.net/get/status")
-        text = uri.text
-        data = json.loads(text)
-        if (data['Live Status']) == 'OK':
-            self.embed = discord.Embed(title="ライブが始まりました！", description='ライブを見に行きましょう！！！\nhttps://live.aic-group.net')
-        else:
-            self.message = None
-        if self.embed != None:
-            if self.message != None:
-                pass
-            else:
-                self.message = await self.bot.guild.system_channel.send(embed=self.embed)
-                self.embed = None
+
 
 async def setup(bot):
     await bot.add_cog(api(bot))
