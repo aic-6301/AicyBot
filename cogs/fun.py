@@ -55,11 +55,11 @@ class Fun(commands.Cog):
         if data['channel']['item'][4]['description'] == '{}':
             description4 = 'なし'
         embed= discord.Embed(title='現在のトレンド', description='Google trendsから取得しています。')
-        embed.add_field(name=data['channel']['item'][0]['title'], value=f"説明：{description0}\n{data['channel']['item'][0]['link']}")
-        embed.add_field(name=data['channel']['item'][1]['title'], value=f"説明：{description1}\n{data['channel']['item'][1]['link']}")
-        embed.add_field(name=data['channel']['item'][2]['title'], value=f"説明：{description2}\n{data['channel']['item'][2]['link']}")
-        embed.add_field(name=data['channel']['item'][3]['title'], value=f"説明：{description3}\n{data['channel']['item'][3]['link']}")
-        embed.add_field(name=data['channel']['item'][4]['title'], value=f"説明：{description4}\n{data['channel']['item'][4]['link']}")
+        embed.add_field(name=data['channel']['item'][0]['title'], value=f"説明：{data['channel']['item'][0]['description']}\n{data['channel']['item'][0]['link']}")
+        embed.add_field(name=data['channel']['item'][1]['title'], value=f"説明：{data['channel']['item'][1]['description']}\n{data['channel']['item'][1]['link']}")
+        embed.add_field(name=data['channel']['item'][2]['title'], value=f"説明：{data['channel']['item'][2]['description']}\n{data['channel']['item'][2]['link']}")
+        embed.add_field(name=data['channel']['item'][3]['title'], value=f"説明：{data['channel']['item'][3]['description']}\n{data['channel']['item'][3]['link']}")
+        embed.add_field(name=data['channel']['item'][4]['title'], value=f"説明：{data['channel']['item'][4]['description']}\n{data['channel']['item'][4]['link']}")
         embed.set_footer(text='Powered by Google Trends')
         await ctx.send(embed=embed)
 async def setup(bot):
