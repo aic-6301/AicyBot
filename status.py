@@ -9,7 +9,7 @@ import json
 
 load_dotenv()
 bot = commands.Bot(command_prefix='as!', intents=discord.Intents.all())
-token = os.getenv('status_token')
+token = os.getenv('token')
 @bot.event
 async def on_ready():
     print(f'Logged in {bot.user}')
@@ -18,7 +18,7 @@ async def on_ready():
 
 @tasks.loop(minutes=3)
 async def status():
-    await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')}", type=discord.ActivityType.streaming), status='idle')
+    await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
     try:
         uri = requests.get("https://api.aic-group.net/get/status")
         text = uri.text
@@ -60,7 +60,7 @@ async def status():
     else:
         e.add_field(name="Minecraft", value='❌オフライン')
     
-    msg = await bot.get_channel(1030355963586289774).fetch_message(1033323482504777768)
+    msg = await bot.get_channel(1030355963586289774).fetch_message(1034089953413570631)
     await msg.edit(embed=e)
 
 
