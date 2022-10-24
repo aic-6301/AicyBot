@@ -8,7 +8,7 @@ import requests
 import json
 
 load_dotenv()
-bot = commands.Bot(command_prefix='as!', intents=discord.Intents.all())
+bot = commands.Bot(command_prefix='a!', intents=discord.Intents.all())
 token = os.getenv('token')
 @bot.event
 async def on_ready():
