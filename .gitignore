@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .vscode/
-.cogs/__pycache__/
+cogs/__pycache__/

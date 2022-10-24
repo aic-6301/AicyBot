@@ -8,6 +8,7 @@ from data.data import is_admin
 from json import load
 from git import Repo
 from dotenv import load_dotenv
+import subprocess
 
 load_dotenv()
 token = os.environ['token']
@@ -64,12 +65,13 @@ class aicyserer(commands.Bot):
                         print(f'Loaded cogs.{file[:-3]}')
                     except:
                         traceback.print_exc()
-                    await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
+            # await bot.tree.sync()
+            await bot.change_presence(activity = discord.Activity(name=f"メンバー数:{len(bot.users)}人", type=discord.ActivityType.playing), status='online')
             embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
-            await bot.tree.sync()
         print(f"Login successful. {bot.user}({bot.user.id})")
+        subprocess.call("python status.py", shell=True)
 
     async def getMyLogger(name):
         logging.basicConfig(level=logging.DEBUG)
