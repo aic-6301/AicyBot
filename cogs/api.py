@@ -11,7 +11,6 @@ import os
 class api(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.livestatus.start()
         self.message = None
         self.embed = None
     @commands.hybrid_group(with_app_command=True, description="APIのコマンド集")
