@@ -65,7 +65,7 @@ class aicyserer(commands.Bot):
                         print(f'Loaded cogs.{file[:-3]}')
                     except:
                         traceback.print_exc()
-            # await bot.tree.sync()
+            await bot.tree.sync()
             embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
