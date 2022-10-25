@@ -27,7 +27,7 @@ async def title(ctx, url):
     await ctx.reply("指定されたURLのtitleを取得しました。\n > タイトル:"+data["title"]+"\n > URL:"+url)
 
     
-bot.run('OTczMjQ5MTU2MjQyMDc5NzQ0.Gb-zHi.sW0CQgYE1EQZobWI3zGATdu0CR4VNKxkAfBgfY')
+bot.run(ryoumatoken)
 
 
 
