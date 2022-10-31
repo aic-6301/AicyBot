@@ -6,7 +6,7 @@ from discord import app_commands
 import requests
 import json
 import os
-
+from typing import Literal
 
 class api(commands.Cog):
     def __init__(self, bot):
@@ -51,44 +51,44 @@ class api(commands.Cog):
                 data = json.loads(text)
                 embed = discord.Embed(title='ステータス', description='サーバーのステータス情報です', color=discord.Colour.from_rgb(160, 106, 84))
                 if (data['MainSite']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='AicyWeb', value='['+status+']('+ data['MainSiteURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='AicyWeb', value=status+']('+ data['MainSiteURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWeb', value=status)
                 if (data['AicyBlog']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='ブログサイト', value='['+status+']('+ data['AicyBlogURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='ブログサイト', value=status+']('+ data['AicyBlogURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='ブログサイト', value=status)
                 if (data['AicyWiki']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='AicyWiki', value='['+status+']('+ data['AicyWikiURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='AicyWiki', value=status+']('+ data['AicyWikiURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWiki', value=status)
                 if (data['AicyMedia']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='メディアサイト', value='['+status+']('+ data['AicyMediaURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMediaURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='メディアサイト', value=status)
                 if (data['AicyAPI']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='AicyAPI', value='['+status+']('+ data['AicyAPIURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPIURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='API', value=status)
                 if (data['AicyGit']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
-                    embed.add_field(name='AicyGit', value='['+status+']('+ data['AicyGitURI'] +')')
+                    status = ':white_check_mark:[アクセス可能'
+                    embed.add_field(name='AicyGit', value=status+']('+ data['AicyGitURI'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyGit', value=status)
                 await msg.edit(embed=embed)
                 if (data['Minecraft Server']) == 'OK':
-                    status = ':white_check_mark:アクセス可能'
+                    status = ':white_check_mark:[アクセス可能'
                     embed.add_field(name='マイクラサーバー', value=status)
                 else:
                     status = ':octagonal_sign:アクセス不可'
@@ -96,7 +96,7 @@ class api(commands.Cog):
                 await msg.edit(embed=embed)
                 if (data['Live Status']) == 'OK':
                     status = ':white_check_mark:配信中'
-                    embed.add_field(name='AicyWeb', value='['+status+']('+ data['AicyLiveURI'] +')')
+                    embed.add_field(name='AicyWeb', value=status+']('+ data['AicyLiveURI'] +')')
                 else:
                     status = ':octagonal_sign:配信されていません'
                     embed.add_field(name='配信状況', value=status)
@@ -158,10 +158,36 @@ class api(commands.Cog):
         if data['type'] == 'URI Syntax Error':
             await ctx.send(data['messeage']+f'\nURLを直してお試しください。')
         else:
-            e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました')
+            e = discord.Embed(title='URL短縮', description='URLの短縮に成功しました', color=discord.Colour.from_rgb(160, 106, 84))
             e.add_field(name='リンク', value=(data['url']))
             await ctx.send(embed=e)
-    # ライブステーサス
+    @commands.hybrid_command(with_app_command=True, description="動画をダウンロード")
+    @app_commands.describe(type='audio/videoのどちらかを選択。標準ではaudioが選択されてます')
+    async def download(self, ctx, url, type: Literal['audio', 'video']=None):
+        if type is None or type == 'audio':
+            msg=await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
+            request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=audio")
+            text =request.text
+            data = json.loads(text)
+            if "ファイルの生成に成功しました。このファイルは1時間以内に消去されます。" in data['message']:
+                e = discord.Embed(title='成功',description='このファイルは一時間以内に消されます。', color=discord.Colour.from_rgb(160, 106, 84))
+                e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
+                await msg.edit(embed=e)
+            else:
+                await msg.edit('失敗しました。後ほどお試しください。')
+        if type == 'video':
+            msg=await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
+            request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=video")
+            text =request.text
+            data = json.loads(text)
+            if "ファイルの生成に成功しました。このファイルは1時間以内に消去されます。" in data['message']:
+                e = discord.Embed(title='成功',description='このファイルは一時間以内に消されます。', color=discord.Colour.from_rgb(160, 106, 84))
+                e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
+                await msg.edit(embed=e)
+            else:
+                await msg.edit('失敗しました。後ほどお試しください。')
+
+
 
 
 async def setup(bot):
