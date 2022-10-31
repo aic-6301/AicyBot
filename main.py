@@ -70,7 +70,6 @@ class aicyserer(commands.Bot):
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
         print(f"Login successful. {bot.user}({bot.user.id})")
-        subprocess.call("python status.py", shell=True)
 
     async def getMyLogger(name):
         logging.basicConfig(level=logging.DEBUG)

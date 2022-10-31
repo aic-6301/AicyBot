@@ -17,8 +17,14 @@ class Status(commands.Cog):
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
             data = json.loads(text)
+            self.message = None
+            try:
+                self.message.delete()
+            except:
+                pass
         except:
-            pass
+            if self.message != None:
+                self.message = await self.bot.guild.system_channel.send('サーバーからステーサスが取得できませんでした。\nOSフリーズまたはip変更の時間の可能性があります。')
         e = discord.Embed(title="各ステータス", color=discord.Colour.from_rgb(160, 106, 84), timestamp=datetime.now())
         e.clear_fields
         if (data['MainSite']) == 'OK':
