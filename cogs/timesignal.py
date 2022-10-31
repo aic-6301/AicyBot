@@ -13,12 +13,12 @@ class Timesignal(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def timesignal(self):
-        dt_now = datetime.now().strftime('%H')
-        if datetime.now().strftime('%M:%S') == '00:00':
+        dt_now = datetime.now().hour
+        if datetime.now().minute == '00':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時ちょうどをお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
             if dt_now == '00':
-                self.embed.add_field(name='あけおめ！！', value=f'今日は{datetime.now().strftime("%m月%d日")}です')
+                self.embed.add_field(name='あけおめ！！', value=f'今日は{datetime.now().year}/{datetime.now().month}/{datetime.now().day}です')
             elif dt_now == '06':
                 self.embed.add_field(name='おはよう！！！',value='ニュースはa!newsで見れるよ')
             elif dt_now == '12':
@@ -29,7 +29,7 @@ class Timesignal(commands.Cog):
                 self.embed.add_field(name='夜ごはん！！！', value='夜ご飯を食べよう!!!')
             elif dt_now == '23':
                 self.embed.add_field(name='夜だよ！！！', value='そろそろねよう！！！')
-        elif datetime.now().strftime('%M') == '30':
+        elif datetime.now().minute+":"+datetime.now().seconds == '30:0':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時30分をお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
         if datetime.now().strftime('%m') == '03':
