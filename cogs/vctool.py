@@ -18,25 +18,25 @@ class owner():
         if len(after.channel.members) == 1:
             if after.channel == self.bot.vc1:
                 self.bot.vc1_owner = member
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc1_owner.mention)
                 embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
                 self.bot.vc1_dash = await self.bot.vc1.send(embed=embed, view=dashboard(self))
-                await self.bot.vc1.send(f'{member.mention}は{after.channel}の所有権を持っています', delete_after=60)
+                await self.bot.vc1.send(f'{member.mention}は{after.channel}の所有権を持っています', )
             elif after.channel == self.bot.vc2:
                 self.bot.vc2_owner = member
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc2_owner.mention)
                 embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
                 self.bot.vc2_dash = await self.bot.vc2.send(embed=embed, view=dashboard(self))
-                await self.bot.vc2.send(f'{member.mention}は{after.channel}の所有権を持っています', delete_after=60)
+                await self.bot.vc2.send(f'{member.mention}は{after.channel}の所有権を持っています', )
             elif after.channel == self.bot.vc3:
                 self.bot.vc3_owner = member
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc3_owner.mention)
                 embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
                 self.bot.vc3_dash = await self.bot.vc3.send(embed=embed, view=dashboard(self))
-                await self.bot.vc3.send(f'{member.mention}は{after.channel}の所有権を持っています', delete_after=60)
+                await self.bot.vc3.send(f'{member.mention}は{after.channel}の所有権を持っています', )
     
     # オーナーチェック
     async def check(self, member, channel):
@@ -62,28 +62,28 @@ class owner():
         
         if channel == self.bot.vc1:
             await self.bot.vc1_dash.delete()
-            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
             embed.add_field(name='現在のVCオーナー :',value=self.bot.vc1_owner.mention)
             embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
             self.bot.vc1_dash = await self.bot.vc1.send(embed=embed, view=dashboard(self))
             self.bot.vc1_owner = random.choice(member)
-            await channel.send(f'{self.bot.vc1_owner.mention}は{channel}の所有権を持っています', delete_after=60)
+            await channel.send(f'{self.bot.vc1_owner.mention}は{channel}の所有権を持っています', )
         elif channel == self.bot.vc2:
             await self.bot.vc2_dash.delete()
-            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
             embed.add_field(name='現在のVCオーナー :',value=self.bot.vc2_owner.mention)
             embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
             self.bot.vc2_dash = await self.bot.vc2.send(embed=embed, view=dashboard(self))
             self.bot.vc2_owner = random.choice(member)
-            await channel.send(f'{self.bot.vc2_owner.mention}は{channel}の所有権を持っています', delete_after=60)
+            await channel.send(f'{self.bot.vc2_owner.mention}は{channel}の所有権を持っています', )
         elif channel == self.bot.vc3:
             await self.bot.vc3_dash.delete()
-            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+            embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
             embed.add_field(name='現在のVCオーナー :',value=self.bot.vc3_owner.mention)
             embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
             self.bot.vc3_dash = await self.bot.vc3.send(embed=embed, view=dashboard(self))
             self.bot.vc3_owner = random.choice(member)
-            await channel.send(f'{self.bot.vc3_owner.mention}は{channel}の所有権を持っています', delete_after=60)
+            await channel.send(f'{self.bot.vc3_owner.mention}は{channel}の所有権を持っています', )
 
 class status():
     def __init__(self, bot):
@@ -153,17 +153,17 @@ class select(discord.ui.Select):
                         break
                     elif self.mode =='owner':
                         if self.channel.id == 981800095760670730:
-                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', delete_after=60)
+                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', )
                             await interaction.response.send_message(content=f"{member.name}に所有権を移動しました",ephemeral=True)
                             return member
                             view.stop()
                         if self.channel.id == 981800262165495828:
-                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', delete_after=60)
+                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', )
                             await interaction.response.send_message(content=f"{member.name}に所有権を移動しました",ephemeral=True)
                             return member
                             view.stop()
                         if self.channel.id == 981800316116803636:
-                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', delete_after=60)
+                            await self.channel.send(f'{member.mention}は{self.channel}の所有権を持っています', )
                             await interaction.response.send_message(content=f"{member.name}に所有権を移動しました",ephemeral=True)
                             return member
                             view.stop()
@@ -318,7 +318,7 @@ class dashboard(discord.ui.View):
             await interaction.response.send_modal(modal)
             await modal.wait()
             if modal.value == '':
-                await self.bot.vc1.edit(name='VC-1(128Kbps)')
+                await self.bot.vc1.edit(name='VC-1')
             else:
                 await self.bot.vc1.edit(name=modal.value)
         
@@ -328,7 +328,7 @@ class dashboard(discord.ui.View):
             await interaction.response.send_modal(modal)
             await modal.wait()
             if modal.value == '':
-                await self.bot.vc2.edit(name='VC-2(128Kbps)')
+                await self.bot.vc2.edit(name='VC-2')
             else:
                 await self.bot.vc2.edit(name=modal.value)
         
@@ -338,7 +338,7 @@ class dashboard(discord.ui.View):
             await interaction.response.send_modal(modal)
             await modal.wait()
             if modal.value == '':
-                await self.bot.vc3.edit(name='VC-3(64Kbps)')
+                await self.bot.vc3.edit(name='VC-3')
             else:
                 await self.bot.vc3.edit(name=modal.value)
         else:
@@ -430,8 +430,8 @@ class dashboard(discord.ui.View):
             embed.add_field(name='状態', value=self.bot.vc1_status)
             embed.add_field(name='何人いるか(Bot再起動などで正常に取得できてない場合があります。)', value=len(self.bot.vc1.members))
             embed.add_field(name='NSFWかどうか', value=self.bot.vc1.nsfw)
-            await interaction.response.send_message('送信したで', ephemeral=True)
-            await interaction.channel.send(embed=embed, delete_after=60)
+            await interaction.response.send_message('送信したよ', ephemeral=True)
+            await interaction.channel.send(embed=embed, )
             
         
         elif interaction.channel == self.bot.vc2:
@@ -441,8 +441,8 @@ class dashboard(discord.ui.View):
             embed.add_field(name='状態', value=self.bot.vc2_status)
             embed.add_field(name='何人いるか(Bot再起動などで正常に取得できてない場合があります。)', value=len(self.bot.vc2.members))
             embed.add_field(name='NSFWかどうか', value=self.bot.vc2.nsfw)
-            await interaction.response.send_message('送信したで', ephemeral=True)
-            await interaction.channel.send(embed=embed, delete_after=60)
+            await interaction.response.send_message('送信したよ', ephemeral=True)
+            await interaction.channel.send(embed=embed, )
             
         
         elif interaction.channel == self.bot.vc3:
@@ -452,8 +452,8 @@ class dashboard(discord.ui.View):
             embed.add_field(name='状態', value=self.bot.vc3_status)
             embed.add_field(name='何人いるか(Bot再起動などで正常に取得できてない場合があります。)', value=len(self.bot.vc3.members))
             embed.add_field(name='NSFWかどうか', value=self.bot.vc3.nsfw)
-            await interaction.response.send_message('送信したで', ephemeral=True)
-            await interaction.channel.send(embed=embed, delete_after=60)
+            await interaction.response.send_message('送信したよ', ephemeral=True)
+            await interaction.channel.send(embed=embed, )
             
 
 
@@ -464,31 +464,31 @@ class vctool(commands.Cog):
         
 
 
-    @commands.command()
+    @commands.hybrid_command(description='VCダッシュボード')
     async def vctool(self, ctx):
         if ctx.author.voice != None:
             if ctx.channel is self.bot.vc1 and ctx.author.voice.channel is self.bot.vc1:
                 await self.bot.vc1_dash.delete()
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc1_owner.mention)
-                embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
+                embed.set_footer(text='"/vctool"でダッシュボードを再送信できます')
                 self.bot.vc1_dash = await ctx.send(embed=embed, view=dashboard(self))
             elif ctx.channel is self.bot.vc2 and ctx.author.voice.channel is self.bot.vc2:
                 await self.bot.vc2_dash.delete()
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc2_owner.mention)
-                embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
+                embed.set_footer(text='"/vctool"でダッシュボードを再送信できます')
                 self.bot.vc2_dash = await ctx.send(embed=embed, view=dashboard(self))
             elif ctx.channel is self.bot.vc3 and ctx.author.voice.channel is self.bot.vc3:
                 await self.bot.vc3_dash.delete()
-                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ(未完成)")
+                embed = discord.Embed(title="だっしゅぼーど", colour=discord.Colour(0x1122a6), description="いろいろできるよ")
                 embed.add_field(name='現在のVCオーナー :',value=self.bot.vc3_owner.mention)
-                embed.set_footer(text='"k/vctool"でダッシュボードを再送信できます')
+                embed.set_footer(text='"/vctool"でダッシュボードを再送信できます')
                 self.bot.vc3_dash = await ctx.send(embed=embed, view=dashboard(self))
             else:
-                await ctx.send('チャンネルが違うで\n自分が参加してるVCのチャンネルで実行してな', delete_after=60)
+                await ctx.send('チャンネルが違います\n自分が参加してるVCのチャンネルで実行してください。',  ephemeral=True)
         else:
-            await ctx.send('VCに参加してないとこのコマンドは使えないで', delete_after=60)
+            await ctx.send('VCに参加してないとこのコマンドは使えないです', ephemeral=True)
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
@@ -544,11 +544,11 @@ class vctool(commands.Cog):
                         await before.channel.purge(limit=None, check=purge_check)
                         await msg.delete()
                         if before.channel == self.bot.vc1:
-                            await self.bot.vc1.edit(name='VC-1(128Kbps)')
+                            await self.bot.vc1.edit(name='VC-1')
                         elif before.channel == self.bot.vc2:
-                            await self.bot.vc2.edit(name='VC-2(128Kbps)')
+                            await self.bot.vc2.edit(name='VC-2')
                         elif before.channel == self.bot.vc3:
-                            await self.bot.vc3.edit(name='VC-3(64Kbps)')
+                            await self.bot.vc3.edit(name='VC-3')
                         await before.channel.edit(sync_permissions=True)
                         await status.set(self, before.channel, 'Normal')
                         
