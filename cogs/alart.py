@@ -23,7 +23,7 @@ class Alart(commands.Cog):
             await self.bot.get_channel(949560203886604293).send(embed=embed)
             with open('data/alart.json', 'r') as f:
                 alart_link_ = json.load(f)
-                alart_link_['alart_link'] = data['channel']['item'][0]['link']
+                alart_link_['link'] = data['channel']['item'][0]['link']
             with open('data/alart.json', 'w') as f:
                 json.dump(alart_link_, f, indent=4)
 
