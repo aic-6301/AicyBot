@@ -9,7 +9,7 @@ class Alart(commands.Cog):
         self.bot = bot
         self.alart.start()
 
-    @tasks.loop(minutes=1)
+    @tasks.loop(seconds=6)
     async def alart(self):
         with open('data/alart.json', 'r') as f:
             alart_link = json.load(f)['link']
