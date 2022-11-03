@@ -21,7 +21,7 @@ class Autoreply(commands.Cog):
         if message.content == 'おやすみ':
             if datetime.now().strftime('%H:%M') <= '12:00':
                 await message.channel.send('まだ朝だぞ')
-            elif datetime.now().strftime('%H:%M') >= '18:00':
+            elif datetime.now().strftime('%H:%M') <= '18:00':
                 await message.channel.send('まだ昼だぞ')
             else:
                 await message.channel.send('おやすみ')

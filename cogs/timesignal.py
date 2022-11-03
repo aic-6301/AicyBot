@@ -29,7 +29,7 @@ class Timesignal(commands.Cog):
                 self.embed.add_field(name='夜ごはん！！！', value='夜ご飯を食べよう!!!')
             elif dt_now == '23':
                 self.embed.add_field(name='夜だよ！！！', value='そろそろねよう！！！')
-        elif datetime.now().minute+":"+datetime.now().seconds == '30:0':
+        elif datetime.now().minute+":"+datetime.now().seconds == '30:00':
             self.embed = discord.Embed(title='時報', colour=discord.Colour(0x4b78e6), description=f'{dt_now}時30分をお知らせします', color=discord.Colour.from_rgb(160, 106, 84))
             self.embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/984807772950519890/1003650594399064094/spin.gif')
         if datetime.now().strftime('%m') == '03':
