@@ -166,7 +166,7 @@ async def status():
         else:
             e.add_field(name="Minecraft", value='❌オフライン')
         
-        msg = await bot.get_channel(1030355963586289774).fetch_message(1034089953413570631)
+        msg = await bot.get_channel(1030355963586289774).fetch_message(1043503405513060443)
         await msg.edit(embed=e)
 
 if __name__ == "__main__":
