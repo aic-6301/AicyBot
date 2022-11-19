@@ -172,7 +172,7 @@ if __name__ == "__main__":
     print("プログラムを実行しています。")
     try:
         bot.run(token)
-        status.run()
+        status.start()
     except:
         traceback.print_exc()
     print("===========実行完了===========")
