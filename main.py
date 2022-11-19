@@ -6,7 +6,6 @@ import logging
 import requests
 from data.data import is_admin
 from json import load
-from git import Repo
 from dotenv import load_dotenv
 import subprocess
 from datetime import datetime
@@ -89,7 +88,6 @@ class aicyserer(commands.Bot):
 
 
 bot = aicyserer()
-_repo_path = os.path.join('./', 'repo')
 
 @bot.command()
 @commands.is_owner()
@@ -116,15 +114,6 @@ async def restart(ctx):
     else:
         await ctx.reply('このコマンドは管理者専用です。')
 
-@bot.command()
-@commands.is_owner()
-async def git(self, ctx):
-    git_repo= git.Repo(_repo_path)
-# fetch all
-    git_repo.remotes.origin.fetch()
-    # origin/hogehoge があればここで自動でhogehogeになる。gitと動きは同じ
-    git_repo.git.checkout('hogehoge') 
-    git_repo.git.pull()
 
 @tasks.loop(minutes=3)
 async def status(self):
