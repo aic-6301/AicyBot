@@ -117,20 +117,20 @@ async def restart(ctx):
 
 
 @tasks.loop(minutes=3)
-async def status(self):
-        await self.bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(self.bot.users)}", type=discord.ActivityType.streaming), status='idle')
+async def status():
+        await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
         try:
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
             data = json.loads(text)
-            self.message = None
+            status_message = None
             try:
-                self.message.delete()
+                status_message.delete()
             except:
                 pass
         except:
-            if self.message != None:
-                self.message = await self.bot.guild.system_channel.send('サーバーからステーサスが取得できませんでした。\nOSフリーズまたはip変更の時間の可能性があります。')
+            if status_message != None:
+                status_message = await bot.guild.system_channel.send('サーバーから応答がありません。\nOSフリーズまたはip変更の時間の可能性があります。')
         e = discord.Embed(title="各ステータス", color=discord.Colour.from_rgb(160, 106, 84), timestamp=datetime.now())
         e.clear_fields
         if (data['MainSite']) == 'OK':
@@ -166,7 +166,7 @@ async def status(self):
         else:
             e.add_field(name="Minecraft", value='❌オフライン')
         
-        msg = await self.bot.get_channel(1030355963586289774).fetch_message(1034089953413570631)
+        msg = await bot.get_channel(1030355963586289774).fetch_message(1034089953413570631)
         await msg.edit(embed=e)
 
 if __name__ == "__main__":
