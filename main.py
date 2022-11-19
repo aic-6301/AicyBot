@@ -71,6 +71,7 @@ class aicyserer(commands.Bot):
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
         print(f"Login successful. {bot.user}({bot.user.id})")
+        status.start()
 
     async def getMyLogger(name):
         logging.basicConfig(level=logging.DEBUG)
@@ -172,7 +173,6 @@ if __name__ == "__main__":
     print("プログラムを実行しています。")
     try:
         bot.run(token)
-        status.start()
     except:
         traceback.print_exc()
     print("===========実行完了===========")
