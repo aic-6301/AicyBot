@@ -174,7 +174,7 @@ class api(commands.Cog):
                 await msg.edit(embed=e)
                 await ctx.send(f'`{data}`')
             else:
-                await msg.edit('失敗しました。後ほどお試しください。')
+                await msg.reply('失敗しました。後ほどお試しください。')
                 await ctx.send(data)
         if type == 'video':
             msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
