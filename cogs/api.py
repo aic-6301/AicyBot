@@ -168,21 +168,19 @@ class api(commands.Cog):
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=audio")
             text =request.text
             data = json.loads(text)
-            if "ファイルの生成に成功しました。このファイルは1時間以内に消去されます。" in data['message']:
+            if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
                 e = discord.Embed(title='成功',description='このファイルは一時間以内に消されます。', color=discord.Colour.from_rgb(160, 106, 84))
                 e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
                 await msg.edit(embed=e)
-                await ctx.send(f'`{data}`')
             else:
                 await msg.reply('失敗しました。後ほどお試しください。')
-                await ctx.send(data)
         if type == 'video':
             msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=video")
             text =request.text
             data = json.loads(text)
-            if "ファイルの生成に成功しました。このファイルは1時間以内に消去されます。" in data['message']:
-                e = discord.Embed(title='成功',description='このファイルは一時間以内に消されます。', color=discord.Colour.from_rgb(160, 106, 84))
+            if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
+                e = discord.Embed(title='成功',description='このファイルはまもなく削除されます。お早めにダウンロードをお願いします。', color=discord.Colour.from_rgb(160, 106, 84))
                 e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
                 await msg.edit(embed=e)
             else:
