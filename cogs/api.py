@@ -164,7 +164,7 @@ class api(commands.Cog):
     @app_commands.describe(type='audio/videoのどちらかを選択。標準ではaudioが選択されてます')
     async def download(self, ctx, url, type: Literal['audio', 'video']=None):
         if type is None or type == 'audio':
-            msg  =await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
+            msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=audio")
             text =request.text
             data = json.loads(text)
@@ -172,8 +172,10 @@ class api(commands.Cog):
                 e = discord.Embed(title='成功',description='このファイルは一時間以内に消されます。', color=discord.Colour.from_rgb(160, 106, 84))
                 e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
                 await msg.edit(embed=e)
+                await ctx.send(f'`{data}`')
             else:
                 await msg.edit('失敗しました。後ほどお試しください。')
+                await ctx.send(data)
         if type == 'video':
             msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=video")
