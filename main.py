@@ -9,6 +9,7 @@ from json import load
 from dotenv import load_dotenv
 import subprocess
 from datetime import datetime
+import asyncio
 import json
 
 load_dotenv()
@@ -70,6 +71,9 @@ class aicyserer(commands.Bot):
             embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
             embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
             await bot.boot_log.send(embed=embed)
+            while True:
+                await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
+                await asyncio.sleep(30)
         print(f"Login successful. {bot.user}({bot.user.id})")
         status.start()
 
@@ -118,7 +122,6 @@ async def restart(ctx):
 
 @tasks.loop(minutes=3)
 async def status():
-        await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
         try:
             uri = requests.get("https://api.aic-group.net/get/status")
             text = uri.text
