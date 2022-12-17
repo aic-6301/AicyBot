@@ -24,15 +24,16 @@ class api(commands.Cog):
     async def ping(self, ctx, url=None):
         if ctx.invoked_subcommand is None:
             if url is None:
-                url = requests.get(f"https://api.aic-group.net/get/ping?type=json")
+                url = requests.get(f"https://api.aic-group.net/v1/tools/ping/")
                 text = url.text
                 data = json.loads(text)
                 await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
             if url == 'websocket':
-                await ctx.send(f'pong!:ping_pong: {round(self.bot.latency * 1000)}ms')
+                embed=discord.Embed(title=':ping_pong:Pong!', description=f"{round(self.bot.latency * 1000)}ms")
+                await ctx.send(embed=embed)
             else:
                 try:
-                    url = requests.get(f"https://api.aic-group.net/get/ping?type=json&ip="+url)
+                    url = requests.get(f"https://api.aic-group.net/v1/tools/ping/?ip="+url+"&type=json")
                     text = url.text
                     data = json.loads(text)
                     await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
@@ -103,7 +104,7 @@ class api(commands.Cog):
                     embed.add_field(name='AicyLive', value=status)
                 await msg.edit(embed=embed)
     @api.command(description="色を取得")
-    async def color(self, ctx, color, size=None):
+    async def color(self, ctx, color):
         try:
             size = size.replace('px', '')
         except:
@@ -116,13 +117,13 @@ class api(commands.Cog):
             new_size = 300
         else:
             new_size = size
-        await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
+        await ctx.send(f'https://api.aic-group.net/v1/color/{new_color}')
     @commands.hybrid_command(with_app_command=True, description="ニュースを取得")
     async def news(self, ctx):
         e = discord.Embed(title='<a:lllloading:1023933608983015524> 取得中', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
         msg = await ctx.send(embed=e)
         try:
-            url = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
+            url = requests.get(f'https://api.aic-group.net/v1/news/mainline/')
             text = url.text
             data = json.loads(text)
             embed = discord.Embed(title='現在のニュースです', description='最新4件を表示しています', color=discord.Colour.from_rgb(160, 106, 84))
@@ -141,12 +142,12 @@ class api(commands.Cog):
     @commands.hybrid_command(with_app_command=True, description="URLを短くします。")
     async def shorten(self, ctx, url, id=None):
         if id is None:
-            url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}')
+            url = requests.get(f'https://api.aic-group.net/v1/tools/shorturl/?url={url}')
             text = url.text
             data = json.loads(text)
         if id is not None:
             if self.bot.vip.members:
-                url = requests.get(f'https://api.aic-group.net/get/shorten?url={url}&id={id}')
+                url = requests.get(f'https://api.aic-group.net/v1/tools/shorturl/?url={url}&id={id}')
                 text = url.text
                 data = json.loads(text)
             else:
@@ -160,11 +161,11 @@ class api(commands.Cog):
             e.add_field(name='リンク', value=(data['url']))
             await ctx.send(embed=e)
     @commands.hybrid_command(with_app_command=True, description="動画をダウンロード")
-    @app_commands.describe(type='audio/videoのどちらかを選択。標準ではaudioが選択されてます')
+    @app_commands.describe(type='audio/videoのどちらかを選択。選択しなければ、audioが選択されます。')
     async def download(self, ctx, url, type: Literal['audio', 'video']=None):
         if type is None or type == 'audio':
             msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
-            request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=audio")
+            request = requests.get(f"https://api.aic-group.net/tools/dl?url={url}&type=audio")
             text =request.text
             data = json.loads(text)
             if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
@@ -174,12 +175,12 @@ class api(commands.Cog):
             else:
                 await msg.reply('失敗しました。後ほどお試しください。')
         if type == 'video':
-            msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
+            msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=video")
             text =request.text
             data = json.loads(text)
             if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
-                e = discord.Embed(title='成功',description='このファイルはまもなく削除されます。お早めにダウンロードをお願いします。', color=discord.Colour.from_rgb(160, 106, 84))
+                e = discord.Embed(title='成功',description='<:warning:1053517470377463859>このファイルはまもなく削除されます。お早めにダウンロードをお願いします。', color=discord.Colour.from_rgb(160, 106, 84))
                 e.add_field(name='ダウンロードリンク', value=data['url']+' ('+data['size']+')')
                 await msg.edit(embed=e)
             else:
