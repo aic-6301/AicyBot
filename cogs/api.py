@@ -42,7 +42,6 @@ class api(commands.Cog):
     @commands.hybrid_command(with_app_command=True, description="サーバーステーサスを取得")
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
-            try:
                 e=discord.Embed(title='<a:lllloading:1023933608983015524> 取得中・・・', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
                 msg = await ctx.send(embed=e)
                 uri = requests.get("https://api.aic-group.net/v1/server/status/")
@@ -110,9 +109,6 @@ class api(commands.Cog):
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyLive', value=status)
                 await msg.edit(embed=embed)
-            except:
-                em = discord.Embed(title='ステーサスを取得できませんでした', description='サーバーが落ちている可能性があります。')
-                await msg.edit(embed=em)
     @api.command(description="色を取得")
     async def color(self, ctx, color, size=None):
         try:
