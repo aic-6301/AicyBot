@@ -43,62 +43,72 @@ class api(commands.Cog):
     async def status(self, ctx):
         if ctx.invoked_subcommand is None:
             try:
-                e=discord.Embed(title='取得中・・・', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
+                e=discord.Embed(title='<a:lllloading:1023933608983015524> 取得中・・・', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
                 msg = await ctx.send(embed=e)
-                uri = requests.get("https://api.aic-group.net/get/status")
+                uri = requests.get("https://api.aic-group.net/v1/server/status/")
                 text = uri.text
                 data = json.loads(text)
                 embed = discord.Embed(title='ステータス', description='サーバーのステータス情報です', color=discord.Colour.from_rgb(160, 106, 84))
-                if (data['MainSite']) == 'OK':
+                if (data['AicyWeb']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyWeb', value=status+']('+ data['MainSiteURI'] +')')
+                    embed.add_field(name='AicyWeb', value=status+']('+ data['AicyWeb']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWeb', value=status)
-                if (data['AicyBlog']) == 'OK':
+                if (data['AicyBlog']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='ブログサイト', value=status+']('+ data['AicyBlogURI'] +')')
+                    embed.add_field(name='ブログサイト', value=status+']('+ data['AicyBlog']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='ブログサイト', value=status)
-                if (data['AicyWiki']) == 'OK':
+                if (data['AicyWiki']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyWiki', value=status+']('+ data['AicyWikiURI'] +')')
+                    embed.add_field(name='AicyWiki', value=status+']('+ data['AicyWiki']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWiki', value=status)
-                if (data['AicyMedia']) == 'OK':
+                if (data['AicyMedia']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMediaURI'] +')')
+                    embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMedia']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='メディアサイト', value=status)
-                if (data['AicyAPI']) == 'OK':
+                if (data['AicyAPI']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPIURI'] +')')
+                    embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPI']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='API', value=status)
-                if (data['AicyGit']) == 'OK':
+                if (data['AicyGit']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyGit', value=status+']('+ data['AicyGitURI'] +')')
+                    embed.add_field(name='AicyGit', value=status+']('+ data['AicyGit']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyGit', value=status)
-                await msg.edit(embed=embed)
-                if (data['Minecraft Server']) == 'OK':
+                embed.add_field(name='マイクラサーバーステータス', value=status)
+                if (data['Minecraft']['status']['Proxy']) == 'true':
+                    proxy_status = ':white_check_mark:プロキシ：アクセス可能'
+                else:
+                    proxy_status = ':octagonal_sign:アクセス不可'
+                if (data['Minecraft']['status']['AicyCraft']) == 'true':
+                    main_status = ':white_check_mark:AicyCraft：アクセス可能'
+                else:
+                    main_status = ':octagonal_sign:アクセス不可'
+                if (data['Minecraft']['status']['AicySurvival']) == 'true':
+                    sub_status = ':white_check_mark:AicySurvival：アクセス可能'
+                else:
+                    sub_status = ':octagonal_sign:アクセス不可'
+                embed.add_field(name='マイクラサーバー', value=f'{proxy_status}\n{main_status}\n{sub_status}')
+                if (data['AicyLive']['status']['status']) == 'true':
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='マイクラサーバー', value=status)
+                    if (data['AicyLive']['status']['stream']) == 'true':
+                        live_status = ':white_check_mark:配信中'
+                    else:
+                        live_status = ':octagonal_sign:配信されていません。'
+                    embed.add_field(name='AicyLive', value=status+']('+ data['AicyLive']['url'] +f')\n{live_status}')
                 else:
                     status = ':octagonal_sign:アクセス不可'
-                    embed.add_field(name='マイクラサーバー', value=status)
-                await msg.edit(embed=embed)
-                if (data['Live Status']) == 'OK':
-                    status = ':white_check_mark:配信中'
-                    embed.add_field(name='AicyWeb', value=status+']('+ data['AicyLiveURI'] +')')
-                else:
-                    status = ':octagonal_sign:配信されていません'
-                    embed.add_field(name='配信状況', value=status)
+                    embed.add_field(name='AicyLive', value=status)
                 await msg.edit(embed=embed)
             except:
                 em = discord.Embed(title='ステーサスを取得できませんでした', description='サーバーが落ちている可能性があります。')
@@ -120,7 +130,7 @@ class api(commands.Cog):
         await ctx.send(f'https://api.aic-group.net/get/color.php?px={new_size}&color='+new_color)
     @commands.hybrid_command(with_app_command=True, description="ニュースを取得")
     async def news(self, ctx):
-        e = discord.Embed(title='取得中', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
+        e = discord.Embed(title='<a:lllloading:1023933608983015524> 取得中', description='少し待ってね', color=discord.Colour.from_rgb(160, 106, 84))
         msg = await ctx.send(embed=e)
         try:
             url = requests.get(f'https://api.aic-group.net/get/news.php?type=mainline')
@@ -164,7 +174,7 @@ class api(commands.Cog):
     @app_commands.describe(type='audio/videoのどちらかを選択。標準ではaudioが選択されてます')
     async def download(self, ctx, url, type: Literal['audio', 'video']=None):
         if type is None or type == 'audio':
-            msg = await ctx.send(embed=discord.Embed(title='ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
+            msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
             request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=audio")
             text =request.text
             data = json.loads(text)
