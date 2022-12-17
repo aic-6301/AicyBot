@@ -42,5 +42,8 @@ class Server(commands.Cog):
                             want_boost = (14-message.guild.premium_subscription_count)
                             embed.add_field(name='サーバーレベル3まで', value=want_boost+'個です')
                         await message.channel.send(embed=embed)
+    @commands.hybrid_command()
+    async def season(ctx):
+        await ctx.send()
 async def setup(bot):
     await bot.add_cog(Server(bot))

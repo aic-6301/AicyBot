@@ -78,12 +78,6 @@ class api(commands.Cog):
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='API', value=status)
-                if (data['AicyGit']['status']) == 'true':
-                    status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyGit', value=status+']('+ data['AicyGit']['url'] +')')
-                else:
-                    status = ':octagonal_sign:アクセス不可'
-                    embed.add_field(name='AicyGit', value=status)
                 embed.add_field(name='マイクラサーバーステータス', value=status)
                 if (data['Minecraft']['status']['Proxy']) == 'true':
                     proxy_status = ':white_check_mark:プロキシ：アクセス可能'
