@@ -68,13 +68,13 @@ class api(commands.Cog):
                     embed.add_field(name='AicyWiki', value=status)
                 if (data['AicyMedia']['status']):
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMedia']['url'] +')')
+                    embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMedia']['url'][0] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='メディアサイト', value=status)
                 if (data['AicyAPI']['status']):
                     status = ':white_check_mark:[アクセス可能'
-                    embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPI']['url'][0] +')')
+                    embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPI']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='API', value=status)
