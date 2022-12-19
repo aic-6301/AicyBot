@@ -36,9 +36,10 @@ class api(commands.Cog):
                     url = requests.get(f"https://api.aic-group.net/v1/tools/ping/?ip="+url+"&type=json")
                     text = url.text
                     data = json.loads(text)
-                    await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+                    result = discord.Embed(title="測定結果",description=data["ping"]+"\nドメイン : "+data["domain"])
+                    await ctx.send(embed=result)
                 except:
-                    await ctx.send('urlが存在しません。別のurlを試してみて下さい')
+                    await ctx.send('pingの測定に失敗しました。\nURLに問題がないか確認してください。')
 
     @commands.hybrid_command(with_app_command=True, description="サーバーステーサスを取得")
     async def status(self, ctx):
@@ -50,31 +51,31 @@ class api(commands.Cog):
                 data = json.loads(text)
                 embed = discord.Embed(title='ステータス', description='サーバーのステータス情報です', color=discord.Colour.from_rgb(160, 106, 84))
                 if (data['AicyWeb']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='AicyWeb', value=status+']('+ data['AicyWeb']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWeb', value=status)
                 if (data['AicyBlog']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='ブログサイト', value=status+']('+ data['AicyBlog']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='ブログサイト', value=status)
                 if (data['AicyWiki']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='AicyWiki', value=status+']('+ data['AicyWiki']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='AicyWiki', value=status)
                 if (data['AicyMedia']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='メディアサイト', value=status+']('+ data['AicyMedia']['url'][0] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
                     embed.add_field(name='メディアサイト', value=status)
                 if (data['AicyAPI']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     embed.add_field(name='AicyAPI', value=status+']('+ data['AicyAPI']['url'] +')')
                 else:
                     status = ':octagonal_sign:アクセス不可'
@@ -93,7 +94,7 @@ class api(commands.Cog):
                     sub_status = ':octagonal_sign:アクセス不可'
                 embed.add_field(name='マイクラサーバー', value=f'{proxy_status}\n{main_status}\n{sub_status}')
                 if (data['AicyLive']['status']['status']):
-                    status = ':white_check_mark:[アクセス可能'
+                    status = ':white_check_mark:アクセス可能'
                     if (data['AicyLive']['status']['stream']):
                         live_status = ':white_check_mark:配信中'
                     else:
