@@ -4,7 +4,22 @@ from discord.ext import commands
 import asyncio
 import datetime
 
+class button(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__()
+        discord.ui.view.timeout = None # タイムアウトをなしに
+        self.bot = bot.bot
 
+    @discord.ui.button(label='はい', style=discord.ButtonStyle.green, emoji='✅', row=1)
+    async def yes(interaction: discord.Integration):
+        try:
+            await interaction.guild.get_member(964887498436276305).ban()
+            await interaction.response.send_message('あいしぃーをbanしました')
+        except:
+            await interaction.response.send_message('Banできませんでした。', ephemeral=True)
+    @discord.ui.button(label='いいえ', style=discord.ButtonStyle.green, emoji='✅', row=1)
+    async def no(interaction: discord.Integration):
+        await interaction.response.send_message('キャンセルしました', ephemeral=True)
 class Mod(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -184,5 +199,9 @@ class Mod(commands.Cog):
         channel = self.bot.get_channel(987240589949034547)
         if execution.action.type == discord.AutoModRuleActionType.send_alert_message:
             await channel.send(ctx.guild.owner.mention)
+    @commands.command()
+    async def aban(self, ctx):
+        await ctx.reply('あいしぃーをbanします', view=button(self))
+
 async def setup(bot):
     await bot.add_cog(Mod(bot))

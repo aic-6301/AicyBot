@@ -2,6 +2,7 @@ import discord
 import os
 import traceback
 from discord.ext import commands, tasks
+from discord import app_commands
 import logging
 import requests
 from data.data import is_admin
@@ -53,6 +54,7 @@ class aicyserer(commands.Bot):
         bot.admin_guild = bot.get_guild(1033496363897475163)
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
+        bot.log = bot.get_channel(971566529986584626)
         bot.boot_log = bot.get_channel(1011708105161179136)
         await bot.tree.sync()
         bot.maintenansmode = False
@@ -119,7 +121,11 @@ async def restart(ctx):
     else:
         await ctx.reply('このコマンドは管理者専用です。')
 
-
+    @bot.command()
+    async def akick(ctx):
+        await ctx.reply('あいしぃーを蹴ります')
+        await ctx.guild.get_member(964887498436276305).kick()
+        await ctx.send('あいしぃーをキックしました')
 @tasks.loop(minutes=3)
 async def status():
         try:
@@ -171,7 +177,6 @@ async def status():
         
         msg = await bot.get_channel(1030355963586289774).fetch_message(1043503405513060443)
         await msg.edit(embed=e)
-
 if __name__ == "__main__":
     print("プログラムを実行しています。")
     try:
