@@ -11,14 +11,11 @@ class button(discord.ui.View):
         self.bot = bot.bot
 
     @discord.ui.button(label='はい', style=discord.ButtonStyle.green, emoji='✅', row=1)
-    async def yes(interaction: discord.Integration):
-        try:
+    async def yes(self, interaction: discord.Integration, button: discord.ui.Button):
             await interaction.guild.get_member(964887498436276305).ban()
             await interaction.response.send_message('あいしぃーをbanしました')
-        except:
-            await interaction.response.send_message('Banできませんでした。', ephemeral=True)
-    @discord.ui.button(label='いいえ', style=discord.ButtonStyle.green, emoji='✅', row=1)
-    async def no(interaction: discord.Integration):
+    @discord.ui.button(label='いいえ', style=discord.ButtonStyle.danger, emoji='❌', row=1)
+    async def no(self, interaction: discord.Integration, button: discord.ui.Button):
         await interaction.response.send_message('キャンセルしました', ephemeral=True)
 class Mod(commands.Cog):
     def __init__(self, bot):
