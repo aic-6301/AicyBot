@@ -8,7 +8,7 @@ class Global(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if message.channel.id == 1033496649395347456:
+        if message.channel.name == 'message_log':
             if message.author.bot:
                 return
             await self.bot.get_channel(949560203886604293).send(message.author+' - '+message.content)
