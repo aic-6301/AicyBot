@@ -1,11 +1,34 @@
 from typing import ValuesView
 import discord
+import discord.ui
 from discord.ext import commands, tasks
 from discord import app_commands
 import requests
 import json
 import os
-from typing import Literal
+from pytube import extract
+from typing import Optional, Literal
+import asyncio
+
+class button(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__()
+        discord.ui.view.timeout = None # タイムアウトをなしに
+        self.bot = bot.bot
+    
+    @discord.ui.button(label="削除する",style=discord.ButtonStyle.danger, emoji='🗑️', row=1)
+    async def delete_message(interaction: discord.Integration):
+        await interaction.delete_original_message()
+
+class dutton(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__()
+        self.bot = bot.bot
+    
+    @discord.ui.button(label="削除する",style=discord.ButtonStyle.danger, emoji='🗑️', row=1, disabled=True)
+    async def delete_message(interaction: discord.Integration):
+        await interaction.delete_original_message()
+
 
 class api(commands.Cog):
     def __init__(self, bot):
@@ -185,7 +208,32 @@ class api(commands.Cog):
                 await msg.edit(embed=e)
             else:
                 await msg.edit('失敗しました。後ほどお試しください。')
-
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.content in 'youtube.com/watch?v=' or 'youtu.be/watch?v=':
+            try:
+                id=extract.video_id(message.content)
+            except:
+                    id=None
+            if id is None:
+                return
+            else:
+                url=requests.get(f'https://api.aic-group.net/v1/tools/youtube/videoinfo/{id}')
+                text = url.text
+                data = json.loads(text)
+                viewcount= "{:,}".format(data['info']['viewCount'])
+                embed = discord.Embed(title=data['info']['title'], description=f"{data['info']['title']}の情報です", color=discord.Color.red(), url=message.content)
+                if len(data['info']['description']) <= 500:
+                    embed.add_field(name="概要欄", value=data['info']['description'])
+                else:
+                    embed.add_field(name="概要欄", value="500文字以上の場合は表示されません…")
+                embed.add_field(name="アップロード日", value=data['info']['upload'])
+                embed.set_author(name=data['info']['channel']['name'], url=data['info']['channel']['url'])
+                embed.set_image(url=data['meta']['thumb'])
+                embed.set_footer(text=f"{viewcount}回視聴")
+                msg = await message.channel.send(embed=embed, view=dutton(self))
+                await asyncio.sleep(60)
+                await msg.edit(embed=embed, view=dutton(self))
 
 
 
