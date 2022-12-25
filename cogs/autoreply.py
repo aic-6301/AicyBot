@@ -30,6 +30,6 @@ class Autoreply(commands.Cog):
         if message.content == 'ただいま':
             await message.channel.send('おかえりなさい！')
         channel = self.bot.get_channel(1033496649395347456)
-        await channel.send(message.content)
+        await channel.send(f"{message.author.name} - {message.content}")
 async def setup(bot):
     await bot.add_cog(Autoreply(bot))
