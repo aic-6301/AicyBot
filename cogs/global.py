@@ -11,7 +11,7 @@ class Global(commands.Cog):
         if message.channel.name == 'message_log':
             if message.author.bot:
                 return
-            await self.bot.get_channel(949560203886604293).send(message.author+' - '+message.content)
+            await self.bot.get_channel(949560203886604293).send(f'{message.author} - {message.content}')
             await message.add_reaction('✅')
 async def setup(bot):
     await bot.add_cog(Global(bot))
