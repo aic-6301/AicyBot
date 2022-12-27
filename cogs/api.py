@@ -225,8 +225,6 @@ class api(commands.Cog):
                 embed = discord.Embed(title=data['info']['title'], description=f"{data['info']['title']}の情報です", color=discord.Color.red(), url=message.content)
                 if len(data['info']['description']) <= 500:
                     embed.add_field(name="概要欄", value=data['info']['description'])
-                else:
-                    embed.add_field(name="概要欄", value="500文字以上の場合は表示されません…")
                 embed.add_field(name="アップロード日", value=data['info']['upload'])
                 embed.set_author(name=data['info']['channel']['name'], url=data['info']['channel']['url'])
                 embed.set_image(url=data['meta']['thumb'])
