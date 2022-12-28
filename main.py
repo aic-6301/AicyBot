@@ -108,12 +108,6 @@ async def restart(ctx):
         exit()
     else:
         await ctx.reply('このコマンドは管理者専用です。')
-
-@bot.command()
-async def akick(ctx):
-    await ctx.reply('あいしぃーを蹴ります')
-    await ctx.guild.get_member(964887498436276305).kick()
-    await ctx.send('あいしぃーをキックしました')
 @tasks.loop(minutes=3)
 async def status():
         try:
