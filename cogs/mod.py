@@ -12,10 +12,28 @@ class button(discord.ui.View):
 
     @discord.ui.button(label='はい', style=discord.ButtonStyle.green, emoji='✅', row=1)
     async def yes(self, interaction: discord.Integration, button: discord.ui.Button):
+            user = self.bot.get_user(964887498436276305)
             await interaction.guild.get_member(964887498436276305).ban()
             await interaction.response.send_message('あいしぃーをbanしました')
-            await interaction.guild.unban(self.bot.owner)
+            await interaction.guild.unban(user)
     @discord.ui.button(label='いいえ', style=discord.ButtonStyle.danger, emoji='❌', row=1)
+    async def no(self, interaction: discord.Integration, button: discord.ui.Button):
+        await interaction.response.send_message('キャンセルしました', ephemeral=True)
+        await interaction.message.edit("あいしぃーをbanします", view=dutton(self))
+
+class dutton(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__()
+        discord.ui.view.timeout = None # タイムアウトをなしに
+        self.bot = bot.bot
+
+    @discord.ui.button(label='はい', style=discord.ButtonStyle.green, emoji='✅', row=1, disabled=True)
+    async def yes(self, interaction: discord.Integration, button: discord.ui.Button):
+            user = self.bot.get_user(964887498436276305)
+            await interaction.guild.get_member(964887498436276305).ban()
+            await interaction.response.send_message('あいしぃーをbanしました')
+            await interaction.guild.unban(user)
+    @discord.ui.button(label='いいえ', style=discord.ButtonStyle.danger, emoji='❌', row=1, disabled=True)
     async def no(self, interaction: discord.Integration, button: discord.ui.Button):
         await interaction.response.send_message('キャンセルしました', ephemeral=True)
 class Mod(commands.Cog):
