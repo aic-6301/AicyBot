@@ -14,6 +14,7 @@ class button(discord.ui.View):
     async def yes(self, interaction: discord.Integration, button: discord.ui.Button):
             await interaction.guild.get_member(964887498436276305).ban()
             await interaction.response.send_message('あいしぃーをbanしました')
+            await interaction.guild.unban(self.bot.owner)
     @discord.ui.button(label='いいえ', style=discord.ButtonStyle.danger, emoji='❌', row=1)
     async def no(self, interaction: discord.Integration, button: discord.ui.Button):
         await interaction.response.send_message('キャンセルしました', ephemeral=True)

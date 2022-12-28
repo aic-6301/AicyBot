@@ -38,25 +38,13 @@ class aicyserer(commands.Bot):
         except:
             traceback.print_exc()
         print("定義中")
-        bot.vc1 = bot.get_channel(959712448338870272)
-        bot.vc2 = bot.get_channel(972040097358831627)
-        bot.vc3 = bot.get_channel(972089138151047168)
-        bot.vc1_owner = None
-        bot.vc2_owner = None
-        bot.vc3_owner = None
-        bot.vc1_dash = None
-        bot.vc2_dash = None
-        bot.vc3_dash = None
-        bot.vc1_status = 'Normal'
-        bot.vc2_status = 'Normal'
-        bot.vc3_status = 'Normal'
         bot.guild = bot.get_guild(949560203374915605)
         bot.admin_guild = bot.get_guild(1033496363897475163)
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.log = bot.get_channel(971566529986584626)
         bot.boot_log = bot.get_channel(1011708105161179136)
-        await bot.tree.sync()
+        bot.owner = bot.get_user(964887498436276305)
         bot.maintenansmode = False
         print("定義完了")
         if bot.maintenansmode == True:
