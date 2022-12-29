@@ -59,9 +59,10 @@ class api(commands.Cog):
                     url = requests.get(f"https://api.aic-group.net/v1/tools/ping/?ip="+url+"&type=json")
                     text = url.text
                     data = json.loads(text)
-                    await ctx.send('ping値' + str(data['ping']) + f'\n' + 'ping先:' + (data['domain']))
+                    result = discord.Embed(title="測定結果",description=data["ping"]+"\nドメイン : "+data["domain"])
+                    await ctx.send(embed=result)
                 except:
-                    await ctx.send('urlが存在しません。別のurlを試してみて下さい')
+                    await ctx.send('pingの測定に失敗しました。\nURLに問題がないか確認してください。')
 
     @commands.hybrid_command(with_app_command=True, description="サーバーステーサスを取得")
     async def status(self, ctx):
@@ -187,8 +188,8 @@ class api(commands.Cog):
     @app_commands.describe(type='audio/videoのどちらかを選択。選択しなければ、audioが選択されます。')
     async def download(self, ctx, url, type: Literal['audio', 'video']=None):
         if type is None or type == 'audio':
-            msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
-            request = requests.get(f"https://api.aic-group.net/tools/dl?url={url}&type=audio")
+            msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・',description="この処理は時間がかかります。", color=discord.Colour.from_rgb(160, 106, 84)))
+            request = requests.get(f"https://api.aic-group.net/v1/tools/dl?url={url}&type=audio")
             text =request.text
             data = json.loads(text)
             if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
@@ -199,7 +200,7 @@ class api(commands.Cog):
                 await msg.reply('失敗しました。後ほどお試しください。')
         if type == 'video':
             msg = await ctx.send(embed=discord.Embed(title='<a:lllloading:1023933608983015524>ダウンロード中・・', color=discord.Colour.from_rgb(160, 106, 84)))
-            request = requests.get(f"https://api.aic-group.net/get/dl?url={url}&type=video")
+            request = requests.get(f"https://api.aic-group.net/v1/tools/dl?url={url}&type=video")
             text =request.text
             data = json.loads(text)
             if "ファイルの生成に成功しました。\nこのファイルはまもなく削除される予定です。" in data['message']:
