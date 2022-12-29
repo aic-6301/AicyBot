@@ -1,17 +1,17 @@
 import discord
 import json
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from playwright.async_api import async_playwright
 import requests
+import time
 
 def eew_embed(response):
     body = response['Body']
-    head = response['head']
+    head = response['Head']
     color = eew_color(body)
     eew_image()
     embed = discord.Embed(title="地震情報",
-    description=f"{head['Headline']}{body['Comments']['Observation']}\n震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
+    description=f"{head['Headline']}{body['Comments']['Observation']}\n最大震度は{body['Intensity']['Observation']['MaxInt']}震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
     color=color,
     timestamp=datetime.now())
     embed.set_image(url='attachment://image.png')
@@ -40,11 +40,14 @@ def eew_color(body):
         color = discord.Color.from_rgb(140, 0, 40)
     return color
 
-def eew_image():
-    driver = webdriver.Chrome('./chromedriver')
-    url = 'https://ntool.online/weather/earthquake?fullscreen=true'
-    driver.get(url)
-    driver.set_window_size(960, 540)
-    driver.save_screenshot("image.png")
-    driver.quit()
-    return
+async def eew_image():
+    async with async_playwright() as p:
+        url = 'https://ntool.online/weather/earthquake?fullscreen=true'
+        browser = await p.chromium.launch()
+        page = await browser.new_page()
+        await page.set_viewport_size({"width": 1024, "height": 576})
+        await page.goto(url)
+        await time.sleep(3)
+        data = await page.screenshot(path="image.png")
+        await browser.close()
+        return
