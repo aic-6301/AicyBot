@@ -49,6 +49,6 @@ async def eew_image():
         page = await browser.new_page()
         await page.goto(url)
         await asyncio.sleep(3)
-        data = await page.screenshot(path="image.png")
+        data = await page.screenshot(path="data/image.png")
         await browser.close()
         return

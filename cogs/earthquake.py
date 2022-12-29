@@ -23,7 +23,7 @@ class Earthquake(commands.Cog):
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_4+_channels'])
                     channel = self.bot.get_channel(channel_id)
-                    await channel.send(file=discord.File("./image.png"), embed=embed) # 登録済みチャンネルに送信
+                    await channel.send(file=discord.File("./data/image.png"), embed=embed) # 登録済みチャンネルに送信
                     with open('data/cache.json', 'r') as f:  # idを保存
                             eew_updatekey = json.load(f)
                             eew_updatekey['eew_updatekey'] = response['Head']['EventID']
@@ -34,7 +34,7 @@ class Earthquake(commands.Cog):
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_all_channels'])
                     channel = self.bot.get_channel(channel_id)
-                    await channel.send(file=discord.File("./image.png"), embed=embed)
+                    await channel.send(file=discord.File("./data/image.png"), embed=embed)
                     with open('data/cache.json', 'r') as f:  # idを保存
                         eew_updatekey = json.load(f)
                         eew_updatekey['eew_updatekey'] = response['Head']['EventID']
