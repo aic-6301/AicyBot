@@ -45,9 +45,8 @@ async def eew_image():
         url = 'https://ntool.online/weather/earthquake?fullscreen=true'
         browser = await p.chromium.launch()
         page = await browser.new_page()
-        await page.set_viewport_size({"width": 1024, "height": 576})
         await page.goto(url)
-        await time.sleep(3)
+        time.sleep(7)
         data = await page.screenshot(path="image.png")
         await browser.close()
         return
