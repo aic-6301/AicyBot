@@ -11,7 +11,7 @@ async def eew_embed(response):
     color = eew_color(body)
     await eew_image()
     embed = discord.Embed(title="地震情報",
-    description=f"{head['Headline']}{body['Comments']['Observation']}\n震源地は{body['Hypocenter']['Name']}、最大震度は{body['Intensity']['Observation']['MaxInt']}、震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
+    description=f"{head['Headline']}{body['Comments']['Observation']}\n震源地は{body['Earthquake']['Hypocenter']['Name']}、最大震度は{body['Intensity']['Observation']['MaxInt']}、震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km、地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
     color=color,
     timestamp=datetime.now())
     embed.set_image(url='attachment://image.png')
