@@ -19,7 +19,7 @@ class Earthquake(commands.Cog):
         if url.status_code == 200:
             if eventid != response['Head']['EventID']:
                 if response['Body']['Intensity']['Observation']['MaxInt'] >= "4":
-                    embed = eewdata.eew_embed(response)
+                    embed = await eewdata.eew_embed(response)
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_4+_channels'])
                     channel = self.bot.get_channel(channel_id)
@@ -30,7 +30,7 @@ class Earthquake(commands.Cog):
                     with open('data/cache.json', 'w') as f:
                             json.dump(eew_updatekey, f, indent=4)
                 else:
-                    embed = eewdata.eew_embed(response)
+                    embed = await eewdata.eew_embed(response)
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_all_channels'])
                     channel = self.bot.get_channel(channel_id)

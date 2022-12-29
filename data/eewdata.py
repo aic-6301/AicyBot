@@ -3,15 +3,15 @@ import json
 from datetime import datetime
 from playwright.async_api import async_playwright
 import requests
-import time
+import asyncio
 
-def eew_embed(response):
+async def eew_embed(response):
     body = response['Body']
     head = response['Head']
     color = eew_color(body)
-    eew_image()
+    await eew_image()
     embed = discord.Embed(title="地震情報",
-    description=f"{head['Headline']}{body['Comments']['Observation']}\n最大震度は{body['Intensity']['Observation']['MaxInt']}震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
+    description=f"{head['Headline']}{body['Comments']['Observation']}\n震源地は{body['Hypocenter']['Name']}、最大震度は{body['Intensity']['Observation']['MaxInt']}、震源の深さは{body['Earthquake']['Hypocenter']['Depth']}km地震の規模はM{body['Earthquake']['Magnitude']}と推定されています。",
     color=color,
     timestamp=datetime.now())
     embed.set_image(url='attachment://image.png')
@@ -38,6 +38,8 @@ def eew_color(body):
         color = discord.Color.from_rgb(190, 0, 0)
     elif body['Intensity']['Observation']['MaxInt'] == "7":
         color = discord.Color.from_rgb(140, 0, 40)
+    else:
+        color = discord.Color.default()
     return color
 
 async def eew_image():
@@ -46,7 +48,7 @@ async def eew_image():
         browser = await p.chromium.launch()
         page = await browser.new_page()
         await page.goto(url)
-        time.sleep(7)
+        await asyncio.sleep(3)
         data = await page.screenshot(path="image.png")
         await browser.close()
         return
