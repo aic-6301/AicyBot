@@ -18,9 +18,9 @@ class log(commands.Cog):
         embed.add_field(name="削除された日", value=datetime.timestamp(datetime.now()), inline=False)
         embed.set_footer(text=f"Aicy -"+ datetime.now().strftime('%Y/%m/%d %H:%M'))
     @commands.Cog.listener()
-    async def on_message_edit(self,before, after, message):
+    async def on_message_edit(self,before, after):
         embed = discord.Embed(title="メッセージ編集")
-        embed.set_author(name=message.author)
+        embed.set_author(name=before.message.author)
         embed.add_field(name="編集前メッセージ", value=before.message.content, inline=False)
         if before.message.attachments:
             embed.add_field(name="ファイル", value=before.message.attachments.url, inline=False)

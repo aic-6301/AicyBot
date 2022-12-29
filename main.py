@@ -14,7 +14,7 @@ import asyncio
 import json
 
 load_dotenv()
-token = os.environ['token']
+token = os.environ['status_token']
 
 class aicyserer(commands.Bot):
     def __init__(self):
@@ -43,7 +43,7 @@ class aicyserer(commands.Bot):
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
         bot.log = bot.get_channel(971566529986584626)
-        bot.boot_log = bot.get_channel(1011708105161179136)
+        bot.boot_log = bot.get_channel(1058005805426814976)
         bot.owner = bot.get_user(964887498436276305)
         bot.maintenansmode = False
         print("定義完了")
