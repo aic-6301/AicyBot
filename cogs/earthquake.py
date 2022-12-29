@@ -22,20 +22,30 @@ class Earthquake(commands.Cog):
                     embed = eewdata.eew_embed(response)
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_4+_channel'])
-                    for channel in self.bot.get_all_channels(): #BOTが所属する全てのチャンネルをループ
-                        if channel.id in channel_id: #グローバルチャット用のチャンネルが見つかったとき
-                            if channel == message.channel: #発言したチャンネルには送らない
+                    for channel in self.bot.get_all_channels(): # 登録チャンネルを探す
+                        if channel.id in channel_id:
+                            if channel == message.channel:
                                 continue
-                            await channel.send(embed=embed)
+                            await channel.send(embed=embed) # 登録済みチャンネルに送信
+                            with open('data/cache.json', 'r') as f:  # idを保存
+                                eew_updatekey = json.load(f)
+                                eew_updatekey['eew_updatekey'] = response['id']
+                            with open('data/cache.json', 'w') as f:
+                                json.dump(eew_updatekey, f, indent=4)
                 else:
                     embed = eewdata.eew_embed(response)
                     with open('data/channels.json', 'r') as f:
                         channel_id = int(json.load(f)['eew_all_channel'])
-                    for channel in self.bot.get_all_channels():
+                    for channel in self.bot.get_all_channels(): # 登録チャンネルを探す
                         if channel.id in channel_id:
                             if channel == message.channel:
                                 continue
                             await channel.send(embed=embed)
+                            with open('data/cache.json', 'r') as f:  # idを保存
+                                eew_updatekey = json.load(f)
+                                eew_updatekey['eew_updatekey'] = response['id']
+                            with open('data/cache.json', 'w') as f:
+                                json.dump(eew_updatekey, f, indent=4)
 
 
 
