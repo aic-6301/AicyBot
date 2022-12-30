@@ -1,7 +1,7 @@
 import discord
 import json
 from datetime import datetime
-from playwright.async_api import async_playwright
+from pyppeteer import launch
 import requests
 import asyncio
 
@@ -43,12 +43,12 @@ def eew_color(body):
     return color
 
 async def eew_image():
-    async with async_playwright() as p:
         url = 'https://ntool.online/weather/earthquake?fullscreen=true'
-        browser = await p.chromium.launch()
-        page = await browser.new_page()
+        browser = await launch()
+        page = await browser.newPage()
         await page.goto(url)
+        await page.setViewport({'width': 960, 'height': 540})
         await asyncio.sleep(3)
-        data = await page.screenshot(path="data/image.png")
+        data = await page.screenshot(path='data/image.png', fullPage=True)
         await browser.close()
         return
