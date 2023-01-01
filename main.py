@@ -14,7 +14,7 @@ import asyncio
 import json
 
 load_dotenv()
-token = os.environ['status_token']
+token = os.environ['token']
 
 class aicyserer(commands.Bot):
     def __init__(self):
