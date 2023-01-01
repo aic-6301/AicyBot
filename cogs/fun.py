@@ -1,66 +1,21 @@
 import discord
-import random
-import asyncio
 from discord.ext import commands
+from discord import app_commands
 import requests
-import bs4
-import json
-
+from typing import Literal
 
 
 class Fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def rps(self, ctx, choice):
-        choices=["パー", "グー", "チョキ"]
-        comp_choice = random.choice(choices)
-        if choice == "パー":
-            if comp_choice == "パー":
-                await ctx.send(f"{comp_choice} 引き分け🙄")
-            if comp_choice == "チョキ":
-                await ctx.send(f"{comp_choice} あなたの負け")
-            if comp_choice == "グー":
-                await ctx.send(f"{comp_choice} あなたの勝ち👏")
-        if choice == "チョキ":
-            if comp_choice == "パー":
-                await ctx.send(f"{comp_choice} あなたの勝ち👏")
-            if comp_choice == "チョキ":
-                await ctx.send(f"{comp_choice} 引き分け🙄")
-            if comp_choice == "グー":
-                await ctx.send(f"{comp_choice} あなたの負け")
-        if choice == "グー":
-            if comp_choice == "パー":
-                await ctx.send(f"{comp_choice} あなたの負け")
-            if comp_choice == "チョキ":
-                await ctx.send(f"{comp_choice} あなたの勝ち👏")
-            if comp_choice == "グー":
-                await ctx.send(f"{comp_choice} 引き分け🙄")
-        if choice not in choices:
-            await ctx.send("じゃんけんにならないよ！！グーかチョキかパーを選んでね！！")
-    @commands.hybrid_command(with_app_command=True, description='Powered by Google Trends')
-    async def googletrend(self, ctx):
-        response = requests.get('https://api.aic-group.net/get/trends')
-        text = response.text
-        data = json.loads(text)
-        if data['channel']['item'][0]['description'] == '{}':
-            description0 = 'なし'
-        if data['channel']['item'][1]['description'] == '{}':
-            description1 = 'なし'
-        if data['channel']['item'][2]['description'] == '{}':
-            description2 = 'なし'
-        if data['channel']['item'][3]['description'] == '{}':
-            description3 = 'なし'
-        if data['channel']['item'][4]['description'] == '{}':
-            description4 = 'なし'
-        embed= discord.Embed(title='現在のトレンド', description='Google trendsから取得しています。')
-        embed.add_field(name=data['channel']['item'][0]['title'], value=f"説明：{data['channel']['item'][0]['description']}\n{data['channel']['item'][0]['link']}")
-        embed.add_field(name=data['channel']['item'][1]['title'], value=f"説明：{data['channel']['item'][1]['description']}\n{data['channel']['item'][1]['link']}")
-        embed.add_field(name=data['channel']['item'][2]['title'], value=f"説明：{data['channel']['item'][2]['description']}\n{data['channel']['item'][2]['link']}")
-        embed.add_field(name=data['channel']['item'][3]['title'], value=f"説明：{data['channel']['item'][3]['description']}\n{data['channel']['item'][3]['link']}")
-        embed.add_field(name=data['channel']['item'][4]['title'], value=f"説明：{data['channel']['item'][4]['description']}\n{data['channel']['item'][4]['link']}")
-        embed.set_footer(text='Powered by Google Trends')
-        await ctx.send(embed=embed)
+    group = app_commands.Group(name="fun", description="楽しい機能達", guild_ids=[949560203374915605], guild_only=True)
+    @group.command(name="5000choyen", description="5000兆円apiを使った機能")
+    @app_commands.describe(top="上の文字", bottom="下の文字")
+    async def gosentyou(self, interaction: discord.Interaction, top: str, bottom: str):
+        url = requests.get(f'https://gsapi.cbrx.io/image?top={top}&bottom={bottom}')
+        with open('data/5000choyen.png', 'wb') as f:
+            f.write(url.content)
+        await interaction.response.send_message(file=discord.File("data/5000choyen.png"))
 async def setup(bot):
     await bot.add_cog(Fun(bot))
