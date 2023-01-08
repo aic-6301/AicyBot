@@ -9,6 +9,7 @@ class Vc(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         create_channel = self.bot.get_channel(1030990534984081538)
+        unei_channel = self.bot.get_channel(1061523318458548244)
         if member.bot is False:
             if before.channel != after.channel:
                 if after.channel == create_channel:
@@ -19,7 +20,7 @@ class Vc(commands.Cog):
 
 
                 if before.channel is not None:
-                    if before.channel is create_channel:
+                    if before.channel is create_channel or unei_channel:
                         return
                     if len(before.channel.members) == 0:
                         if len(before.channel.members) != 0:
