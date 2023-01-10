@@ -32,6 +32,11 @@ class aicyserer(commands.Bot):
         except:
             traceback.print_exc()
         try:
+            await bot.load_extension("dispander")
+            print("Loaded jishaku")
+        except:
+            traceback.print_exc()
+        try:
             with open('config.json', 'r+', encoding='utf-8') as file:
                 bot.config = load(file)
             print('Config loaded')
