@@ -73,90 +73,15 @@ class aicyserer(commands.Bot):
         handler.setFormatter(formatter)
         logger.addHandler(handler)
         return logger
-
-
-
-
 bot = aicyserer()
 
-@bot.command()
-@commands.is_owner()
-async def maintenansmode(ctx, mode):
-    if mode == 'True' or 'true' or 'yes' or 'on':
-        bot.maintenansmode = True
-        await ctx.send('メンテナンスモードが有効化されました\n全機能を停止します。')
-        for file in os.listdir('./cogs'):
-                if file.endswith('.py'):
-                    try:
-                        await bot.unload_extension(f'cogs.{file[:-3]}')
-                    except:
-                        traceback.print_exc()
-    if mode == 'False' or 'false' or 'no' or 'off':
-        bot.maintenansmode = False
-        await ctx.send('メンテナンスモードが無効化されました\n再起動をします')
-        exit()
 
-@bot.command()
-async def restart(ctx):
-    if ctx.author.roles:
-        await ctx.reply('再起動します。', mention_author=False)
-        exit()
-    else:
-        await ctx.reply('このコマンドは管理者専用です。')
-@tasks.loop(minutes=3)
-async def status():
-        try:
-            uri = requests.get("https://api.aic-group.net/get/status")
-            text = uri.text
-            data = json.loads(text)
-            status_message = None
-            try:
-                status_message.delete()
-            except:
-                pass
-        except:
-            if status_message != None:
-                status_message = await bot.guild.system_channel.send('サーバーから応答がありません。\nOSフリーズまたはip変更の時間の可能性があります。')
-        e = discord.Embed(title="各ステータス", color=discord.Colour.from_rgb(160, 106, 84), timestamp=datetime.now())
-        e.clear_fields
-        if (data['MainSite']) == 'OK':
-            e.add_field(name="メインサイト", value='✅オンライン\n[サイトに行く](https://www.aic-group.net)')
-        else:
-            e.add_field(name="メインサイト", value='❌オフライン')
-        if (data['AicyBlog']) == 'OK':
-            e.add_field(name="ブログ", value='✅オンライン\n[サイトに行く](https://blog.aic-group.net)')
-        else:
-            e.add_field(name="ブログ", value='❌オフライン')
-        if (data['AicyWiki']) == 'OK':
-            e.add_field(name="Wiki", value='✅オンライン\n[サイトに行く](https://wiki.aic-group.net)')
-        else:
-            e.add_field(name="Wiki", value='❌オフライン')
-        if (data['AicyAPI']) == 'OK':
-            e.add_field(name="API", value='✅オンライン')
-        else:
-            e.add_field(name="API", value='❌オフライン')
-        if (data['AicyMedia']) == 'OK':
-            e.add_field(name="Media", value='✅オンライン\n[サイトに行く](https://media.aic-group.net)')
-        else:
-            e.add_field(name="Media", value='❌オフライン')
-        if (data['AicyLive']) == 'OK':
-            e.add_field(name="Live", value='✅オンライン\n[サイトに行く](https://live.aic-group.net)')
-        else:
-            e.add_field(name="Live", value='❌オフライン')
-        if (data['AicyGit']) == 'OK':
-            e.add_field(name="Git", value='✅オンライン\n[サイトに行く](https://git.aic-group.net)')
-        else:
-            e.add_field(name="Git", value='❌オフライン')
-        if (data['Minecraft Server']) == 'OK':
-            e.add_field(name="Minecraft", value='✅オンライン')
-        else:
-            e.add_field(name="Minecraft", value='❌オフライン')
-        
-        msg = await bot.get_channel(1030355963586289774).fetch_message(1043503405513060443)
-        await msg.edit(embed=e)
+
+
 if __name__ == "__main__":
     print("プログラムを実行しています。")
     try:
+        asyncio.sleep(3)
         bot.run(token)
     except:
         traceback.print_exc()
