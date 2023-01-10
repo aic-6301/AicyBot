@@ -45,27 +45,22 @@ class aicyserer(commands.Bot):
         bot.log = bot.get_channel(971566529986584626)
         bot.boot_log = bot.get_channel(1058005805426814976)
         bot.owner = bot.get_user(964887498436276305)
-        bot.maintenansmode = False
         print("定義完了")
-        if bot.maintenansmode == True:
-            await bot.change_presence(activity = discord.Activity(name=f"メンテナンスモードです。全機能が停止しています。", type=discord.ActivityType.playing), status='dnd')
-        else:
-            for file in os.listdir('./cogs'): # cogの中身ロード
-                if file.endswith('.py'):
-                    try:
-                        await bot.load_extension(f'cogs.{file[:-3]}')
-                        print(f'Loaded cogs.{file[:-3]}')
-                    except:
-                        traceback.print_exc()
-            await bot.tree.sync()
-            embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
-            embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
-            await bot.boot_log.send(embed=embed)
-            while True:
-                await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
-                await asyncio.sleep(30)
+        for file in os.listdir('./cogs'): # cogの中身ロード
+            if file.endswith('.py'):
+                try:
+                    await bot.load_extension(f'cogs.{file[:-3]}')
+                    print(f'Loaded cogs.{file[:-3]}')
+                except:
+                    traceback.print_exc()
+        await bot.tree.sync()
+        embed = discord.Embed(title='起動通知', description=f'{bot.user}でログインしました。', color=discord.Colour.from_rgb(160, 106, 84))
+        embed.add_field(name='メンバー数', value=f'{len(bot.users)}人')
+        await bot.boot_log.send(embed=embed)
         print(f"Login successful. {bot.user}({bot.user.id})")
-        status.start()
+        while True:
+            await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
+            await asyncio.sleep(30)
 
     async def getMyLogger(name):
         logging.basicConfig(level=logging.DEBUG)
