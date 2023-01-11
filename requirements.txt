@@ -4,7 +4,7 @@ dispander==0.5.0
 dpy-syntaxer==1.1.0
 emoji==1.7.0
 ffmpeg==1.4
-GitPython==3.1.29
+GitPython==3.1.30
 google==3.0.0
 googletrans==3.0.0
 gTTS==2.2.4
