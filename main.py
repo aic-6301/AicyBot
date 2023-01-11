@@ -35,12 +35,6 @@ class aicyserer(commands.Bot):
             print("Loaded jishaku")
         except:
             traceback.print_exc()
-        try:
-            with open('config.json', 'r+', encoding='utf-8') as file:
-                bot.config = load(file)
-            print('Config loaded')
-        except:
-            traceback.print_exc()
         print("定義中")
         bot.guild = bot.get_guild(949560203374915605)
         bot.admin_guild = bot.get_guild(1033496363897475163)
