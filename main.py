@@ -5,7 +5,6 @@ from discord.ext import commands, tasks
 from discord import app_commands
 import logging
 import requests
-from data.data import is_admin
 from json import load
 from dotenv import load_dotenv
 import subprocess
