@@ -2,10 +2,8 @@ import discord
 import os
 import traceback
 from discord.ext import commands, tasks
-from discord import app_commands
 import logging
 import requests
-from data.data import is_admin
 from json import load
 from dotenv import load_dotenv
 import subprocess
@@ -33,20 +31,12 @@ class aicyserer(commands.Bot):
             traceback.print_exc()
         try:
             await bot.load_extension("dispander")
-            print("Loaded jishaku")
-        except:
-            traceback.print_exc()
-        try:
-            with open('config.json', 'r+', encoding='utf-8') as file:
-                bot.config = load(file)
-            print('Config loaded')
+            print("Loaded dispander")
         except:
             traceback.print_exc()
         print("定義中")
         bot.guild = bot.get_guild(949560203374915605)
         bot.admin_guild = bot.get_guild(1033496363897475163)
-        bot.vip = bot.guild.get_role(1015602734684184677)
-        bot.everyone = bot.guild.get_role(949560203374915605)
         bot.log = bot.get_channel(971566529986584626)
         bot.boot_log = bot.get_channel(1058005805426814976)
         bot.owner = bot.get_user(964887498436276305)
@@ -86,7 +76,6 @@ bot = aicyserer()
 if __name__ == "__main__":
     print("プログラムを実行しています。")
     try:
-        asyncio.sleep(3)
         bot.run(token)
     except:
         traceback.print_exc()
