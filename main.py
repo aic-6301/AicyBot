@@ -40,7 +40,6 @@ class aicyserer(commands.Bot):
         bot.admin_guild = bot.get_guild(1033496363897475163)
         bot.vip = bot.guild.get_role(1015602734684184677)
         bot.everyone = bot.guild.get_role(949560203374915605)
-        bot.log = bot.get_channel(971566529986584626)
         bot.boot_log = bot.get_channel(1058005805426814976)
         bot.owner = bot.get_user(964887498436276305)
         print("定義完了")
