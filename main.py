@@ -47,7 +47,7 @@ class aicyserer(commands.Bot):
             if file.endswith('.py'):
                 try:
                     await bot.load_extension(f'cogs.{file[:-3]}')
-                    print(f'Loaded cogs.{file[:-3]}')
+                    print(f'Loaded cogs: {file[:-3]}')
                 except:
                     traceback.print_exc()
         await bot.tree.sync()
