@@ -59,17 +59,8 @@ class aicyserer(commands.Bot):
             await bot.change_presence(activity = discord.Activity(name=f"Server Running! 最終更新：{datetime.now().strftime('%H:%M')} | メンバー数:{len(bot.users)}", type=discord.ActivityType.streaming), status='idle')
             await asyncio.sleep(30)
 
-    async def getMyLogger(name):
-        logging.basicConfig(level=logging.DEBUG)
-        logger = logging.getLogger(name)
-        logger.setLevel(logging.DEBUG)
-        handler = logging.FileHandler('./log/project.log')
-        handler.setLevel(logging.DEBUG)
-        formatter = logging.Formatter(
-            '%(levelname)-9s  %(asctime)s  [%(name)s] %(message)s')
-        handler.setFormatter(formatter)
-        logger.addHandler(handler)
-        return logger
+    async def not_found(self, ctx):
+        await ctx.send(f"{ctx.command.name}のサブコマンドがないよ！`a!help {ctx.command.name}`をみてね！")
 bot = aicyserer()
 
 
