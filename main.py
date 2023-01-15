@@ -30,11 +30,6 @@ class aicyserer(commands.Bot):
             print("Loaded jishaku")
         except:
             traceback.print_exc()
-        try:
-            await bot.load_extension("dispander")
-            print("Loaded jishaku")
-        except:
-            traceback.print_exc()
         print("定義中")
         bot.guild = bot.get_guild(949560203374915605)
         bot.admin_guild = bot.get_guild(1033496363897475163)
