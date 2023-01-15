@@ -9,7 +9,7 @@ class Ping(commands.Cog):
 
     @commands.hybrid_group(name="ping", with_app_command=True)
     async def ping(self, ctx):
-        await ctx.send(embed=discord.Embed(title=f':ping_pong:Pong!', description=f'{round(self.bot.latency * 1000)}ms'))
+        await ctx.send(embed=discord.Embed(title=':ping_pong:Pong!', description=f'{round(self.bot.latency * 1000)}ms'))
     @ping.command(name="site", with_app_command=True)
     async def _site(self, ctx, target):
         result = int(ping(target, unit="ms"))
