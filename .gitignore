@@ -128,9 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .vscode/
-cogs/__pycache__/
-cogs/__pycache__/api.cpython-310.pyc
-cogs/__pycache__/mod.cpython-310.pyc
-cogs/__pycache__/server.cpython-310.pyc
-cogs/__pycache__/timesignal.cpython-310.pyc
-data/cache.json
+.cogs/__pycache__/
+

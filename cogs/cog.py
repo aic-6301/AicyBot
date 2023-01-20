@@ -2,6 +2,15 @@ import discord
 from discord.ext import commands
 import traceback
 
+class test(discord.ui.View):
+    def __init__(self, bot):
+        super().__init__()
+        self.timeout=None
+        self.bot = bot
+
+    @discord.ui.button(label="aaa", emoji="ℹ️", style=discord.ButtonStyle.green)
+    async def test_callback(self, interaction:discord.Interaction, button:discord.Button):
+        await interaction.response.send_message("やあ！")
 
 class Cog(commands.Cog):
     def __init__(self, bot):
@@ -111,6 +120,15 @@ class Cog(commands.Cog):
                 error_msg  = ''.join(traceback.TracebackException.from_exception(orig_error).format())
                 await error_ch.send('エラー全文')
                 await error_ch.send(error_msg)
+    
+    @commands.command()
+    async def test_button(self, ctx):
+        await ctx.send("button test", view=discord.ui.button(label="aaa", emoji="ℹ️", style=discord.ButtonStyle.green, custom_id='test_button'))
+
+
+@commands.Cog.listener()
+async def on_interaction(inter:discord.Interaction):
+    if inter
 
 async def setup(bot):
     await bot.add_cog(Cog(bot))
