@@ -13,6 +13,6 @@ class Tools(commands.Cog):
             emoji = "<:unstable_ping:1066023212284121189>"
         else:
             emoji = "<:interruption:1066023323898744912>"
-        await interaction.response.send_message(embed=disnake.Embed(title=f":ping_pong: Pong!", description=f"botの応答速度は、{emoji}{(self.bot.latency)*1000:.0f}msです。", color=disnake.Color.from_rgb(128,255,0)))
+        await interaction.response.send_message(embed=disnake.Embed(title=":ping_pong: Pong!", description=f"botの応答速度は、{emoji}{(self.bot.latency)*1000:.0f}msです。", color=disnake.Color.from_rgb(128,255,0)))
 def setup(bot):
     bot.add_cog(Tools(bot))
