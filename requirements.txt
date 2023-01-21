@@ -1,7 +1,4 @@
-components==1.2.8
-discord.py==2.1.0
-dispander==0.5.0
-dpy-syntaxer==1.1.0
+disnake==2.1.0
 emoji==1.7.0
 ffmpeg==1.4
 GitPython==3.1.30
