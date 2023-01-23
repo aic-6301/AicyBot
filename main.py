@@ -39,6 +39,7 @@ class AicyBot(commands.Bot):
         print(f"Ready! {self.user.name}({self.user.id})")
         await self.get_channel(1058005805426814976).send(embed=disnake.Embed(title="起動しました！", description=f"<t:{self.start_time.timestamp():.0f}:R>にAicyBotが起動しました!\n disnake Version: {disnake.__version__}"))
 
+
 if __name__ == "__main__":
     bot = AicyBot()
     bot.run(TOKEN)
