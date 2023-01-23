@@ -56,6 +56,7 @@ class aicyserer(commands.Bot):
 
     async def not_found(self, ctx):
         await ctx.send(f"{ctx.command.name}のサブコマンドがないよ！`a!help {ctx.command.name}`をみてね！")
+
 bot = aicyserer()
 
 
